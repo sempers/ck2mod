@@ -1,0 +1,1873 @@
+emf_nwo_create_male_ruler_effect = {
+	random_list = {
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 16
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 17
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 18
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 19
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 20
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 21
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 22
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 23
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 24
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = no
+				age = 25
+			}
+		}
+	}
+}
+
+
+emf_nwo_create_female_ruler_effect = {
+	random_list = {
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 16
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 17
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 18
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 19
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 20
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 21
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 22
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 23
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 24
+			}
+		}
+		10 = {
+			create_character = {
+				random_traits = yes
+				religion = PREV # Province
+				culture = PREV # Province
+				dynasty = random
+				health = 5
+				fertility = 0.5
+				female = yes
+				age = 25
+			}
+		}
+	}
+}
+
+emf_nwo_generate_ancient_religion_provinces_culture = { # Flip specific cultures to ancient religions.
+	if = {										        # THIS is the province scope
+		limit = {
+			OR = {
+				culture_group = celtic
+				culture_group = iberian
+				culture = frankish
+				culture = occitan
+				culture = basque
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = celtic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = celtic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = central_germanic
+				culture_group = franco_germanic
+				culture_group = east_germanic
+				culture = saxon
+				culture = old_saxon
+				culture = frisian
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = german_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = german_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture = roman
+				culture = italian
+				culture = sicilian
+				culture = sicilian_greek
+				culture_group = byzantine
+				culture_group = crusader_group
+				culture_group = east_romance
+			}
+		}
+		religion = hellenic_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = north_germanic
+				culture = norman
+				culture = english
+				culture = scots
+				culture = teutonic
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = norse_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture = persian
+				culture = kurdish
+				culture = baloch
+				culture = sogdian
+				culture = tocharian
+				culture = agnean
+			}
+		}
+		religion = zoroastrian
+	}
+	if = {
+		limit = {
+			OR = {
+				culture = egyptian_arabic
+				culture_group = east_african
+				culture = coptic
+			}
+		}
+		religion = egyptian_pagan
+	}
+	if = {
+		limit = {
+			culture_group = finno_ugric
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = finnish_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = finnish_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = baltic
+				culture = ugricbaltic
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = baltic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = baltic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = east_slavic
+				culture_group = west_slavic
+				culture_group = south_slavic
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = slavic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = slavic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture_group = altaic
+				culture_group = magyar
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = tengri_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = tengri_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				culture = bedouin_arabic
+				culture = levantine_arabic
+			}
+		}
+		religion = arab_pagan
+	}
+	if = {
+		limit = {
+			culture = afghan
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = zun_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = zun_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			culture_group = israelite
+		}
+		religion = jewish_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				culture = maghreb_arabic
+				culture = andalusian_arabic
+				culture = sicilian_arabic
+			}
+		}
+		religion = berber_pagan
+	}
+	if = {
+		limit = {
+			culture_group = west_african
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = west_african_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = west_african_pagan_reformed
+		}
+	}
+}
+
+emf_nwo_generate_ancient_religion_provinces = { # Flip specific regions to ancient religions.
+	if = {										# THIS is the province scope
+		limit = {
+			OR = {
+				region = custom_france 
+				region = custom_aquitaine 
+				region = custom_aragon 
+				region = custom_navarra 
+				region = custom_castille 
+				region = custom_asturias 
+				region = custom_andalusia
+				region = custom_ireland
+				region = custom_brittany
+				region = custom_scotland
+				region = custom_portugal
+				region = custom_wales
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = celtic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = celtic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_germany
+				region = custom_frisia
+				region = custom_lotharingia
+				region = custom_burgundy
+				region = custom_england
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = german_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = german_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_croatia 
+				region = custom_serbia 
+				region = custom_bulgaria 
+				region = custom_byzantium 
+				region = custom_nikaea
+				region = custom_trebizond
+				region = custom_armenia
+				region = custom_italy
+				region = custom_sicily
+				region = custom_georgia
+				duchy = {
+					title = d_carinthia
+				}
+			}
+		}
+		religion = hellenic_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_norway 
+				region = custom_sweden
+				region = custom_denmark
+				region = custom_north_sea
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = norse_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_persia
+				region = custom_mesopotamia
+				region = custom_azerbaijan
+			}
+		}
+		religion = zoroastrian
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_egypt
+				region = custom_nubia
+			}
+		}
+		religion = egyptian_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_finland
+				region = custom_perm
+				region = custom_novgorod
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = finnish_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = finnish_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_lithuania
+				region = custom_pomerania
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = baltic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = baltic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_muscovy
+				region = custom_rus
+				region = custom_bohemia
+				region = custom_carpathia
+				region = custom_wallachia
+				region = custom_poland
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = slavic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = slavic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_england 
+				region = custom_norway 
+				region = custom_sweden
+				region = custom_denmark
+				region = custom_north_sea
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = norse_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_khwarizm
+				region = world_steppe
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = tengri_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = tengri_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_arabia
+				region = custom_adal
+				region = custom_abyssinia
+			}
+		}
+		religion = arab_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_baluchistan
+				region = custom_afghanistan
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = zun_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = zun_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_jerusalem
+				region = custom_syria
+			}
+		}
+		religion = jewish_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_africa
+				region = custom_morocco
+				region = custom_algiers
+			}
+		}
+		religion = berber_pagan
+	}
+	if = {
+		limit = {
+			region = world_india_rajastan
+		}
+		religion = jain
+	}
+	if = {
+		limit = {
+			region = world_india_bengal
+		}
+		religion = hindu
+	}
+	if = {
+		limit = {
+			region = world_india_deccan
+		}
+		religion = buddhist
+	}
+	if = {
+		limit = {
+			region = world_africa_west
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = west_african_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = west_african_pagan_reformed
+		}
+	}
+}
+
+emf_nwo_generate_ancient_religion_provinces_specific = { # Flip only some provinces to ancient religions
+	if = {
+		limit = {
+			OR = {
+				region = custom_germany
+				region = custom_frisia
+				region = custom_england
+			}
+			OR = {
+				culture_group = central_germanic
+				culture_group = west_germanic
+				culture_group = franco_germanic
+				culture_group = east_germanic
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = german_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = german_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_ireland
+				region = custom_brittany
+				region = custom_scotland
+				region = custom_wales
+				region = custom_cornwall
+			}
+			culture_group = celtic
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = celtic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = celtic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_byzantium 
+				region = custom_nikaea
+				region = custom_trebizond
+				region = custom_sicily
+			}
+			OR = {
+				culture_group = byzantine
+				culture_group = east_romance
+				AND = {
+					culture_group = latin
+					NOT = { culture = norman }
+				}
+				
+			}
+		}
+		religion = hellenic_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_norway 
+				region = custom_sweden
+				region = custom_denmark
+				region = custom_north_sea
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = norse_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = norse_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_persia
+			}
+			OR = {
+				culture_group = iranian
+				culture_group = tocharian_group
+			}
+		}
+		religion = zoroastrian
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_egypt
+			}
+		}
+		religion = egyptian_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_finland
+				region = custom_perm
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = finnish_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = finnish_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_lithuania
+				region = custom_pomerania
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = baltic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = baltic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_muscovy
+				region = custom_rus
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = slavic_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = slavic_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			AND = {
+				region = custom_arabia
+				NOT = { region = custom_medina }
+			}
+		}
+		religion = arab_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_baluchistan
+				region = custom_afghanistan
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = zun_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = zun_pagan_reformed
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_jerusalem
+			}
+		}
+		religion = jewish_pagan
+	}
+	if = {
+		limit = {
+			OR = {
+				region = custom_morocco
+				region = custom_algiers
+			}
+		}
+		religion = berber_pagan
+	}
+	if = {
+		limit = {
+			region = world_africa_west
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_game_rule = {
+						name = pagan_reformation
+						value = start_reformed
+					}
+				}
+			}
+			religion = west_african_pagan
+		}
+		if = {
+			limit = {
+				has_game_rule = {
+					name = pagan_reformation
+					value = start_reformed
+				}
+			}
+			religion = west_african_pagan_reformed
+		}
+	}
+}
+
+emf_nwo_generate_ancient_religion_characters = { # Flip specific character to ancient religions, based on their capital. event_target:nwo_ar = character in question
+	capital_scope = {
+		event_target:nwo_ar = {
+			religion = PREV
+		}			
+	}
+}
+
+emf_nwo_generate_male_child = { # Generates male child based on the age of ROOT
+	if = {
+		limit = { NOT = { num_of_children = 2 } } # Don't want to generate children for characters who already have 2 or more children
+		if = {
+			limit = { # If younger than 22, but older than 16
+				NOT = { age = 22 }
+				age = 17
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 1
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 2
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 3
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 26, but older than 21
+				NOT = { age = 26 }
+				age = 22
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 4
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 5
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 6
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 29, but older than 25
+				NOT = { age = 29 }
+				age = 26
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 7
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 8
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 9
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 32, but older than 28
+				NOT = { age = 32 }
+				age = 29
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 10
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 11
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 12
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 35, but older than 31
+				NOT = { age = 35 }
+				age = 32
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 13
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 14
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 15
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 38, but older than 34
+				NOT = { age = 38 }
+				age = 35
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 19
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 20
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 21
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If older than 37
+				age = 38
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 22
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 23
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 24
+						female = no
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		new_character = {
+			if = {
+				limit = { ROOT = { is_female = no } }
+				set_father = ROOT
+			}
+			if = {
+				limit = { ROOT = { is_female = yes } }
+				set_mother = ROOT
+			}
+			ROOT = {
+				random_spouse = {
+					limit = { age_diff = { who = PREVPREV years = 16 } }
+					if = {
+						limit = { is_female = no }
+						new_character = { set_father = PREV }
+					}
+					if = {
+						limit = { is_female = yes }
+						new_character = { set_mother = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { religion_group = indian_group }
+				add_trait = kshatriya
+				character_event = { id = RoI.30121 }
+			}
+			set_character_flag = start_of_game_character
+			character_event = { id = Plus.324 }
+		}
+		recalc_succession = yes
+	}
+}
+
+emf_nwo_generate_female_child = { # Generates female child based on the age of ROOT
+	if = {
+		limit = { NOT = { num_of_children = 2 } } # Don't want to generate children for characters who already have 2 or more children
+		if = {
+			limit = { # If younger than 22, but older than 16
+				NOT = { age = 22 }
+				age = 17
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 1
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 2
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 3
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 26, but older than 21
+				NOT = { age = 26 }
+				age = 22
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 4
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 5
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 6
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 29, but older than 25
+				NOT = { age = 29 }
+				age = 26
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 7
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 8
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 9
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 32, but older than 28
+				NOT = { age = 32 }
+				age = 29
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 10
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 11
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 12
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 35, but older than 31
+				NOT = { age = 35 }
+				age = 32
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 13
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 14
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 15
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If younger than 38, but older than 34
+				NOT = { age = 38 }
+				age = 35
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 19
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 20
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 21
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		if = {
+			limit = { # If older than 37
+				age = 38
+			}
+			random_list = {
+				34 = {
+					create_character = {
+						random_traits = yes
+						age = 22
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 23
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+				33 = {
+					create_character = {
+						random_traits = yes
+						age = 24
+						female = yes
+						culture = ROOT
+						religion = ROOT
+						dynasty = ROOT
+					}
+				}
+			}
+		}
+		new_character = {
+			if = {
+				limit = { ROOT = { is_female = no } }
+				set_father = ROOT
+			}
+			if = {
+				limit = { ROOT = { is_female = yes } }
+				set_mother = ROOT
+			}
+			ROOT = {
+				random_spouse = {
+					limit = { age_diff = { who = PREVPREV years = 16 } }
+					if = {
+						limit = { is_female = no }
+						new_character = { set_father = PREV }
+					}
+					if = {
+						limit = { is_female = yes }
+						new_character = { set_mother = PREV }
+					}
+				}
+			}
+			if = {
+				limit = { religion_group = indian_group }
+				add_trait = kshatriya
+				character_event = { id = RoI.30121 }
+			}
+			set_character_flag = start_of_game_character
+			character_event = { id = Plus.324 }
+		}
+		recalc_succession = yes
+	}
+}

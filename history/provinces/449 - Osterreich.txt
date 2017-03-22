@@ -1,0 +1,28 @@
+# 449 - Österreich
+
+# County Title
+title = c_osterreich
+
+# Settlements
+max_settlements = 6
+b_wien = castle
+b_linz = city
+b_melk = temple
+
+#b_hohenwarth = castle
+#b_stpolten = city
+#b_wagram = castle
+#b_krems = castle
+#b_steyr = castle
+
+# Misc
+culture = german
+religion = chalcedonian
+
+# History
+1000.1.1 = { culture = bavarian }
+1054.1.1 = {
+	religion = catholic
+}
+1187.1.1 = { b_steyr = castle } 
+1300.1.1 = { culture = austrian }

@@ -1,0 +1,1038 @@
+
+namespace = Plus
+
+#reserved: Plus.4050 to Plus.4099
+
+#######################################
+# CHILDHOOD TRAIT REVEAL EVENTS
+# Written by Zeress
+#######################################
+
+# Child Realizes They Are Homosexual
+
+character_event = {
+	id = Plus.4050
+	desc = "EVTDESC_Plus_4050"
+	picture = "GFX_evt_child_play"
+	
+	is_triggered_only = yes
+	
+	min_age = 10
+
+	trigger = {
+		is_homosexual_trigger = yes
+	}
+	
+	weight_multiplier = {
+		days = 1		
+	}	
+		
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+		}
+		name = "EVTOPTA_PLUS_4050"
+		custom_tooltip = { text = "PLUS_4050_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4051
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4051
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {		
+		name = "EVTOPTB_PLUS_4050"
+		custom_tooltip = { text = "PLUS_4050_hover_ctt" }
+	}
+}
+
+# Guardian discovers homosexuality
+character_event = {
+	id = Plus.4051
+	desc = "EVTDESC_PLUS_4051"
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+	
+	option = { # Beat it out of them
+		name = "EVTOPTA_PLUS_4051"
+		ai_chance = {
+			factor = 10
+
+			modifier = {
+				factor = 9
+				trait = cruel
+			}
+		}
+		FROM = {			
+			opinion = {
+				modifier = opinion_bitter
+				who = ROOT
+				years = 20
+			}
+		}		
+		hidden_tooltip = { 
+			FROM = { 
+				character_event = { id = Plus.4052 } 
+				random = {
+					chance = 20				
+					char_closet_homosexual_effect = yes				
+				}
+			} 
+		}
+	}
+	
+	option = { # Lecture them
+		name = "EVTOPTB_PLUS_4051"	
+		ai_chance = {
+			factor = 10
+
+			modifier = {
+				factor = 9
+				trait = zealous
+			}
+		}
+		FROM = {			
+			opinion = {
+				modifier = opinion_mad_at_guardian
+				who = ROOT
+				years = 5
+			}
+		}		
+		hidden_tooltip = { 
+			FROM = { 
+				character_event = { id = Plus.4053 } 
+				random = {
+					chance = 20				
+					char_closet_homosexual_effect = yes				
+				}
+			} 
+		}
+	}
+
+	option = { # I'm just reading too much into things...
+		ai_chance = {
+			factor = 30			
+		}
+		name = "EVTOPTC_PLUS_4051"		
+		hidden_tooltip = { FROM = { character_event = { id = Plus.4054 } } }
+	}
+}
+
+# Guardian beats you
+character_event = {
+	id = Plus.4052
+	desc = "EVTDESC_PLUS_4052"
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # I am so confused...
+		name = "EVTOPTA_PLUS_4052"
+	}
+}
+
+# Guardian lectures you
+character_event = {
+	id = Plus.4053
+	desc = "EVTDESC_PLUS_4053"
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # I am so confused...
+		name = "EVTOPTA_PLUS_4052"
+	}
+}
+
+# Guardian lectures you
+character_event = {
+	id = Plus.4054
+	desc = "EVTDESC_PLUS_4054"
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # I am so confused...
+		name = "EVTOPTA_PLUS_4052"
+	}
+}
+
+# Child is exceptionally smart or stupid.
+
+character_event = {
+	id = Plus.4055
+	desc = {
+	  trigger = {
+		OR = {
+			trait = genius
+			trait = quick
+		}
+	  }
+	  text = "EVTDESCa_Plus_4055"
+	}
+	desc = {
+	  trigger = {
+		OR = {
+			trait = imbecile
+			trait = slow
+		}
+	  }
+	  text = "EVTDESCb_Plus_4055"
+	}
+	picture = "GFX_evt_child_play"
+	
+	is_triggered_only = yes
+	
+	min_age = 5
+
+	trigger = {
+		NOT = { has_global_flag = always_visible_traits }
+		OR = {
+			trait = genius
+			trait = quick
+			trait = imbecile
+			trait = slow
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			age = 3
+			NOT = { age = 4 }
+		}
+		
+		modifier = {
+			factor = 5
+			age = 6
+			NOT = { age = 7 }
+		}
+		
+		modifier = {
+			factor = 10
+			age = 7
+		}
+	}
+
+	immediate = {
+		hidden_tooltip = {
+			if = {
+				limit = { trait = genius }
+				remove_trait = genius
+				add_trait = genius_visible
+			}
+			if = {
+				limit = { trait = quick }
+				remove_trait = quick
+				add_trait = quick_visible
+			}
+			if = {
+				limit = { trait = imbecile }
+				remove_trait = imbecile
+				add_trait = imbecile_visible
+			}
+			if = {
+				limit = { trait = slow }
+				remove_trait = slow
+				add_trait = slow_visible
+			}
+		}
+	}
+	
+	# Genius
+	
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = genius_visible
+		}
+		name = "EVTOPTA_PLUS_4055"
+		custom_tooltip = { text = "PLUS_4055a_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4056
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4056
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = genius_visible
+		}
+		name = "EVTOPTB_PLUS_4055"
+		custom_tooltip = { text = "PLUS_4055a_hover_ctt" }
+	}
+	
+	# Quick
+
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = quick_visible
+		}
+		name = "EVTOPTA_PLUS_4055"
+		custom_tooltip = { text = "PLUS_4055b_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4056
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4056
+						days = 3
+					}
+				}
+			}
+		}
+	}	
+	
+	option = {
+		trigger = {
+			has_guardian = no
+			trait = quick_visible
+		}
+		name = "EVTOPTB_PLUS_4055"
+		custom_tooltip = { text = "PLUS_4055b_hover_ctt" }
+	}
+}
+
+# Guardian discovers genius/quick
+character_event = {
+	id = Plus.4056
+	desc = {
+	  trigger = {
+		FROM = {
+			OR = {
+				trait = genius_visible
+				trait = quick_visible
+			}
+		}
+	  }
+	  text = "EVTDESCa_PLUS_4056"
+	}
+	desc = {
+	  trigger = {
+		FROM = {
+			OR = {
+				trait = imbecile_visible
+				trait = slow_visible
+			}
+		}
+	  }
+	  text = "EVTDESCb_PLUS_4056"
+	}
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # Fantastic!
+		trigger = {
+			FROM = { trait = genius_visible }
+		}
+		name = "EVTOPTa_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4056a_hover_ctt" }
+	}
+	
+	option = { # Fantastic
+		trigger = {
+			FROM = { trait = quick_visible }
+		}
+		name = "EVTOPTa_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4056b_hover_ctt" }
+	}
+	
+	option = { # You hide the rocks
+		trigger = {
+			FROM = { trait = imbecile_visible }
+		}
+		name = "EVTOPTb_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4056c_hover_ctt" }
+	}
+	
+	option = { # You hide the rocks
+		trigger = {
+			FROM = { trait = slow_visible }
+		}
+		name = "EVTOPTb_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4056d_hover_ctt" }
+	}
+}
+
+# Child is tall or a dwarf
+
+character_event = {
+	id = Plus.4057
+	desc = {
+	  trigger = {
+		trait = tall
+	  }
+	  text = "EVTDESCa_Plus_4057"
+	}
+	desc = {
+	  trigger = {
+		trait = dwarf
+	  }
+	  text = "EVTDESCb_Plus_4057"
+	}
+	picture = "GFX_evt_child_play"
+	
+	is_triggered_only = yes
+	
+	min_age = 2
+
+	trigger = {
+		NOT = { has_global_flag = always_visible_traits }
+		OR = {
+			AND = {
+				trait = tall
+				age = 7
+			}
+			trait = dwarf
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+			
+			trait = tall
+			age = 2
+			NOT = { age = 3 }
+		}
+		
+		modifier = {
+			factor = 5
+			
+			trait = tall
+			age = 5
+			NOT = { age = 6 }
+		}
+		
+		modifier = {
+			factor = 10
+			
+			trait = tall
+			age = 6
+		}
+		
+		modifier = {
+			factor = 0.5
+			
+			trait = dwarf
+			age = 2
+			NOT = { age = 3 }
+		}
+		
+		modifier = {
+			factor = 5
+			
+			trait = dwarf
+			age = 3
+			NOT = { age = 4 }
+		}
+		
+		modifier = {
+			factor = 10
+			
+			trait = dwarf
+			age = 4
+		}
+	}
+	
+	immediate = {
+		hidden_tooltip = {
+			if = {
+				limit = { trait = tall }
+				remove_trait = tall
+				add_trait = tall_visible
+			}
+			if = {
+				limit = { trait = dwarf }
+				remove_trait = dwarf
+				add_trait = dwarf_visible
+			}
+		}
+	}
+	
+	# Tall
+	
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = tall_visible
+		}
+		name = "EVTOPTA_PLUS_4057"
+		custom_tooltip = { text = "PLUS_4057a_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4058
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4058
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = tall_visible
+		}
+		name = "EVTOPTB_PLUS_4057"
+		custom_tooltip = { text = "PLUS_4057a_hover_ctt" }
+	}
+	
+	# Dwarf
+
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = dwarf_visible
+		}
+		name = "EVTOPTA_PLUS_4057"
+		custom_tooltip = { text = "PLUS_4057b_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4058
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4058
+						days = 3
+					}
+				}
+			}
+		}
+	}	
+	
+	option = {
+		trigger = {
+			has_guardian = no
+			trait = dwarf_visible
+		}
+		name = "EVTOPTB_PLUS_4057"
+		custom_tooltip = { text = "PLUS_4057b_hover_ctt" }
+	}
+}
+
+# Guardian discovers tall/dwarf
+character_event = {
+	id = Plus.4058
+	desc = {
+	  trigger = {
+		FROM = {
+			trait = tall_visible
+		}
+	  }
+	  text = "EVTDESCa_PLUS_4058"
+	}
+	desc = {
+	  trigger = {
+		FROM = {
+			trait = dwarf_visible
+		}
+	  }
+	  text = "EVTDESCb_PLUS_4058"
+	}
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # Fantastic!
+		trigger = {
+			FROM = { trait = tall_visible }
+		}
+		name = "EVTOPTa_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4058a_hover_ctt" }
+	}
+	
+	option = { # Worrisome...
+		trigger = {
+			FROM = { trait = dwarf_visible }
+		}
+		name = "EVTOPTb_PLUS_4058"
+		custom_tooltip = { text = "PLUS_4058b_hover_ctt" }
+	}
+
+}
+
+# Child is strong or weak
+
+character_event = {
+	id = Plus.4059
+	desc = {
+	  trigger = {
+		trait = strong
+	  }
+	  text = "EVTDESCa_Plus_4059"
+	}
+	desc = {
+	  trigger = {
+		trait = weak
+	  }
+	  text = "EVTDESCb_Plus_4059"
+	}
+	picture = "GFX_evt_child_play"
+	
+	is_triggered_only = yes
+	
+	min_age = 5
+
+	trigger = {
+		NOT = { has_global_flag = always_visible_traits }
+		OR = {
+			trait = strong
+			trait = weak
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+
+			age = 5
+			NOT = { age = 7 }
+		}
+		
+		modifier = {
+			factor = 5
+			
+			age = 9
+			NOT = { age = 10 }
+		}
+		
+		modifier = {
+			factor = 10
+			
+			age = 11
+		}
+	}
+	
+	immediate = {
+		hidden_tooltip = {
+			if = {
+				limit = { trait = strong }
+				remove_trait = strong
+				add_trait = strong_visible
+			}
+			if = {
+				limit = { trait = weak }
+				remove_trait = weak
+				add_trait = weak_visible
+			}
+		}
+	}
+	
+	# Strong
+	
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = strong_visible
+		}
+		name = "EVTOPTA_PLUS_4059"
+		custom_tooltip = { text = "PLUS_4059a_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4060
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4060
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = strong_visible
+		}
+		name = "EVTOPTB_PLUS_4059"
+		custom_tooltip = { text = "PLUS_4059a_hover_ctt" }
+	}
+	
+	# Weak
+
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = weak_visible
+		}
+		name = "EVTOPTA_PLUS_4059"
+		custom_tooltip = { text = "PLUS_4059b_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4060
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4060
+						days = 3
+					}
+				}
+			}
+		}
+	}	
+	
+	option = {
+		trigger = {
+			has_guardian = no
+			trait = weak_visible
+		}
+		name = "EVTOPTB_PLUS_4059"
+		custom_tooltip = { text = "PLUS_4059b_hover_ctt" }
+	}
+}
+
+# Guardian discovers strong/weak
+character_event = {
+	id = Plus.4060
+	desc = {
+	  trigger = {
+		FROM = {
+			trait = strong_visible
+		}
+	  }
+	  text = "EVTDESCa_PLUS_4060"
+	}
+	desc = {
+	  trigger = {
+		FROM = {
+			trait = weak_visible
+		}
+	  }
+	  text = "EVTDESCb_PLUS_4060"
+	}
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # Fantastic!
+		trigger = {
+			FROM = { trait = strong_visible }
+		}
+		name = "EVTOPTa_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4060a_hover_ctt" }
+	}
+	
+	option = { # Worrisome...
+		trigger = {
+			FROM = { trait = weak_visible }
+		}
+		name = "EVTOPTb_PLUS_4060"
+		custom_tooltip = { text = "PLUS_4060b_hover_ctt" }
+	}
+
+}
+
+# Child is fair or ugly
+
+character_event = {
+	id = Plus.4061
+	desc = {
+	  trigger = {
+		trait = fair
+	  }
+	  text = "EVTDESCa_Plus_4061"
+	}
+	desc = {
+	  trigger = {
+		trait = ugly
+	  }
+	  text = "EVTDESCb_Plus_4061"
+	}
+	picture = "GFX_evt_child_play"
+	
+	is_triggered_only = yes
+	
+	min_age = 11
+
+	trigger = {
+		NOT = { has_global_flag = always_visible_traits }
+		OR = {
+			trait = fair
+			trait = ugly
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 0.5
+
+			age = 11
+			NOT = { age = 12 }
+		}
+		
+		modifier = {
+			factor = 5
+			
+			age = 13
+			NOT = { age = 14 }
+		}
+		
+		modifier = {
+			factor = 10
+			
+			age = 15
+		}
+	}
+	
+	immediate = {
+		hidden_tooltip = {
+			if = {
+				limit = { trait = fair }
+				remove_trait = fair
+				add_trait = fair_visible
+			}
+			if = {
+				limit = { trait = ugly }
+				remove_trait = ugly
+				add_trait = ugly_visible
+			}
+		}
+	}
+	
+	# fair
+	
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = fair_visible
+		}
+		name = "EVTOPTA_PLUS_4061"
+		custom_tooltip = { text = "PLUS_4061a_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4062
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4062
+						days = 3
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		trigger = {
+			NOR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = fair_visible
+		}
+		name = "EVTOPTB_PLUS_4061"
+		custom_tooltip = { text = "PLUS_4061a_hover_ctt" }
+	}
+	
+	# ugly
+
+	option = {
+		trigger = {
+			OR = {
+				has_guardian = yes
+				educator = { always = yes }
+			}
+			trait = ugly_visible
+		}
+		name = "EVTOPTA_PLUS_4061"
+		custom_tooltip = { text = "PLUS_4061b_hover_ctt" }
+		hidden_tooltip = {
+			if = {
+				limit = { has_guardian = yes }
+				guardian = {
+					character_event = {
+						id = Plus.4062
+						days = 3
+					}
+				}
+			}
+			if = {
+				limit = { educator = { always = yes } }
+				educator = {
+					character_event = {
+						id = Plus.4062
+						days = 3
+					}
+				}
+			}
+		}
+	}	
+	
+	option = {
+		trigger = {
+			has_guardian = no
+			trait = ugly_visible
+		}
+		name = "EVTOPTB_PLUS_4061"
+		custom_tooltip = { text = "PLUS_4061b_hover_ctt" }
+	}
+}
+
+# Guardian discovers fair or ugly
+character_event = {
+	id = Plus.4062
+	desc = {
+	  trigger = {
+		FROM = {
+			trait = fair_visible
+		}
+	  }
+	  text = "EVTDESCa_PLUS_4062"
+	}
+	desc = {
+	  trigger = {
+		FROM = {
+			trait = ugly_visible
+		}
+	  }
+	  text = "EVTDESCb_PLUS_4062"
+	}
+	picture = "GFX_evt_guardian"
+	
+	is_triggered_only = yes
+
+	option = { # Fantastic!
+		trigger = {
+			FROM = { trait = fair_visible }
+		}
+		name = "EVTOPTa_PLUS_4056"
+		custom_tooltip = { text = "PLUS_4062a_hover_ctt" }
+	}
+	
+	option = { # Worrisome...
+		trigger = {
+			FROM = { trait = ugly_visible }
+		}
+		name = "EVTOPTb_PLUS_4062"
+		custom_tooltip = { text = "PLUS_4062b_hover_ctt" }
+	}
+
+}

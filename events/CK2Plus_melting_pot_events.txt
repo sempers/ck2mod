@@ -1,0 +1,4755 @@
+namespace = Plus
+
+#reserved: Plus.630 to Plus.699
+
+########################################
+# CULTURAL MELTING POT EVENTS
+########################################
+
+### ENGLISH
+
+# The English Melting Pot
+character_event = {
+	id = 55002
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = { region = custom_england }
+		OR = {
+			culture = norman
+			culture = frankish
+			culture = occitan
+			culture = saxon
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = english }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			region = custom_england
+			OR = {
+				AND = {
+					culture = saxon
+					ROOT = {
+						OR = {
+							culture = norman
+							culture = frankish
+							culture = occitan
+						}
+					}
+				}
+				AND = {
+					ROOT = { culture = saxon }
+					OR = {
+						culture = norman
+						culture = frankish
+						culture = occitan
+					}
+				}
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_england
+					OR = {
+						AND = {
+							culture = saxon
+							ROOT = {
+								OR = {
+									culture = norman
+									culture = frankish
+									culture = occitan
+								}
+							}
+						}
+						AND = {
+							ROOT = { culture = saxon }
+							OR = {
+								culture = norman
+								culture = frankish
+								culture = occitan
+							}
+						}
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_england
+				OR = {
+					AND = {
+						culture = saxon
+						ROOT = {
+							OR = {
+								culture = norman
+								culture = frankish
+								culture = occitan
+							}
+						}
+					}
+					AND = {
+						ROOT = { culture = saxon }
+						OR = {
+							culture = norman
+							culture = frankish
+							culture = occitan
+						}
+					}
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA55002
+		culture = english
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = norman
+					culture = frankish
+					culture = occitan
+					culture = saxon
+				}
+			}
+			culture = english
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = english
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = 55003
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		region = custom_england
+		owner = { top_liege = { culture = english } }
+		OR = {
+			culture = saxon
+			culture = norman
+			culture = frankish
+			culture = occitan
+		}
+		OR = {
+			any_neighbor_province = { culture = english }
+			owner = {
+				culture = english
+				capital_scope = { region = custom_england }
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = english
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak English
+character_event = {
+	id = 55004
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = english
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = { region = custom_england }
+		top_liege = { culture = english }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			OR = {
+				culture = saxon
+				culture = norman
+				culture = frankish
+				culture = occitan
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				OR = {
+					culture = saxon
+					culture = norman
+					culture = frankish
+					culture = occitan
+				}
+			}
+			culture = english
+		}
+	}
+}
+
+
+### SICILIAN
+
+# The Sicilian Melting Pot
+character_event = {
+	id = Plus.630
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 1100
+		capital_scope = { region = custom_sicily }
+		OR = {
+			culture = greek
+			culture_group = arabic
+			culture = norman
+		}
+		NOT = { culture = sicilian_arabic }
+		OR = {
+			independent = yes
+			top_liege = {
+				OR = {
+					culture = sicilian
+					culture = sicilian_greek
+					culture = sicilian_arabic
+				}
+			}
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			region = custom_sicily
+			NOT = { culture = sicilian_arabic }
+			OR = {
+				culture = greek
+				culture = italian
+				culture_group = arabic
+				culture = norman
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_sicily
+					NOT = { culture = sicilian_arabic }
+					OR = {
+						culture = greek
+						culture = italian
+						culture_group = arabic
+						culture = norman
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_sicily
+				NOT = { culture = sicilian_arabic }
+				OR = {
+					culture = greek
+					culture = italian
+					culture_group = arabic
+					culture = norman
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_630
+		trigger = {
+			OR = {
+				AND = {
+					culture = norman
+					independent = yes
+				}
+				AND = {
+					top_liege = { culture = sicilian }
+					independent = no
+				}
+			}
+		}
+		culture = sicilian
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = greek
+					culture = italian
+					culture_group = arabic
+					culture = norman
+				}
+			}
+			culture = sicilian
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = sicilian
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTA_Plus_630
+		trigger = {
+			OR = {
+				AND = {
+					culture = greek
+					independent = yes
+				}
+				AND = {
+					top_liege = { culture = sicilian_greek }
+					independent = no
+				}
+			}
+		}
+		culture = sicilian_greek
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = greek
+					culture = italian
+					culture_group = arabic
+					culture = norman
+				}
+			}
+			culture = sicilian_greek
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = sicilian_greek
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTA_Plus_630
+		trigger = {
+			OR = {
+				AND = {
+					culture_group = arabic
+					independent = yes
+				}
+				AND = {
+					top_liege = { culture = sicilian_arabic }
+					independent = no
+				}
+			}
+		}
+		culture = sicilian_arabic
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				NOT = { culture = sicilian_arabic }
+				OR = {
+					culture = greek
+					culture = italian
+					culture_group = arabic
+					culture = norman
+				}
+			}
+			culture = sicilian_arabic
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = sicilian_arabic
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.631
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		region = custom_sicily
+		owner = {
+			top_liege = {
+				NOT = { culture = ROOT }
+				OR = {
+					culture = sicilian
+					culture = sicilian_greek
+					culture = sicilian_arabic
+				}
+			}
+		}
+		OR = {
+			culture = greek
+			culture = italian
+			culture_group = arabic
+			culture = norman
+		}
+		NOT = { culture = sicilian_arabic }
+		OR = {
+			owner = {
+				top_liege = {
+					ROOT = {
+						any_neighbor_province = { culture = PREVPREV }
+					}
+				}
+			}
+			owner = {
+				top_liege = { culture = PREV }
+				capital_scope = { region = custom_sicily }
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		event_target:new_culture = { reverse_culture = ROOT }
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Sicilian
+character_event = {
+	id = Plus.632
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		OR = {
+			culture = sicilian
+			culture = sicilian_greek
+			culture = sicilian_arabic
+		}
+		capital_scope = { region = custom_sicily }
+		top_liege = { culture = ROOT }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			NOT = { culture = ROOT }
+			OR = {
+				culture = greek
+				culture = italian
+				culture_group = arabic
+				culture = norman
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				NOT = { culture = ROOT }
+				OR = {
+					culture = greek
+					culture = italian
+					culture_group = arabic
+					culture = norman
+				}
+			}
+			culture = ROOT
+		}
+	}
+}
+
+
+### ANGLO-NORSE
+
+# The Anglo-Norse Melting Pot
+character_event = {
+	id = Plus.635
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 900
+		OR = {
+			culture = saxon
+			culture = norse
+		}
+		capital_scope = { region = custom_england }
+		OR = {
+			independent = yes
+			top_liege = { culture = english_norse }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			region = custom_england
+			NOT = { culture = ROOT }
+			OR = {
+				culture = saxon
+				culture = norse
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_england
+					NOT = { culture = ROOT }
+					OR = {
+						culture = saxon
+						culture = norse
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_england
+				NOT = { culture = ROOT }
+				OR = {
+					culture = saxon
+					culture = norse
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_635
+		culture = english_norse
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = saxon
+					culture = norse
+				}
+			}
+			culture = english_norse
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = english_norse
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.636
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		year = 900
+		region = custom_england
+		owner = { top_liege = { culture = english_norse } }
+		OR = {
+			culture = saxon
+			culture = norse
+		}
+		OR = {
+			any_neighbor_province = { culture = english_norse }
+			owner = {
+				culture = english_norse
+				capital_scope = { region = custom_england }
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = english_norse
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Anglo-Norse
+character_event = {
+	id = Plus.637
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = english_norse
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = { region = custom_england }
+		top_liege = { culture = english_norse }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			OR = {
+				culture = saxon
+				culture = norse
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				OR = {
+					culture = saxon
+					culture = norse
+				}
+			}
+			culture = ROOT
+		}
+	}
+}
+
+
+### OUTREMER
+
+# The Outremer Melting Pot
+character_event = {
+	id = Plus.640
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	religion_group = christian
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_global_flag = christian_crusades_unlocked
+		NOR = {
+			culture = outremer
+			culture_group = arabic
+			culture_group = altaic
+			culture_group = iranian
+		}
+		capital_scope = {
+			OR = {
+				culture = levantine_arabic
+				culture = egyptian_arabic
+				culture = bedouin_arabic
+			}
+			OR = {
+				region = world_middle_east
+				region = custom_khwarizm
+				region = custom_persia
+				region = custom_egypt
+			}
+		}
+		OR = {
+			religion = chalcedonian
+			religion = catholic
+			religion = cathar
+			religion = fraticelli
+			religion = waldensian
+			religion = lollard
+			religion = adoptionist
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = outremer }
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		capital_scope = { save_event_target_as = melting_pot_province }
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_640
+		culture = outremer
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				religion_group = christian
+				NOR = {
+					culture = outremer
+					culture_group = arabic
+					culture_group = altaic
+					culture_group = iranian
+				}
+			}
+			culture = outremer
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# Make my court speak Outremer
+character_event = {
+	id = Plus.641
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = outremer
+	religion_group = christian
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = {
+			OR = {
+				culture = levantine_arabic
+				culture = egyptian_arabic
+				culture = bedouin_arabic
+				culture = outremer
+			}
+			OR = {
+				region = world_middle_east
+				region = custom_khwarizm
+				region = custom_persia
+				region = custom_egypt
+			}
+		}
+		top_liege = { culture = outremer }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			religion_group = ROOT
+			NOR = {
+				culture = outremer
+				culture_group = arabic
+				culture_group = altaic
+				culture_group = iranian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				religion_group = ROOT
+				NOR = {
+					culture = outremer
+					culture_group = arabic
+					culture_group = altaic
+					culture_group = iranian
+				}
+			}
+			culture = ROOT
+		}
+	}
+}
+
+
+### LATIN
+
+# The Latin Melting Pot
+character_event = {
+	id = Plus.645
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	religion_group = christian
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		has_global_flag = christian_crusades_unlocked
+		NOR = {
+			culture = latin
+			culture_group = byzantine
+		}
+		capital_scope = {
+			culture = greek
+			NOT = { region = custom_sicily }
+		}
+		OR = {
+			religion = chalcedonian
+			religion = catholic
+			religion = cathar
+			religion = fraticelli
+			religion = waldensian
+			religion = lollard
+			religion = adoptionist
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = latin }
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		capital_scope = { save_event_target_as = melting_pot_province }
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_645
+		culture = latin
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				religion_group = christian
+				NOR = {
+					culture = latin
+					culture_group = byzantine
+				}
+			}
+			culture = latin
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# Make my court speak Latin
+character_event = {
+	id = Plus.646
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = latin
+	religion_group = christian
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = {
+			OR = {
+				culture = greek
+				culture = latin
+			}
+			NOT = { region = custom_sicily }
+		}
+		top_liege = { culture = latin }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			religion_group = ROOT
+			NOR = {
+				culture = latin
+				culture_group = byzantine
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				religion_group = ROOT
+				NOR = {
+					culture = latin
+					culture_group = byzantine
+				}
+			}
+			culture = ROOT
+		}
+	}
+}
+
+
+### GALLAWA
+
+# The Gallawa Melting Pot
+character_event = {
+	id = Plus.650
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 900
+		OR = {
+			culture_group = north_germanic
+			culture_group = celtic
+		}
+		capital_scope = {
+			OR = {
+				region = custom_scotland
+				region = custom_ireland
+				region = custom_wales
+				region = custom_brittany
+			}
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = gallawa }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			OR = {
+				region = custom_scotland
+				region = custom_ireland
+				region = custom_wales
+				region = custom_brittany
+			}
+			NOT = { culture_group = ROOT }
+			OR = {
+				culture_group = north_germanic
+				culture_group = celtic
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					OR = {
+						region = custom_scotland
+						region = custom_ireland
+						region = custom_wales
+						region = custom_brittany
+					}
+					NOT = { culture_group = ROOT }
+					OR = {
+						culture_group = north_germanic
+						culture_group = celtic
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				OR = {
+					region = custom_scotland
+					region = custom_ireland
+					region = custom_wales
+					region = custom_brittany
+				}
+				NOT = { culture_group = ROOT }
+				OR = {
+					culture_group = north_germanic
+					culture_group = celtic
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_650
+		culture = gallawa
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				NOT = { culture = gallawa }
+				OR = {
+					culture_group = north_germanic
+					culture_group = celtic
+				}
+			}
+			culture = gallawa
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = gallawa
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.651
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		year = 900
+		OR = {
+			region = custom_scotland
+			region = custom_ireland
+			region = custom_wales
+			region = custom_brittany
+		}
+		owner = { top_liege = { culture = gallawa } }
+		NOT = { culture = gallawa }
+		OR = {
+			culture_group = north_germanic
+			culture_group = celtic
+		}
+		OR = {
+			any_neighbor_province = { culture = gallawa }
+			owner = {
+				culture = gallawa
+				capital_scope = {
+					OR = {
+						region = custom_scotland
+						region = custom_ireland
+						region = custom_wales
+						region = custom_brittany
+					}
+				}
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = gallawa
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Gallawa
+character_event = {
+	id = Plus.652
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = gallawa
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = {
+			OR = {
+				region = custom_scotland
+				region = custom_ireland
+				region = custom_wales
+				region = custom_brittany
+			}
+		}
+		top_liege = { culture = gallawa }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			NOT = { culture = gallawa }
+			OR = {
+				culture_group = north_germanic
+				culture_group = celtic
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				NOT = { culture = gallawa }
+				OR = {
+					culture_group = north_germanic
+					culture_group = celtic
+				}
+			}
+			culture = gallawa
+		}
+	}
+}
+
+
+### RUSSIAN
+
+# The Russian Melting Pot
+character_event = {
+	id = Plus.655
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 900
+		NOT = { has_global_flag = russian_melting_pot } # No need to check on dates after historic Russian rise
+		OR = {
+			culture_group = east_slavic
+			culture = norse
+		}
+		capital_scope = {
+			OR = {
+				region = custom_rus
+				region = custom_novgorod
+				region = custom_muscovy
+			}
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = russian }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			OR = {
+				region = custom_rus
+				region = custom_novgorod
+				region = custom_muscovy
+			}
+			NOT = { culture = ROOT }
+			NOT = { culture = russian }
+			OR = {
+				culture_group = east_slavic
+				culture = norse
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					OR = {
+						region = custom_rus
+						region = custom_novgorod
+						region = custom_muscovy
+					}
+					NOT = { culture = ROOT }
+					NOT = { culture = russian }
+					OR = {
+						culture_group = east_slavic
+						culture = norse
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				OR = {
+					region = custom_rus
+					region = custom_novgorod
+					region = custom_muscovy
+				}
+				NOT = { culture = ROOT }
+				NOT = { culture = russian }
+				OR = {
+					culture_group = east_slavic
+					culture = norse
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_655
+		culture = russian
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				NOT = { culture = russian }
+				OR = {
+					culture_group = east_slavic
+					culture = norse
+				}
+			}
+			culture = russian
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = russian
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.656
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		year = 900
+		NOT = { has_global_flag = russian_melting_pot }
+		OR = {
+			region = custom_rus
+			region = custom_novgorod
+			region = custom_muscovy
+		}
+		owner = { top_liege = { culture = russian } }
+		NOT = { culture = russian }
+		OR = {
+			culture_group = east_slavic
+			culture = norse
+		}
+		OR = {
+			any_neighbor_province = { culture = russian }
+			owner = {
+				culture = russian
+				capital_scope = {
+					OR = {
+						region = custom_rus
+						region = custom_novgorod
+						region = custom_muscovy
+					}
+				}
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = russian
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Russian
+character_event = {
+	id = Plus.657
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = russian
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 900
+		NOT = { has_global_flag = russian_melting_pot }
+		capital_scope = {
+			OR = {
+				region = custom_rus
+				region = custom_novgorod
+				region = custom_muscovy
+			}
+		}
+		top_liege = { culture = russian }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			NOT = { culture = russian }
+			OR = {
+				culture_group = east_slavic
+				culture = norse
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				NOT = { culture = russian }
+				OR = {
+					culture_group = east_slavic
+					culture = norse
+				}
+			}
+			culture = russian
+		}
+	}
+}
+
+
+### NORMAN
+
+# The Norman Melting Pot
+character_event = {
+	id = Plus.660
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	
+	trigger = {
+		capital_scope = { region = world_europe_west_francia }
+		OR = {
+			culture = norse
+			culture = frankish
+			culture = breton
+			culture = occitan
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = norman }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			region = world_europe_west_francia
+			OR = {
+				AND = {
+					ROOT = { culture = norse }
+					OR = {
+						culture = frankish
+						culture = breton
+						culture = occitan
+					}
+				}
+				AND = {
+					culture = norse
+					ROOT = {
+						OR = {
+							culture = frankish
+							culture = breton
+							culture = occitan
+						}
+					}
+				}
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+	
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.24
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = world_europe_west_francia
+					OR = {
+						culture = norse
+						culture = frankish
+						culture = breton
+						culture = occitan
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = world_europe_west_francia
+				OR = {
+					culture = norse
+					culture = frankish
+					culture = breton
+					culture = occitan
+			    }
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_660
+		culture = norman
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = norse
+					culture = frankish
+					culture = breton
+					culture = occitan
+				}
+			}
+			culture = norman
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = norman
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.661
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		region = world_europe_west_francia
+		owner = { top_liege = { culture = norman } }
+		OR = {
+			culture = norse
+			culture = frankish
+			culture = breton
+			culture = occitan
+		}
+		OR = {
+			any_neighbor_province = { culture = norman }
+			owner = {
+				culture = norman
+				capital_scope = { region = world_europe_west_francia }
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = norman
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Norman
+character_event = {
+	id = Plus.662
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = norman
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		capital_scope = { region = world_europe_west_francia }
+		top_liege = { culture = norman }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			OR = {
+				culture = norse
+				culture = frankish
+				culture = breton
+				culture = occitan
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				OR = {
+					culture = norse
+					culture = frankish
+					culture = breton
+					culture = occitan
+				}
+			}
+			culture = norman
+		}
+	}
+}
+
+### German Melting Pot
+# This series of 3 events splits the "Old German" culture into various regional German sub-cultures
+# scripted trigger/effect explanations
+# german_culture_region_trigger 		= Checks the region of the province given and converts the province to priority culture.
+#								  			the lower on the list it is, the higher the priority.
+# german_cultures_trigger 				= Returns true if the culture compared is any of the German culture
+# german_cultures_no_old_german_trigger = Returns true if the culture compared is any of the German cultures except for old german aka "german"
+# culture_spread_effect					= Changes the culture of any same dynasty, unlanded courtier of ROOT to ROOT's culture.
+#								  			Also changes melting_pot_province's culture to that of ROOT's.
+# german_culture_spread_effect_province = Similar to culture_spread_effect, but only checks and changes the melting_pot_province's culture
+
+## Early German Melting Pot
+character_event = {
+	id = Plus.663
+	desc = EVTDESC_Plus_663
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		NOT = { has_global_flag = millenium_start } # All Germans are split from 1000 on anyways, no need to check
+		NOT = { has_global_flag = vanilla_germans } # German split disabled by player, no need to check # Vanilla start flag
+		year = 900
+		capital_scope = { german_culture_region_trigger = yes }
+		NOT = { german_cultures_no_old_german_trigger = yes }
+		any_demesne_province = {
+			num_of_settlements = 1
+			culture = german
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500 # Test, should be 500 months
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = { # Prioritize the homes of the cultures
+			factor = 0.90
+			d_swabia = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_bavaria = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_koln = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_franconia = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_swiss = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_saxony = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_thuringia = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.5
+			year = 900
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = { # Determines what province should become what culture. The lower on the list a culture is, the higher priority it is in the case of overlap
+		if = {
+			limit = { NOT = { has_global_flag = german_split_begun } }
+			set_global_flag = german_split_begun
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_swabian
+					NOT = { culture = swabian }
+					culture = german
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_bavarian
+					NOT = { culture = bavarian }
+					culture = german
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_franconian
+					NOT = { culture = franconian }
+					culture = frankish
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_colognian
+					NOT = { culture = colognian }
+					culture = german
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_swiss
+					NOT = { culture = swiss }
+					culture = german
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_old_saxon
+					NOT = { culture = old_saxon }
+					culture = german
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_thuringian
+					NOT = { culture = thuringian }
+					culture = german
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_swabian
+				NOT = { culture = swabian }
+				culture = german
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_bavarian
+				NOT = { culture = bavarian }
+				culture = german
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_colognian
+				NOT = { culture = colognian }
+				culture = german
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_franconian
+				NOT = { culture = franconian }
+				culture = frankish
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_swiss
+				NOT = { culture = swiss }
+				culture = german
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_old_saxon
+				NOT = { culture = old_saxon }
+				culture = german
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_thuringian
+				NOT = { culture = thuringian }
+				culture = german
+			}
+			save_event_target_as = melting_pot_province
+		}
+		if = {
+			limit = { NOT = { culture = german } }
+			
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_663
+
+		trigger = {
+			culture = german
+			event_target:melting_pot_province = { region = custom_swabian }
+		}
+		
+		culture = swabian
+		custom_tooltip = { 
+			text = swabian_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_Plus_663
+
+		trigger = {
+			culture = german
+			event_target:melting_pot_province = { region = custom_bavarian }
+		}
+		
+		culture = bavarian
+		custom_tooltip = { 
+			text = bavarian_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}
+	
+	option = {
+		name = EVTOPTC_Plus_663
+
+		trigger = {
+			culture = german
+			event_target:melting_pot_province = { region = custom_colognian }
+		}
+		
+		culture = colognian
+		custom_tooltip = { 
+			text = colognian_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}
+
+	option = {
+		name = EVTOPTD_Plus_663
+
+		trigger = {
+			culture = frankish
+			event_target:melting_pot_province = { region = custom_franconian }
+		}
+		
+		culture = franconian
+		custom_tooltip = { 
+			text = franconian_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}
+
+	option = {
+		name = EVTOPTE_Plus_663
+
+		trigger = {
+			culture = german
+			event_target:melting_pot_province = { region = custom_swiss }
+		}
+		
+		culture = swiss
+		custom_tooltip = { 
+			text = swiss_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}
+	
+	option = {
+		name = EVTOPTF_Plus_663
+
+		trigger = {
+			culture = german
+			event_target:melting_pot_province = { region = custom_old_saxon }
+		}
+		
+		culture = old_saxon
+		custom_tooltip = { 
+			text = old_saxon_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}
+
+	option = {
+		name = EVTOPTG_Plus_663
+
+		trigger = {
+			culture = german
+			event_target:melting_pot_province = { region = custom_thuringian }
+		}
+		
+		culture = thuringian
+		custom_tooltip = { 
+			text = thuringian_cultural_shift_custom_tooltip
+			hidden_tooltip = { culture_spread_effect = yes }
+		}
+	}	
+	
+	option = { # Owner is not German so it just happens naturally
+		name = I_SEE
+
+		trigger = {
+			NOT = { culture = german }
+		}
+		custom_tooltip = {
+			text = generic_cultural_shift
+		
+			hidden_tooltip = {
+				event_target:melting_pot_province = {
+					add_province_modifier = {
+						name = recent_culture_change
+						duration = -1
+					}
+					german_culture_spread_effect_province = yes
+					set_province_flag = melting_pot
+				}
+				any_courtier = {
+					limit = {
+						is_ruler = no
+						prisoner = no
+						dynasty = ROOT
+						culture = german
+					}
+					culture = event_target:melting_pot_province
+				}
+			}
+		}
+	}
+	
+	option = { # Refuse the change
+		name = EVTOPTB_Plus_630
+		trigger = { 
+			ai = no
+			culture = german
+		}
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.664
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		NOT = { has_global_flag = millenium_start } # All Germans are split from 1000 on anyways, no need to check
+		NOT = { has_global_flag = vanilla_germans } # German split disabled by player, no need to check
+		holder_scope = { higher_tier_than = COUNT }
+		OR = {
+			owner = { german_cultures_no_old_german_trigger = yes }
+			owner = { any_liege = { german_cultures_no_old_german_trigger = yes } }
+		}
+		OR = {
+			AND = {
+				region = custom_swabian
+				NOT = { culture = swabian }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_swabian }
+					}
+				}
+			}
+			AND = {
+				region = custom_bavarian
+				NOT = { culture = bavarian }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_bavarian }
+					}
+				}
+			}
+			AND = {
+				region = custom_colognian
+				NOT = { culture = colognian }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_colognian }
+					}
+				}
+			}
+			AND = {
+				region = custom_franconian
+				NOT = { culture = franconian }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_franconian }
+					}
+				}
+			}
+			AND = {
+				region = custom_swiss
+				NOT = { culture = swiss }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_swiss }
+					}
+				}
+			}
+			AND = {
+				region = custom_old_saxon
+				NOT = { culture = old_saxon }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_old_saxon }
+					}
+				}
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120 # Test, should be 120 months
+		modifier = {
+			factor = 0.5
+			year = 950
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = new_culture
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		event_target:new_culture = { reverse_culture = ROOT }
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak German
+character_event = {
+	id = Plus.665
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		NOT = { has_global_flag = millenium_start } # All Germans are split from 1000 on anyways, no need to check
+		NOT = { has_global_flag = vanilla_germans } # German split disabled by player, no need to check
+		german_cultures_no_old_german_trigger = yes
+		capital_scope = { german_culture_region_trigger = yes }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			NOT = { culture = ROOT }
+			culture = german
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60 # Test, should be 60 months
+		modifier = {
+			factor = 0.5
+			year = 950
+		}
+		modifier = {
+			factor = 0.5
+			year = 1050
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				NOT = { culture = ROOT }
+				culture = german
+			}
+			culture = ROOT
+		}
+	}
+}
+
+## Late German Melting Pot
+character_event = {
+	id = Plus.666
+	desc = EVTDESC_Plus_663
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		NOT = { has_global_flag = vanilla_germans } # German split disabled by player, no need to check # Vanilla start flag
+		year = 1250
+		capital_scope = { late_german_culture_region_trigger = yes }
+		NOT = { late_german_cultures_trigger = yes }
+		any_demesne_province = {
+			num_of_settlements = 1
+			late_german_cultures_trigger = yes
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 500 # Test, should be 500 months
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = { # Prioritize the homes of the cultures
+			factor = 0.90
+			d_osterreich = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.90
+			d_prussia = { holder = ROOT }
+		}
+		modifier = {
+			factor = 0.5
+			year = 1300
+		}
+		modifier = {
+			factor = 0.5
+			year = 1350
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = { # Determines what province should become what culture. The lower on the list a culture is, the higher priority it is in the case of overlap
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_austrian
+					NOT = { culture = austrian }
+					culture = bavarian
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_prussian
+					NOT = { culture = teutonic }
+					low_prussian_cultures_trigger = yes
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_austrian
+				NOT = { culture = austrian }
+				culture = bavarian
+			}
+			save_event_target_as = melting_pot_province
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_prussian
+				NOT = { culture = teutonic }
+				low_prussian_cultures_trigger = yes
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_666
+
+		trigger = {
+			culture = bavarian
+			event_target:melting_pot_province = { region = custom_austrian }
+		}
+		
+		culture = austrian
+		austrian_culture_spread_effect = yes
+	}
+	
+	option = {
+		name = EVTOPTB_Plus_663
+
+		trigger = {
+			low_prussian_cultures_trigger = yes
+			event_target:melting_pot_province = { region = custom_prussian }
+		}
+		
+		culture = teutonic
+		teutonic_culture_spread_effect = yes
+	}
+	
+	option = { # Owner is not German so it just happens naturally
+		name = I_SEE
+
+		trigger = {
+			NOT = { late_german_cultures_trigger = yes }
+		}
+		custom_tooltip = {
+			text = generic_cultural_shift
+		
+			hidden_tooltip = {
+				event_target:melting_pot_province = {
+					add_province_modifier = {
+						name = recent_culture_change
+						duration = -1
+					}
+					german_culture_spread_effect_province = yes
+					set_province_flag = melting_pot
+				}
+				any_courtier = {
+					limit = {
+						is_ruler = no
+						prisoner = no
+						dynasty = ROOT
+						late_german_cultures_trigger = yes
+					}
+					culture = event_target:melting_pot_province
+				}
+			}
+		}
+	}
+	
+	option = { # Refuse the change
+		name = EVTOPTB_Plus_630
+		trigger = { 
+			ai = no
+			late_german_cultures_trigger = yes
+		}
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.667
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		year = 1270
+		NOT = { has_global_flag = vanilla_germans } # German split disabled by player, no need to check
+		holder_scope = { higher_tier_than = COUNT }
+		OR = {
+			owner = { german_cultures_no_old_german_trigger = yes }
+			owner = { any_liege = { german_cultures_no_old_german_trigger = yes } }
+		}
+		OR = {
+			AND = {
+				region = custom_austrian
+				NOT = { culture = austrian }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_austrian }
+					}
+				}
+			}
+			AND = {
+				region = custom_prussian
+				NOT = { culture = teutonic }
+				OR = {
+					owner = {
+						top_liege = {
+							ROOT = {
+								any_neighbor_province = { culture = PREVPREV }
+							}
+						}
+					}
+					owner = {
+						top_liege = { culture = PREV }
+						capital_scope = { region = custom_prussian }
+					}
+				}
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120 # Test, should be 120 months
+		modifier = {
+			factor = 0.5
+			year = 1300
+		}
+		modifier = {
+			factor = 0.5
+			year = 1350
+		}
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = new_culture
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		event_target:new_culture = { reverse_culture = ROOT }
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak German
+character_event = {
+	id = Plus.668
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 1270
+		NOT = { has_global_flag = vanilla_germans } # German split disabled by player, no need to check
+		late_german_cultures_trigger = yes
+		capital_scope = { late_german_culture_region_trigger = yes }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			NOT = { culture = ROOT }
+			late_german_cultures_trigger = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60 # Test, should be 60 months
+		modifier = {
+			factor = 0.5
+			year = 950
+		}
+		modifier = {
+			factor = 0.5
+			year = 1050
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				NOT = { culture = ROOT }
+				late_german_cultures_trigger = yes
+			}
+			culture = ROOT
+		}
+	}
+}
+
+### Scots
+
+# The Scots Melting Pot
+character_event = {
+	id = Plus.669
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 900
+		capital_scope = { region = custom_scotland }
+		OR = {
+			culture = old_saxon
+			culture = frisian
+			culture = scottish
+			culture = english
+			culture = saxon
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = scottish }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			region = custom_scotland
+			OR = {
+				AND = {
+					culture = saxon
+					ROOT = {
+						OR = {
+							culture = scottish
+							culture = english
+						}
+					}
+				}
+				AND = {
+					ROOT = { culture = saxon }
+					OR = {
+						culture = scottish
+						culture = english
+					}
+				}
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 1000
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					region = custom_scotland
+					OR = {
+						AND = {
+							culture = saxon
+							ROOT = {
+								OR = {
+									culture = scottish
+									culture = english
+								}
+							}
+						}
+						AND = {
+							ROOT = { culture = saxon }
+							OR = {
+								culture = scottish
+								culture = english
+							}
+						}
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				region = custom_scotland
+				OR = {
+					AND = {
+						culture = saxon
+						ROOT = {
+							OR = {
+								culture = scottish
+								culture = english
+							}
+						}
+					}
+					AND = {
+						ROOT = { culture = saxon }
+						OR = {
+							culture = scottish
+							culture = english
+						}
+					}
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA55002
+		culture = scots
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = saxon
+					culture = english
+				}
+			}
+			culture = scots
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = scots
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.670
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		region = custom_scotland
+		owner = { top_liege = { culture = scots } }
+		OR = {
+			culture = saxon
+			culture = english
+		}
+		OR = {
+			any_neighbor_province = { culture = scots }
+			owner = {
+				OR = {
+					culture = english
+					culture = saxon
+				}
+				capital_scope = { region = custom_scotland }
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = scots
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Scots
+character_event = {
+	id = Plus.671
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+	culture = scots
+
+	trigger = {
+		capital_scope = { region = custom_scotland }
+		top_liege = { culture = scots }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			OR = {
+				culture = scottish
+				culture = saxon
+				culture = old_saxon
+				culture = english
+				culture = frisian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1150
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				OR = {
+					culture = scottish
+					culture = saxon
+					culture = old_saxon
+					culture = english
+					culture = frisian
+				}
+			}
+			culture = scottish
+		}
+	}
+}
+
+### Yugoslavian
+
+# The Yugoslavian Melting Pot
+character_event = {
+	id = Plus.672
+	desc = EVTDESC_Plus_670
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		year = 1100
+		OR = {
+			culture = croatian
+			culture = serbian
+			culture = bulgarian
+		}
+		OR = {
+			capital_scope = { region = custom_croatia }
+			capital_scope = { region = custom_bulgaria }
+			capital_scope = { region = custom_serbia }
+		}
+		OR = {
+			independent = yes
+			top_liege = { culture = yugoslavian }
+		}
+		any_demesne_province = {
+			num_of_settlements = 1
+			OR = {
+				region = custom_croatia
+				region = custom_bulgaria
+				region = custom_serbia
+			}
+			NOT = { culture = ROOT }
+			OR = {
+				culture = croatian
+				culture = serbian
+				culture = bulgarian
+			}
+		}
+		NOT = { has_character_flag = no_melting_pot }
+		e_yugoslavia = {
+			has_holder = yes
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 0.25
+			independent = no
+		}
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 1 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 2 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 3 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 4 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 5 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 6 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 7 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 8 }
+		}
+		modifier = {
+			factor = 1.05
+			NOT = { learning = 9 }
+		}
+		modifier = {
+			factor = 0.95
+			learning = 11
+		}
+		modifier = {
+			factor = 0.95
+			learning = 12
+		}
+		modifier = {
+			factor = 0.95
+			learning = 13
+		}
+		modifier = {
+			factor = 0.95
+			learning = 14
+		}
+		modifier = {
+			factor = 0.95
+			learning = 15
+		}
+		modifier = {
+			factor = 0.95
+			learning = 16
+		}
+		modifier = {
+			factor = 0.95
+			learning = 17
+		}
+		modifier = {
+			factor = 0.95
+			learning = 18
+		}
+		modifier = {
+			factor = 0.95
+			learning = 19
+		}
+		modifier = {
+			factor = 0.95
+			learning = 20
+		}
+		modifier = {
+			factor = 0.95
+			learning = 21
+		}
+		modifier = {
+			factor = 0.95
+			learning = 22
+		}
+		modifier = {
+			factor = 0.95
+			learning = 23
+		}
+		modifier = {
+			factor = 0.95
+			learning = 24
+		}
+		modifier = {
+			factor = 0.95
+			learning = 25
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				capital_scope = {
+					num_of_settlements = 1
+					OR = {
+						region = custom_croatia
+						region = custom_bulgaria
+						region = custom_serbia
+					}
+					NOT = { culture = ROOT }
+					OR = {
+						culture = croatian
+						culture = serbian
+						culture = bulgarian
+					}
+				}
+			}
+			capital_scope = { save_event_target_as = melting_pot_province }
+			break = yes
+		}
+		random_demesne_province = {
+			limit = {
+				num_of_settlements = 1
+				OR = {
+					region = custom_croatia
+					region = custom_bulgaria
+					region = custom_serbia
+				}
+				NOT = { culture = ROOT }
+				OR = {
+					culture = croatian
+					culture = serbian
+					culture = bulgarian
+				}
+			}
+			save_event_target_as = melting_pot_province
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_Plus_635
+		culture = yugoslavian
+		any_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				dynasty = ROOT
+				OR = {
+					culture = croatian
+					culture = serbian
+					culture = bulgarian
+				}
+			}
+			culture = yugoslavian
+		}
+		event_target:melting_pot_province = {
+			add_province_modifier = {
+				name = recent_culture_change
+				duration = -1
+			}
+			culture = yugoslavian
+			set_province_flag = melting_pot
+		}
+	}
+	option = {
+		name = EVTOPTB_Plus_630
+		trigger = { ai = no }
+		set_character_flag = no_melting_pot
+	}
+}
+
+# It's spreading
+province_event = {
+	id = Plus.673
+	desc = EVTDESC_Plus_671
+	picture = GFX_evt_throne_room
+	
+	trigger = {
+		year = 1100
+		OR = {
+			region = custom_croatia
+			region = custom_bulgaria
+			region = custom_serbia
+		}
+		owner = { top_liege = { culture = yugoslavian } }
+		OR = {
+			culture = croatian
+			culture = serbian
+			culture = bulgarian
+		}
+		OR = {
+			any_neighbor_province = { culture = yugoslavian }
+			owner = {
+				culture = yugoslavian
+				OR = {
+					capital_scope = { region = custom_croatia }
+					capital_scope = { region = custom_bulgaria }
+					capital_scope = { region = custom_serbia }
+				}
+			}
+		}
+		num_of_settlements = 1
+		NOT = { has_province_flag = melting_pot }
+	}
+
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+	
+	immediate = {
+		owner = {
+			top_liege = { save_event_target_as = new_culture }
+		}
+	}
+
+	option = {
+		name = I_SEE
+		add_province_modifier = {
+			name = recent_culture_change
+			duration = -1
+		}
+		culture = yugoslavian
+		set_province_flag = melting_pot
+		save_event_target_as = converted_province
+		hidden_tooltip = {
+			owner = {
+				if = {
+					limit = { has_ambition = obj_civilize_province }
+					set_character_flag = civilized_province
+				}
+				if = {
+					limit = {
+						top_liege = {
+							NOT = { character = PREV }
+							culture = PREV
+							has_ambition = obj_civilize_province
+						}
+					}
+					top_liege = { character_event = { id = Plus.334 } }
+				}
+			}
+		}
+	}
+}
+
+# Make my court speak Yugoslavian
+character_event = {
+	id = Plus.674
+	desc = EVTDESC_Plus_672
+	picture = GFX_evt_throne_room
+	
+	only_rulers = yes
+	culture = yugoslavian
+	min_age = 16
+	capable_only = yes
+	prisoner = no
+
+	trigger = {
+		OR = {
+			capital_scope = { region = custom_croatia }
+			capital_scope = { region = custom_bulgaria }
+			capital_scope = { region = custom_serbia }
+		}
+		top_liege = { culture = yugoslavian }
+		any_courtier = {
+			is_ruler = no
+			prisoner = no
+			OR = {
+				culture = croatian
+				culture = serbian
+				culture = bulgarian
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		modifier = {
+			factor = 0.5
+			year = 1000
+		}
+		modifier = {
+			factor = 0.5
+			year = 1100
+		}
+		modifier = {
+			factor = 0.5
+			year = 1200
+		}
+	}
+
+	option = {
+		name = OK
+		random_courtier = {
+			limit = {
+				is_ruler = no
+				prisoner = no
+				OR = {
+					culture = croatian
+					culture = serbian
+					culture = bulgarian
+				}
+			}
+			culture = ROOT
+		}
+	}
+}

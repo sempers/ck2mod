@@ -1,0 +1,15 @@
+# 830 - Fezzan
+
+# County Title
+title = c_fezzan
+
+# Settlements
+max_settlements = 2
+
+b_fezzan = castle
+
+# Misc
+culture = maghreb_arabic
+religion = ibadi
+
+# History

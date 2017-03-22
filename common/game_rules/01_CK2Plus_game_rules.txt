@@ -1,0 +1,278 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	option = {										# please note that the first option is always the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		achievements = no							# by default achievements = yes, allows or disallows achievements
+#	}
+# }
+
+new_world_order = {
+	name = "NWO_TITLE"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "NWO_NO_DESC"
+	}
+	option = {
+		name = yes
+		text = "YES"
+		desc = "NWO_YES_DESC"
+	}
+}
+
+crusade_rules = {
+	name = "CRUSADE_RULES_TITLE"
+	group = "RULE_GROUP_PLUS"
+	option =  {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "CRUSADE_RULES_DEFAULT_DESC"
+	}
+	option = {
+		name = activate_immediately
+		text = "CRUSADE_RULES_IMMEDIATE"
+		desc = "CRUSADE_RULES_IMMEDIATE_DESC"
+	}
+}
+
+crusade_delay_rules = {
+	name = "CRUSADE_DELAY_RULES_TITLE"
+	group = "RULE_GROUP_PLUS"
+	option =  {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "CRUSADE_DELAY_RULES_DEFAULT_DESC"
+	}
+	option =  {
+		name = one_year
+		text = "ONE_YEAR"
+		desc = "CRUSADE_DELAY_RULES_ONE_DESC"
+	}
+	option =  {
+		name = three_years
+		text = "THREE_YEARS"
+		desc = "CRUSADE_DELAY_RULES_THREE_DESC"
+	}
+	option =  {
+		name = five_years
+		text = "FIVE_YEARS"
+		desc = "CRUSADE_DELAY_RULES_FIVE_DESC"
+	}
+	option =  {
+		name = ten_years
+		text = "TEN_YEARS"
+		desc = "CRUSADE_DELAY_RULES_TEN_DESC"
+	}
+}
+
+vanilla_empires = {
+	name = "SETUP_VANILLA_EMPIRES"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "VANILLA_EMPIRES_NO_DESC"
+	}
+	option = {
+		name = yes
+		text = "YES"
+		desc = "VANILLA_EMPIRES_YES_DESC"
+	}
+}
+
+ancient_religions = {
+	name = "ANCIENT_RELIGIONS"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "ANCIENT_RELIGIONS_NO_DESC"
+	}
+	option = {
+		name = regions
+		text = "REGIONS"
+		desc = "ANCIENT_RELIGIONS_REGIONS_DESC"
+	}
+	option = {
+		name = specific_provinces
+		text = "SPECIFIC"
+		desc = "ANCIENT_RELIGIONS_SPECIFIC_DESC"
+	}
+	option = {
+		name = cultures
+		text = "CULTURES"
+		desc = "ANCIENT_RELIGIONS_CULTURES_DESC"
+	}
+}
+
+vanilla_germans = {
+	name = "VANILLA_GERMANS"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "VANILLA_GERMANS_NO_DESC"
+	}
+	option = {
+		name = yes
+		text = "YES"
+		desc = "VANILLA_GERMANS_YES_DESC"
+	}
+}
+
+trigger_schism_rule = {
+	name = "GREAT_SCHISM_NAME"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "GREAT_SCHISM_DEFAULT_DESC"
+	}
+	option = {
+		name = no
+		text = "RULE_OPTION_JOIN"
+		desc = "GREAT_SCHISM_JOIN_DESC"
+	}
+	option = {
+		name = yes
+		text = "RULE_OPTION_SPLIT"
+		desc = "GREAT_SCHISM_SPLIT_DESC"
+	}
+	option = {
+		name = disable
+		text = "RULE_OPTION_DISABLE"
+		desc = "GREAT_SCHISM_DISABLED_DESC"
+	}
+}
+
+empire_creation_kingdom_rule = {
+	name = "EMPIRE_CREATION_KINGDOM_RULE_NAME"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = has_two
+		text = "HAS_TWO"
+		desc = "HAS_TWO_DESC"
+	}
+	option = {
+		name = has_three
+		text = "HAS_THREE"
+		desc = "HAS_THREE_DESC"
+	}
+}
+
+hidden_character_traits_rule = {
+	name = "HIDDEN_CHARACTER_TRAITS_RULE_NAME"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = yes
+		text = "HIDDEN_TRAITS"
+		desc = "HIDDEN_TRAITS_DESC"
+	}
+	option = {
+		name = no
+		text = "NO_HIDDEN_TRAITS"
+		desc = "NO_HIDDEN_TRAITS_DESC"
+	}
+}
+
+tribal_to_feudal = {
+	name = "TRIBAL_TO_FEUDAL"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "TRIBAL_TO_FEUDAL_NO_DESC"
+	}
+	
+	option = {
+		name = yes
+		text = "YES"
+		desc = "TRIBAL_TO_FEUDAL_YES_DESC"
+	}
+}
+
+rapid_conquest_cbs = {
+	name = "RAPID_CONQUEST"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "RAPID_CONQUEST_NO_DESC"
+	}
+	
+	option = {
+		name = yes
+		text = "YES"
+		desc = "RAPID_CONQUEST_YES_DESC"
+	}
+}
+
+multiplayer_compatibility = {
+	name = "MULTIPLAYER_COMPATIBILITY"
+	option = {
+		name = no
+		text = "NO"
+		desc = "MULTIPLAYER_COMPATIBILITY_NO_DESC"
+	}
+	
+	option = {
+		name = yes
+		text = "YES"
+		desc = "MULTIPLAYER_COMPATIBILITY_YES_DESC"
+	}
+}
+
+fabricate_claim_rate = {
+	name = "FABRICATE_CLAIM_RATE"
+	option = {
+		name = default
+		text = "RULE_OPTION_DEFAULT"
+		desc = "FABRICATE_CLAIM_RATE_DEFAULT_DESC"
+	}
+	
+	option = {
+		name = double
+		text = "RULE_OPTION_DOUBLE"
+		desc = "FABRICATE_CLAIM_RATE_DOUBLE_DESC"
+	}
+	
+	option = {
+		name = triple
+		text = "RULE_OPTION_TRIPLE"
+		desc = "FABRICATE_CLAIM_RATE_TRIPLE_DESC"
+	}
+	
+	option = {
+		name = quadruple
+		text = "RULE_OPTION_QUADRUPLE"
+		desc = "FABRICATE_CLAIM_RATE_QUADRUPLE_DESC"
+	}
+	
+	option = {
+		name = half
+		text = "RULE_OPTION_HALF"
+		desc = "FABRICATE_CLAIM_RATE_HALF_DESC"
+	}
+}
+
+non_dynastic_heirs = {
+	name = "NON_DYNASTIC_HEIRS"
+	group = "RULE_GROUP_PLUS"
+	option = {
+		name = no
+		text = "NO"
+		desc = "NON_DYNASTIC_HEIRS_NO_DESC"
+	}
+	option = {
+		name = yes
+		text = "YES"
+		desc = "NON_DYNASTIC_HEIRS_YES_DESC"
+	}
+}

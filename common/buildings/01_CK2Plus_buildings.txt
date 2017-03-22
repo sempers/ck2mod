@@ -1,0 +1,2029 @@
+castle = {
+	ca_study_1 = {
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 3
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		prerequisites = { ca_keep_1 }
+		gold_cost = 100
+		build_time = 730
+		tech_growth_modifier = 0.05
+		military_techpoints = 0.05
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 0.2
+	}
+	ca_study_2 = {
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 6
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		prerequisites = { ca_keep_2 }
+		upgrades_from = ca_study_1
+		gold_cost = 200
+		build_time = 1095
+		tech_growth_modifier = 0.1
+		military_techpoints = 0.05
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 0.2
+	}
+
+	# Imperial Decadence
+	ca_imperial_dec_1 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_1 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.07
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_2 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_2 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.14
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_3 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_3 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.21
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_4 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_4 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.28
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_5 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_5 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.35
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_6 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_6 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.42
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_7 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_7 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.49
+		ai_creation_factor = 0
+	}
+	ca_imperial_dec_8 = {
+		desc = ca_imperial_dec_desc
+		potential = {
+			FROM = { has_character_modifier = imperial_decadence_8 }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		levy_size = -0.56
+		ai_creation_factor = 0
+	}
+	
+	# Roman Legionary
+	ca_culture_roman_1 = {
+		desc = ca_culture_roman_1_desc
+		potential = {
+			FROMFROM = { 
+				OR = {
+					location = { culture = roman }
+					has_building = ca_culture_roman_1
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = roman
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		heavy_infantry = 30
+		heavy_infantry_defensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_roman_2 = {
+		desc = ca_culture_roman_1_desc
+		potential = {
+			FROMFROM = { 
+				OR = {
+					location = { culture = roman }
+					has_building = ca_culture_roman_2
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = roman
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ca_culture_roman_1
+		gold_cost = 300
+		build_time = 1095
+		heavy_infantry = 40
+		heavy_infantry_defensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_roman_3 = {
+		desc = ca_culture_roman_1_desc
+		potential = {
+			FROMFROM = { 
+				OR = {
+					location = { culture = roman }
+					has_building = ca_culture_roman_3
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = roman
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ca_culture_roman_2
+		gold_cost = 400
+		build_time = 2190
+		heavy_infantry = 50
+		heavy_infantry_defensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_roman_4 = {
+		desc = ca_culture_roman_1_desc
+		potential = {
+			FROMFROM = { 
+				OR = {
+					location = { culture = roman }
+					has_building = ca_culture_roman_4
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = roman
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ca_culture_roman_3
+		gold_cost = 500
+		build_time = 2190
+		heavy_infantry = 60
+		heavy_infantry_defensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	# Extra troops for holy orders
+	ca_order_house = {
+		potential = {
+			FROM = {
+				OR = {
+					holy_order = yes
+					any_liege = { holy_order = yes }
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		gold_cost = 50
+		build_time = 360
+		knights = 100
+		heavy_infantry = 250
+		archers = 150
+		ai_creation_factor = 10000
+
+		extra_tech_building_start = 0
+	}
+
+	# Coptic culture
+	ca_culture_coptic_1 = {
+		desc = ca_culture_coptic_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					location = { culture = coptic }
+					has_building = ca_culture_coptic_1
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = coptic
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		heavy_infantry_defensive = 0.15
+		heavy_infantry = 60
+		ai_creation_factor = 101
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_coptic_2 = {
+		desc = ca_culture_coptic_1_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					location = { culture = coptic }
+					has_building = ca_culture_coptic_2
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = coptic
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ca_culture_coptic_1
+		gold_cost = 300
+		build_time = 1095
+		heavy_infantry_defensive = 0.15
+		heavy_infantry = 80
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_coptic_3 = {
+		desc = ca_culture_coptic_1_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					location = { culture = coptic }
+					has_building = ca_culture_coptic_3
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = coptic
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ca_culture_coptic_2
+		gold_cost = 400
+		build_time = 2190
+		heavy_infantry_defensive = 0.15
+		heavy_infantry = 100
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_coptic_4 = {
+		desc = ca_culture_coptic_1_desc
+		potential = {
+			FROMFROM = {
+				OR = {
+					location = { culture = coptic }
+					has_building = ca_culture_coptic_4
+				}
+			}
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			NOT = { has_province_modifier = recent_culture_change }
+			culture = coptic
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		upgrades_from = ca_culture_coptic_3
+		gold_cost = 500
+		build_time = 2190
+		heavy_infantry_offensive = 0.15
+		heavy_infantry = 120
+		ai_creation_factor = 98
+		
+		extra_tech_building_start = 0.8
+	}
+	#Palace
+	ca_palaceaachen = {
+		potential = {
+				FROMFROM = { title = b_aachen }
+		}
+		desc = ca_palaceaachen_desc
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}	
+		gold_cost = 1250
+		build_time = 2200
+
+		economy_techpoints = 0.1
+		culture_techpoints = 0.1
+		monthly_character_prestige = 0.5
+		tax_income = 3.5
+		
+		ai_creation_factor = 65
+
+		extra_tech_building_start = 1.2
+	}
+	
+	#GIZEHPYRAMID
+	ca_gizehpyramid = {
+		potential = {
+				FROMFROM = { title = b_gizeh }
+		}
+		desc = ca_gizehpyramid_desc
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}	
+		gold_cost = 1250
+		build_time = 2200
+
+		culture_techpoints = 0.05
+		monthly_character_prestige = 0.3
+		tax_income = 2
+		
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0
+	}
+	
+	#PETRA
+	ca_petra = {
+		potential = {
+				FROMFROM = { title = b_petra }
+		}
+		desc = ca_petra_desc
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+		}	
+		gold_cost = 700
+		build_time = 2200
+
+		culture_techpoints = 0.05
+		economy_techpoints = 0.05
+		monthly_character_prestige = 0.05
+		tax_income = 1
+		
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0
+	}
+	
+	#HADRIAN'S WALL
+	ca_hadrianswall = {
+		potential = {
+			OR = {
+				FROMFROM = { title = b_bamburgh }
+				FROMFROM = { title = b_burgh }
+			}				
+		}
+		desc = ca_hadrianswall_desc
+		gold_cost = 1000
+		build_time = 2000
+		
+		garrison_size = 0.05
+		fort_level = 1.5
+		tax_income = 1
+		military_techpoints = 0.1
+		monthly_character_prestige = 0.02
+		
+		ai_creation_factor = 86
+
+		extra_tech_building_start = 0
+	}
+	
+	#AGRA FORT
+	ca_agrafort = {
+		potential = {
+				FROMFROM = { title = b_kalinjar }
+		}
+		desc = ca_agrafort_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+		gold_cost = 1250
+		build_time = 2200
+		
+		levy_size = 0.10
+		garrison_size = 0.15
+		fort_level = 2.5
+		tax_income = 3
+		culture_techpoints = 0.1
+		economy_techpoints = 0.1
+		monthly_character_prestige = 0.4
+		
+		ai_creation_factor = 40
+
+		extra_tech_building_start = 10
+	}
+}
+
+# City
+city = {
+	ct_jewish_community_1 = {
+		potential = {
+			FROM = {
+				NOT = { religion_group = jewish_group }
+			}
+			NOT = { religion_group = jewish_group }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		tax_income = 2
+		ai_creation_factor = 1
+
+		extra_tech_building_start = 10.0
+	}
+	ct_jewish_community_2 = {
+		upgrades_from = ct_jewish_community_1
+		potential = {
+			FROM = {
+				NOT = { religion_group = jewish_group }
+			}
+			NOT = { religion_group = jewish_group }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		tax_income = 2
+		ai_creation_factor = 1
+
+		extra_tech_building_start = 10.0
+	}
+	ct_jewish_community_3 = {
+		upgrades_from = ct_jewish_community_2
+		potential = {
+			FROM = {
+				NOT = { religion_group = jewish_group }
+			}
+			NOT = { religion_group = jewish_group }
+		}
+		trigger = {
+			always = no
+		}
+		gold_cost = 0
+		build_time = 0
+		tax_income = 2
+		ai_creation_factor = 1
+
+		extra_tech_building_start = 10.0
+	}
+	#VISBYRINGMUR
+	ca_visbyringmur = {
+		potential = {
+				FROMFROM = { title = b_visby }
+		}
+		desc = ca_visbyringmur_desc
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
+		gold_cost = 800
+		build_time = 1200
+
+		garrison_size = 0.15
+		fort_level = 3
+		tax_income = 2
+		monthly_character_prestige = 0.1
+		military_techpoints = 0.1
+			
+		ai_creation_factor = 25
+
+		extra_tech_building_start = 1.5
+	}
+}
+
+temple = {
+	tp_school_3 = {
+		desc = tp_school_1_desc
+		trigger = {
+			TECH_TEMPLE_CONSTRUCTION = 6
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+				}
+			}
+		}
+		prerequisites = { tp_wall_3 }
+		upgrades_from = tp_school_2
+		gold_cost = 600
+		build_time = 547
+
+		tech_growth_modifier = 0.3
+		culture_techpoints = 0.05
+		
+		ai_creation_factor = 92
+		add_number_to_name = no
+
+		
+		extra_tech_building_start = 0.2
+	}
+}
+
+trade_post = {
+	tr_generic_road_1 = {	# Generic Road Improvement Stage 1
+		potential = {
+			NOR = { # These are not allowed to have roads
+				AND = {
+					trade_route = silk_road # This trade route is not allowed to have roads
+					NOR = { # The following provinces are exceptions
+						province_id = 496 # Constantinople
+						province_id = 764 # Antioch
+					}
+				}
+				AND = {
+					trade_route = mediterranean_trade # This trade route is not allowed to have roads
+					NOR = { # The following provinces are exceptions
+						province_id = 496 # Constantinople
+						province_id = 764 # Antioch
+						province_id = 468 # Dubrovnik
+						province_id = 356 # Venice
+						province_id = 333 # Rome
+						province_id = 233 # Genoa
+						province_id = 221 # Provence
+						province_id = 204 # Barcelona
+						province_id = 165 # Cadiz/Qadis
+					}
+				}
+				AND = {
+					trade_route = atlantic_trade # This trade route is not allowed to have roads
+					NOR = { # The following provinces are exceptions
+						province_id = 843 # Marrakech
+						province_id = 157 # Santiago
+						province_id = 155 # Asturias de Oviedo
+						province_id = 149 # Bordeaux
+						province_id = 141 # Poitiers
+						province_id = 100 # Avranches
+						province_id = 78 # Brugge
+						province_id = 32 # London
+						province_id = 26 # Winchester
+						province_id = 43 # Moray
+						province_id = 57 # York/Deira
+						province_id = 52 # Northumberland/Northumbria						
+					}
+				}
+				AND = {
+					trade_route = baltic_sea # This trade route is not allowed to have roads
+					NOR = { # The following provinces are exceptions
+						province_id = 78 # Brugge
+						province_id = 261 # Hamburg
+						province_id = 262 # Lubeck
+						province_id = 368 # Danzig
+						province_id = 373 # Kurs
+						province_id = 378 # Reval					
+					}
+				}				
+			}
+		}
+		desc = tr_generic_road_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 1
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 100
+		build_time = 150
+		ai_creation_factor = 95
+		
+		tradevalue = 6					 # 6 gold per year generated
+		local_movement_speed = 0.1 		 # 0.1 = 10% boost
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_generic_road_2 = {	# Generic Road Improvement Stage 2
+		potential = {
+		}
+		desc = tr_generic_road_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 150
+		build_time = 300
+		upgrades_from = tr_generic_road_1 
+		ai_creation_factor = 95
+		
+		trade_route_value = 2			# Affects your cut of the trade route income
+		tradevalue = 6					# 6 gold per year generated
+		local_movement_speed = 0.2		# 0.2 = 20% boost
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_generic_road_3 = {	# Generic Road Improvement Stage 3
+		potential = {
+		}
+		desc = tr_generic_road_3_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 6
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 300
+		build_time = 600
+		upgrades_from = tr_generic_road_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 6			# Affects your cut of the trade route income
+		tradevalue = 10					# 10 gold per year generated
+		monthly_character_prestige = 0.3
+		local_movement_speed = 0.3 		#0.3 = 30% boost
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_generic_toll_booth_1 = {	# Generic Toll Booth Stage 1
+		potential = {
+			NOR = { # These are not allowed to have toll booths
+				AND = {
+					trade_route = silk_road # This trade route is not allowed to have toll booths
+					NOR = { # The following provinces are exceptions
+						province_id = 496 # Constantinople
+						province_id = 764 # Antioch
+					}
+				}
+				AND = {
+					trade_route = mediterranean_trade # This trade route is not allowed to have toll booths
+					NOR = { # The following provinces are exceptions
+						province_id = 496 # Constantinople
+						province_id = 764 # Antioch
+						province_id = 468 # Dubrovnik
+						province_id = 356 # Venice
+						province_id = 333 # Rome
+						province_id = 233 # Genoa
+						province_id = 221 # Provence
+						province_id = 204 # Barcelona
+						province_id = 165 # Cadiz/Qadis
+					}
+				}
+				AND = {
+					trade_route = atlantic_trade # This trade route is not allowed to have toll booths
+					NOR = { # The following provinces are exceptions
+						province_id = 843 # Marrakech
+						province_id = 157 # Santiago
+						province_id = 155 # Asturias de Oviedo
+						province_id = 149 # Bordeaux
+						province_id = 141 # Poitiers
+						province_id = 100 # Avranches
+						province_id = 78 # Brugge
+						province_id = 32 # London
+						province_id = 26 # Winchester
+						province_id = 43 # Moray
+						province_id = 57 # York/Deira
+						province_id = 52 # Northumberland/Northumbria						
+					}
+				}
+				AND = {
+					trade_route = baltic_sea # This trade route is not allowed to have toll booths
+					NOR = { # The following provinces are exceptions
+						province_id = 78 # Brugge
+						province_id = 261 # Hamburg
+						province_id = 262 # Lubeck
+						province_id = 368 # Danzig
+						province_id = 373 # Kurs
+						province_id = 378 # Reval					
+					}
+				}				
+			}
+		}
+		desc = tr_generic_toll_booth_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 1
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 100
+		build_time = 150
+		ai_creation_factor = 95
+		
+		trade_route_value = 2	# Affects your cut of the trade route income
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_generic_toll_booth_2 = {	# Generic Toll Booth Stage 2
+		potential = {
+		}
+		desc = tr_generic_toll_booth_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 200
+		build_time = 200
+		upgrades_from = tr_generic_toll_booth_1
+		ai_creation_factor = 95
+		
+		trade_route_value = 3	# Affects your cut of the trade route income
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_generic_toll_booth_3 = {	# Generic Toll Booth Stage 3
+		potential = {
+		}
+		desc = tr_generic_toll_booth_3_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 300
+		build_time = 300
+		upgrades_from = tr_generic_toll_booth_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 4	# Affects your cut of the trade route income
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_customs_house_1 = {	# Customs House Stage 1
+		potential = {
+			port = yes
+			OR = { 
+				trade_route = mediterranean_trade
+				trade_route = atlantic_trade
+				trade_route = baltic_sea
+			}
+		}
+		desc = tr_customs_house_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 1
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 100
+		build_time = 150
+		ai_creation_factor = 95
+		
+		trade_route_value = 2 	# Affects your cut of the trade route income
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_customs_house_2 = {	# Customs House Stage 2
+		potential = {
+		}
+		desc = tr_customs_house_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 3
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 200
+		build_time = 200
+		upgrades_from = tr_customs_house_1
+		ai_creation_factor = 95
+		
+		trade_route_value = 3	# Affects your cut of the trade route income
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_customs_house_3 = {	#Customs House Stage 3
+		potential = {
+		}
+		desc = tr_customs_house_3_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 300
+		build_time = 300
+		upgrades_from = tr_customs_house_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 4	# Affects your cut of the trade route income
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_amber_road_trade_guild_1 = {	# Amber Trade Guild Stage 1
+		potential = {
+			trade_route = amber_road
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_amber_road_trade_guild_1
+							trade_post_has_building = tr_amber_road_trade_guild_2
+						}
+					}				
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2	
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_amber_road_trade_guild_2 = {	# Amber Trade Guild Stage 2
+		potential = {
+			trade_route = amber_road
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_amber_road_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_amber_road_trade_guild_3 = {	# Amber Trade Guild Stage 3
+		potential = {
+			trade_route = amber_road
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}		
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_amber_road_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_balkan_road_trade_guild_1 = {	# Balkan Trade Guild Stage 1
+		potential = {
+			trade_route = balkan_road
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_balkan_road_trade_guild_1
+							trade_post_has_building = tr_balkan_road_trade_guild_2
+						}
+					}				
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2				
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_balkan_road_trade_guild_2 = {	# Balkan Trade Guild Stage 2
+		potential = {
+			trade_route = balkan_road
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_balkan_road_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_balkan_road_trade_guild_3 = {	# Balkan Trade Guild Stage 3
+		potential = {
+			trade_route = balkan_road
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}			
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_balkan_road_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_french_trade_guild_1 = {	# French Trade Guild Stage 1
+		potential = {
+			trade_route = french_trade
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_french_trade_guild_1
+							trade_post_has_building = tr_french_trade_guild_2
+						}
+					}				
+				}			
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_french_trade_guild_2 = {	# French Trade Guild Stage 2
+		potential = {
+			trade_route = french_trade
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_french_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_french_trade_guild_3 = {	# French Trade Guild Stage 3
+		potential = {
+			trade_route = french_trade
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_french_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_iberian_trade_guild_1 = {	# Iberian Trade Guild Stage 1
+		potential = {
+			trade_route = iberian_trade
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_iberian_trade_guild_1
+							trade_post_has_building = tr_iberian_trade_guild_2
+						}
+					}	
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2				
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_iberian_trade_guild_2 = {	# Iberian Trade Guild Stage 2
+		potential = {
+			trade_route = iberian_trade
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}				
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_iberian_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_iberian_trade_guild_3 = {	# Iberian Trade Guild Stage 3
+		potential = {
+			trade_route = iberian_trade
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_iberian_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}	
+	tr_british_trade_guild_1 = {	# British Trade Guild Stage 1
+		potential = {
+			trade_route = british_trade
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_british_trade_guild_1
+							trade_post_has_building = tr_british_trade_guild_2
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2				
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_british_trade_guild_2 = {	# British Trade Guild Stage 2
+		potential = {
+			trade_route = british_trade
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_british_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_british_trade_guild_3 = {	# British Trade Guild Stage 3
+		potential = {
+			trade_route = british_trade
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_british_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_atlantic_trade_guild_1 = {	# Atlantic Trade Guild Stage 1
+		potential = {
+			trade_route = atlantic_trade
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_atlantic_trade_guild_1
+							trade_post_has_building = tr_atlantic_trade_guild_2
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_atlantic_trade_guild_2 = {	# Atlantic Trade Guild Stage 2
+		potential = {
+			trade_route = atlantic_trade
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_atlantic_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_atlantic_trade_guild_3 = {	# Atlantic Trade Guild Stage 3
+		potential = {
+			trade_route = atlantic_trade
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_atlantic_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_baltic_trade_guild_1 = {	# Baltic Trade Guild Stage 1
+		potential = {
+			trade_route = baltic_sea
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_baltic_trade_guild_1
+							trade_post_has_building = tr_baltic_trade_guild_2
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2				
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_baltic_trade_guild_2 = {	# Baltic Trade Guild Stage 2
+		potential = {
+			trade_route = baltic_sea
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_baltic_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_baltic_trade_guild_3 = {	# Baltic Trade Guild Stage 3
+		potential = {
+			trade_route = baltic_sea
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}		
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_baltic_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_mediterranean_trade_guild_1 = {	# Mediterranean Trade Guild Stage 1
+		potential = {
+			trade_route = mediterranean_trade
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_mediterranean_trade_guild_1
+							trade_post_has_building = tr_mediterranean_trade_guild_2
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_salt_road_trade_guild_1
+					trade_post_has_building = tr_salt_road_trade_guild_2					
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_mediterranean_trade_guild_2 = {	# Mediterranean Guild Stage 2
+		potential = {
+			trade_route = mediterranean_trade
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7	
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_mediterranean_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_mediterranean_trade_guild_3 = {	# Mediterranean Trade Guild Stage 3
+		potential = {
+			trade_route = mediterranean_trade
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}		
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_mediterranean_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_salt_road_trade_guild_1 = {	# Salt Road Trade Guild Stage 1
+		potential = {
+			trade_route = salt_road
+		}
+		desc = tr_trade_guild_1_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 5
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_3_OTHER_PROVINCES_CONDITION # May only have 1 of the same type of guild every 300 range
+				NOT = {
+					any_trade_route_province = {
+						NOT = {
+							distance = {
+								where = ROOT
+								value = 300
+							}
+						}
+						OR = {
+							trade_post_has_building = tr_salt_road_trade_guild_1
+							trade_post_has_building = tr_salt_road_trade_guild_2
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_GUILD_ONLY # May only have 1 of any type of guild in one province
+				NOR = {
+					trade_post_has_building = tr_amber_road_trade_guild_1
+					trade_post_has_building = tr_amber_road_trade_guild_2
+					trade_post_has_building = tr_atlantic_trade_guild_1
+					trade_post_has_building = tr_atlantic_trade_guild_2
+					trade_post_has_building = tr_balkan_road_trade_guild_1
+					trade_post_has_building = tr_balkan_road_trade_guild_2
+					trade_post_has_building = tr_baltic_trade_guild_1
+					trade_post_has_building = tr_baltic_trade_guild_2
+					trade_post_has_building = tr_british_trade_guild_1
+					trade_post_has_building = tr_british_trade_guild_2
+					trade_post_has_building = tr_french_trade_guild_1
+					trade_post_has_building = tr_french_trade_guild_2
+					trade_post_has_building = tr_iberian_trade_guild_1
+					trade_post_has_building = tr_iberian_trade_guild_2
+					trade_post_has_building = tr_mediterranean_trade_guild_1
+					trade_post_has_building = tr_mediterranean_trade_guild_2
+				}
+			}			
+		}
+		gold_cost = 300
+		build_time = 300
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 6	# Affects your cut of the trade route income
+		tradevalue = 20			# 20 gold per year generated
+		
+		extra_tech_building_start = 6.0
+	}
+	tr_salt_road_trade_guild_2 = {	# Salt Road Guild Stage 2
+		potential = {
+			trade_route = salt_road
+		}
+		desc = tr_trade_guild_2_desc
+		trigger = {
+			TECH_TRADE_PRACTICES = 7		
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}			
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_salt_road_trade_guild_1
+		ai_creation_factor = 95
+		
+		trade_route_wealth = 10	# Affects total value of trade route
+		trade_route_value = 12	# Affects your cut of the trade route income
+		tradevalue = 30			# 30 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_salt_road_trade_guild_3 = {	# Salt Road Trade Guild Stage 3
+		potential = {
+			trade_route = salt_road
+		}
+		desc = tr_trade_guild_3_desc
+		trigger = {
+			custom_tooltip = {
+				text = TR_TRADE_GUILD_1_IN_WORLD
+				has_province_modifier = trade_guild_hq # Only one guild headquarters in the world per route
+			}
+			FROM = { # Tribals and Nomads are not allowed to have anything past a trade post
+				is_tribal = no
+				is_nomadic = no
+			}
+		}
+		gold_cost = 600
+		build_time = 400
+		upgrades_from = tr_salt_road_trade_guild_2
+		ai_creation_factor = 95
+		
+		trade_route_value = 24	# Affects your cut of the trade route income
+		trade_route_wealth = 10	# Affects total value of trade route
+		tradevalue = 40			# 40 gold per year generated
+		
+		extra_tech_building_start = 8
+	}
+	tr_tp_garrison_1 = {
+		potential = {
+			OR = { 
+				trade_route = silk_road
+				trade_route = mediterranean_trade
+				trade_route = amber_road
+				trade_route = balkan_road
+				trade_route = salt_road
+				trade_route = french_trade
+				trade_route = iberian_trade
+				trade_route = atlantic_trade
+				trade_route = british_trade
+				trade_route = baltic_sea
+				trade_route = timbuktu_trade
+				trade_route = grand_trunk_road
+			}
+			FROM = {
+				is_patrician = no
+			}
+		}
+		desc = tr_tp_garrison_1_desc
+		trigger = { TECH_TRADE_PRACTICES = 0 }
+		gold_cost = 100
+		build_time = 182
+		ai_creation_factor = 91
+		
+		garrison_size = 0.3
+		fort_level = 0.3
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_tp_garrison_2 = {
+		potential = {
+			OR = { 
+				trade_route = silk_road
+				trade_route = mediterranean_trade
+				trade_route = amber_road
+				trade_route = balkan_road
+				trade_route = salt_road
+				trade_route = french_trade
+				trade_route = iberian_trade
+				trade_route = atlantic_trade
+				trade_route = british_trade
+				trade_route = baltic_sea
+				trade_route = timbuktu_trade
+				trade_route = grand_trunk_road
+			}
+			FROM = {
+				is_patrician = no
+			}
+		}
+		desc = tr_tp_garrison_2_desc
+		trigger = { TECH_TRADE_PRACTICES = 3 }
+		gold_cost = 150
+		build_time = 274
+		upgrades_from = tr_tp_garrison_1
+		ai_creation_factor = 90
+		
+		garrison_size = 0.6
+		fort_level = 0.6
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+	tr_tp_garrison_3 = {
+		potential = {
+			OR = { 
+				trade_route = silk_road
+				trade_route = mediterranean_trade
+				trade_route = amber_road
+				trade_route = balkan_road
+				trade_route = salt_road
+				trade_route = french_trade
+				trade_route = iberian_trade
+				trade_route = atlantic_trade
+				trade_route = british_trade
+				trade_route = baltic_sea
+				trade_route = timbuktu_trade
+				trade_route = grand_trunk_road
+			}
+			FROM = {
+				is_patrician = no
+			}
+		}
+		desc = tr_tp_garrison_3_desc
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+		gold_cost = 200
+		build_time = 365
+		upgrades_from = tr_tp_garrison_2
+		ai_creation_factor = 89
+		
+		garrison_size = 1.0
+		fort_level = 1
+		
+		extra_tech_building_start = 10.0 # Never get at start of game
+	}
+}
+

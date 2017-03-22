@@ -1,0 +1,54 @@
+#	Example:
+# 
+#	example_trigger = {
+#		year = 1066
+#		num_of_spouses = 2
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		exampel_trigger = yes
+#	}
+#
+# Naming convention:  xxxx_trigger
+#
+
+no_lifestyle_traits_trigger = {
+	OR = {
+		AND = {
+			trait = immortal
+			OR = {
+				AND = {
+					age < 100
+					lifestyle_traits < 1
+				}
+				AND = {
+					age < 150
+					lifestyle_traits < 2
+				}
+				AND = {
+					age < 200
+					lifestyle_traits < 3
+				}
+				AND = {
+					age < 300
+					lifestyle_traits < 4
+				}
+				AND = {
+					age < 400
+					lifestyle_traits < 5
+				}
+				AND = {
+					age < 500
+					lifestyle_traits < 6
+				}
+			}
+		}
+		AND = {
+			NOT = { trait = immortal }
+			lifestyle_traits < 1
+		}
+	}
+}
