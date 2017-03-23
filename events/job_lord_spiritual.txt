@@ -368,6 +368,26 @@ character_event = {
 			liege = { learning = 25 }
 		}
 		modifier = {
+			factor = 0.95
+			liege = { learning = 26 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 27 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 28 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 29 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 30 }
+		}
+		modifier = {
 			factor = 1.05
 			NOT = { learning = 1 }
 		}
@@ -462,6 +482,26 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 		modifier = {
 			factor = 0.9
@@ -912,6 +952,25 @@ character_event = {
 			liege = { learning = 25 }
 		}
 		modifier = {
+			factor = 0.95
+			liege = { learning = 26 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 27 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 28 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 29 }
+		}
+		modifier = {
+			factor = 0.95
+			liege = { learning = 30 }
+		modifier = {
 			factor = 1.05
 			NOT = { learning = 1 }
 		}
@@ -1006,6 +1065,26 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 		modifier = {
 			factor = 2.0
@@ -1330,6 +1409,26 @@ character_event = {
 		modifier = {
 			factor = 1.05
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 		modifier = {
 			factor = 1.1
@@ -1684,6 +1783,26 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
+		}		
 		modifier = {
 			factor = 0.9
 			religion_authority = 0.6
@@ -2110,6 +2229,26 @@ character_event = {
 		modifier = {
 			factor = 1.05
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 		modifier = {
 			factor = 0.75
@@ -2804,6 +2943,26 @@ character_event = {
 			learning = 25
 		}
 		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
+		}
+		modifier = {
 			factor = 0.9
 			religion_authority = 0.6
 		}
@@ -3065,6 +3224,26 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 	}
 
@@ -3422,6 +3601,26 @@ character_event = {
 			factor = 1.05
 			learning = 25
 		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -3610,6 +3809,26 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 		modifier = {
 			factor = 2.0
@@ -3850,6 +4069,26 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
+		}
 	}
 
 	option = {
@@ -4073,6 +4312,26 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
+		}
 	}
 
 	option = {
@@ -4265,6 +4524,26 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 	}
 
@@ -4564,6 +4843,26 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
+		}
 	}
 
 	option = {
@@ -4774,6 +5073,26 @@ character_event = {
 		modifier = {
 			factor = 1.05
 			learning = 25
+		}
+		modifier = {
+			factor = 1.05
+			learning = 26
+		}
+		modifier = {
+			factor = 1.05
+			learning = 27
+		}
+		modifier = {
+			factor = 1.05
+			learning = 28
+		}
+		modifier = {
+			factor = 1.05
+			learning = 29
+		}
+		modifier = {
+			factor = 1.05
+			learning = 30
 		}
 	}
 
@@ -5017,6 +5336,26 @@ character_event = {
 			factor = 1.05
 			learning = 25
 		}
+		modifier = {
+			factor = 1.05
+			learning = 26
+		}
+		modifier = {
+			factor = 1.05
+			learning = 27
+		}
+		modifier = {
+			factor = 1.05
+			learning = 28
+		}
+		modifier = {
+			factor = 1.05
+			learning = 29
+		}
+		modifier = {
+			factor = 1.05
+			learning = 30
+		}
 	}
 
 	option = {
@@ -5206,6 +5545,26 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.95
+			learning = 26
+		}
+		modifier = {
+			factor = 0.95
+			learning = 27
+		}
+		modifier = {
+			factor = 0.95
+			learning = 28
+		}
+		modifier = {
+			factor = 0.95
+			learning = 29
+		}
+		modifier = {
+			factor = 0.95
+			learning = 30
 		}
 	}
 

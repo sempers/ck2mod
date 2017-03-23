@@ -6788,7 +6788,7 @@ character_event = {
 					}
 				}
 			}
-			add_trait = homosexual
+			add_trait = homosexual_visible
 		}
 		hidden_tooltip = {
 			if = {
@@ -8878,6 +8878,75 @@ character_event = {
 							}
 						}
 						remove_character_modifier = loan_1000_hidden
+					}
+					if = {
+						limit = { has_character_modifier = loan_1500 }
+						FROM = {
+							add_character_modifier = {
+								name = loan_1500
+								duration = 730
+								inherit = yes						
+							}
+						}
+						remove_character_modifier = loan_1500
+					}
+					if = {
+						limit = { has_character_modifier = loan_1500_hidden }
+						FROM = {
+							add_character_modifier = {
+								name = loan_1500_hidden
+								duration = -1
+								inherit = yes
+								hidden = yes
+							}
+						}
+						remove_character_modifier = loan_1500_hidden
+					}
+					if = {
+						limit = { has_character_modifier = loan_2000 }
+						FROM = {
+							add_character_modifier = {
+								name = loan_2000
+								duration = 730
+								inherit = yes						
+							}
+						}
+						remove_character_modifier = loan_2000
+					}
+					if = {
+						limit = { has_character_modifier = loan_2000_hidden }
+						FROM = {
+							add_character_modifier = {
+								name = loan_2000_hidden
+								duration = -1
+								inherit = yes
+								hidden = yes
+							}
+						}
+						remove_character_modifier = loan_2000_hidden
+					}
+					if = {
+						limit = { has_character_modifier = loan_2500 }
+						FROM = {
+							add_character_modifier = {
+								name = loan_2500
+								duration = 730
+								inherit = yes						
+							}
+						}
+						remove_character_modifier = loan_2500
+					}
+					if = {
+						limit = { has_character_modifier = loan_2500_hidden }
+						FROM = {
+							add_character_modifier = {
+								name = loan_2500_hidden
+								duration = -1
+								inherit = yes
+								hidden = yes
+							}
+						}
+						remove_character_modifier = loan_2500_hidden
 					}
 					if = {
 						limit = { has_character_modifier = loan_timer_jews }

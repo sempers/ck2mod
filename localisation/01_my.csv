@@ -1,0 +1,16 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+brew_immortal_potion;Brew Immortal Potion;;;;;;;;;;;;;x
+brew_immortal_potion_desc;Brew a philosophical stone potion and share the gift of immortality with this character.;;;;;;;;;;;;;x
+opinion_immortalized_me;Immortalized Me;;;;;;;;;;;;;x
+loan_1500;Loan Taken;Emprunt contracté;Genommenes Darlehen;;Loan Taken;;;;;;;;;x
+loan_1500_desc;A loan will be due for repayment at the expiration date of this modifier.;Un emprunt devra estre remboursé à la date d'expiration.;Ein Darlehen muss mit Ablauf dieses Modifikators zurückgezahlt werden;;A loan will be due for repayment at the expiration date of this modifier.;;;;;;;;;x
+loan_2000;Loan Taken;Emprunt contracté;Genommenes Darlehen;;Loan Taken;;;;;;;;;x
+loan_2000_desc;A loan will be due for repayment at the expiration date of this modifier.;Un emprunt devra estre remboursé à la date d'expiration.;Ein Darlehen muss mit Ablauf dieses Modifikators zurückgezahlt werden;;A loan will be due for repayment at the expiration date of this modifier.;;;;;;;;;x
+loan_2500;Loan Taken;Emprunt contracté;Genommenes Darlehen;;Loan Taken;;;;;;;;;x
+loan_2500_desc;A loan will be due for repayment at the expiration date of this modifier.;Un emprunt devra estre remboursé à la date d'expiration.;Ein Darlehen muss mit Ablauf dieses Modifikators zurückgezahlt werden;;A loan will be due for repayment at the expiration date of this modifier.;;;;;;;;;x
+repay_loan_1500;Repay Loan;Remboursement du prest;Darlehen zurückzahlen;;Repay Loan;;;;;;;;;x
+repay_loan_1500_desc;Repay the full amount of the loan you have taken.;Rembourser le montant intégral de l'emprunt.;Rückzahlung des gesamten Darlehens das Sie eingenommen haben.;;Repay the full amount of the loan you have taken.;;;;;;;;;x
+repay_loan_2000;Repay Loan;Remboursement du prest;Darlehen zurückzahlen;;Repay Loan;;;;;;;;;x
+repay_loan_2000_desc;Repay the full amount of the loan you have taken.;Rembourser le montant intégral de l'emprunt.;Rückzahlung des gesamten Darlehens das Sie eingenommen haben.;;Repay the full amount of the loan you have taken.;;;;;;;;;x
+repay_loan_2500;Repay Loan;Remboursement du prest;Darlehen zurückzahlen;;Repay Loan;;;;;;;;;x
+repay_loan_2500_desc;Repay the full amount of the loan you have taken.;Rembourser le montant intégral de l'emprunt.;Rückzahlung des gesamten Darlehens das Sie eingenommen haben.;;Repay the full amount of the loan you have taken.;;;;;;;;;x

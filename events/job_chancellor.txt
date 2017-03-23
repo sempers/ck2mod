@@ -194,6 +194,26 @@ character_event = {
 			diplomacy = 25
 		}
 		modifier = {
+			factor = 0.95
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 30
+		}
+		modifier = {
 			factor = 0.9
 			trait = grey_eminence
 		}
@@ -442,6 +462,26 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.05
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 30
+		}
+		modifier = {
+			factor = 1.05
 			trait = honest
 		}
 		modifier = {
@@ -659,6 +699,30 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			diplomacy = 24
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 25
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 30
 		}
 	}
 	
@@ -915,6 +979,26 @@ character_event = {
 			diplomacy = 25
 		}
 		modifier = {
+			factor = 0.95
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 30
+		}
+		modifier = {
 			factor = 1.05
 			trait = honest
 		}
@@ -929,34 +1013,6 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 15
-		}
-		modifier = {
-			factor = 0.5
-			has_game_rule = {
-				name = fabricate_claim_rate
-				value = double
-			}
-		}
-		modifier = {
-			factor = 0.33
-			has_game_rule = {
-				name = fabricate_claim_rate
-				value = triple
-			}
-		}
-		modifier = {
-			factor = 0.25
-			has_game_rule = {
-				name = fabricate_claim_rate
-				value = quadruple
-			}
-		}
-		modifier = {
-			factor = 2.0
-			has_game_rule = {
-				name = fabricate_claim_rate
-				value = half
-			}
 		}
 	}
 
@@ -1308,7 +1364,7 @@ letter_event = {
 				}
 			}
 		}
-		scaled_wealth = { value = -1.5 min = -150 }
+		scaled_wealth = { value = -1.5 min = -150 max = -600 }
 		prestige = -150
 		FROM = {
 			FROM = {
@@ -1347,7 +1403,7 @@ letter_event = {
 				}
 			}
 		}
-		scaled_wealth = { value = -1.0 min = -100 }
+		scaled_wealth = { value = -1.0 min = -100 max = -400 }
 		prestige = -100
 		FROM = {
 			FROM = {
@@ -1394,7 +1450,7 @@ letter_event = {
 				}
 			}
 		}
-		scaled_wealth = { value = -0.75 min = -75 }
+		scaled_wealth = { value = -0.75 min = -75 max = -300 }
 		prestige = -50
 		FROM = {
 			FROM = {
@@ -1467,7 +1523,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -3.0 min = -300 }
+		scaled_wealth = { value = -3.0 min = -300 max = -1200 }
 		prestige = -300
 		FROM = {
 			FROM = {
@@ -1499,7 +1555,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -2.0 min = -200 }
+		scaled_wealth = { value = -2.0 min = -200 max = -400 }
 		prestige = -200
 		FROM = {
 			FROM = {
@@ -1531,7 +1587,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -1.0 min = -100 }
+		scaled_wealth = { value = -1.0 min = -100 max = -400 }
 		prestige = -100
 		FROM = {
 			FROM = {
@@ -1599,7 +1655,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -3.0 min = -300 }
+		scaled_wealth = { value = -3.0 min = -300 max=-1200}
 		prestige = -200
 		FROM = {
 			FROM = {
@@ -1631,7 +1687,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -1.5 min = -150 }
+		scaled_wealth = { value = -1.5 min = -150 max=-600 }
 		prestige = -100
 		FROM = {
 			FROM = {
@@ -1846,6 +1902,26 @@ character_event = {
 		modifier = {
 			factor = 1.05
 			diplomacy = 25
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 30
 		}
 	}
 
@@ -2218,6 +2294,26 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.95
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 0.95
+			diplomacy = 30
+		}
+		modifier = {
+			factor = 0.95
 			trait = grey_eminence
 		}
 		modifier = {
@@ -2487,6 +2583,26 @@ character_event = {
 		modifier = {
 			factor = 1.05
 			diplomacy = 25
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 26
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 27
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 28
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 29
+		}
+		modifier = {
+			factor = 1.05
+			diplomacy = 30
 		}
 	}
 

@@ -29,6 +29,7 @@ character_event = {
 			religion = jain
 			religion = cathar
 			is_inaccessible_trigger = yes
+			trait = hunter
 		}
 		martial = 5
 		OR = {
@@ -188,6 +189,7 @@ character_event = {
 			no_lifestyle_traits_trigger = no
 			trait = shy
 			trait = slothful
+			trait = falconer
 			religion = jain
 			is_inaccessible_trigger = yes
 		}
@@ -297,6 +299,7 @@ character_event = {
 			trait = gregarious
 			is_dumb_trigger = yes
 			is_inaccessible_trigger = yes
+			trait = scholar
 		}
 		learning = 5
 		OR = {
@@ -436,6 +439,7 @@ character_event = {
 		NOT = {
 			no_lifestyle_traits_trigger = yes
 			trait = zealous
+			trait = mystic
 			is_inaccessible_trigger = yes
 		}
 		learning = 5
@@ -576,6 +580,7 @@ character_event = {
 			no_lifestyle_traits_trigger = yes
 			trait = kind
 			trait = charitable
+			trait = impaler
 			religion = jain
 			religion = cathar
 			is_inaccessible_trigger = yes
@@ -718,6 +723,7 @@ character_event = {
 			no_lifestyle_traits_trigger = no
 			trait = slothful
 			trait = wroth
+			trait = gardener
 			is_inaccessible_trigger = yes
 		}
 		stewardship = 5
@@ -862,6 +868,7 @@ character_event = {
 			trait = cruel
 			trait = envious
 			trait = gregarious
+			trait = poet
 			is_inaccessible_trigger = yes
 		}
 		diplomacy = 5
@@ -1002,6 +1009,7 @@ character_event = {
 			no_lifestyle_traits_trigger = no
 			trait = slothful
 			trait = gregarious
+			trait = administrator
 			is_inaccessible_trigger = yes
 		}
 		stewardship = 5
@@ -1128,6 +1136,7 @@ character_event = {
 			no_lifestyle_traits_trigger = no
 			trait = temperate
 			trait = shy
+			trait = hedonist
 			is_inaccessible_trigger = yes
 		}
 		trait = lustful
@@ -1254,6 +1263,7 @@ character_event = {
 			trait = content
 			trait = kind
 			trait = craven
+			trait = duelist
 			is_weak_trigger = yes
 			is_inaccessible_trigger = yes
 		}
@@ -1432,6 +1442,7 @@ character_event = {
 			trait = cynical
 			trait = slothful
 			trait = hafiz
+			trait = faqih
 			is_inaccessible_trigger = yes
 		}
 		learning = 5
@@ -1573,6 +1584,7 @@ character_event = {
 			trait = wroth
 			trait = content
 			trait = humble
+			trait = architect
 			is_inaccessible_trigger = yes
 		}
 		stewardship = 5
@@ -1704,6 +1716,7 @@ character_event = {
 			trait = wroth
 			trait = content
 			trait = trusting
+			trait = strategist
 			is_inaccessible_trigger = yes
 		}
 		martial = 5
@@ -1835,6 +1848,7 @@ character_event = {
 			trait = shy
 			trait = ugly_visible
 			trait = paranoid
+			trait = socializer
 			is_inaccessible_trigger = yes
 		}
 		diplomacy = 5
@@ -1963,6 +1977,7 @@ character_event = {
 			no_lifestyle_traits_trigger = no
 			trait = trusting
 			trait = honest
+			trait = schemer
 			is_inaccessible_trigger = yes
 		}
 		intrigue = 5
@@ -2091,6 +2106,7 @@ character_event = {
 			no_lifestyle_traits_trigger = no
 			trait = wroth
 			trait = arbitrary
+			trait = gamer
 			is_inaccessible_trigger = yes
 		}
 		intrigue = 5

@@ -218,6 +218,26 @@ character_event = {
 			factor = 0.8
 			intrigue = 20
 		}
+		modifier = {
+			factor = 0.8
+			intrigue = 22
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 24
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 26
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 28
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 30
+		}
 	}
 
 	option = {
@@ -1861,6 +1881,54 @@ character_event = {
 			factor = 0.95
 			intrigue = 18
 		}
+		modifier = {
+			factor = 0.95
+			intrigue = 19
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 20
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 21
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 22
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 23
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 24
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 26
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 27
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 28
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 29
+		}
+		modifier = {
+			factor = 0.95
+			intrigue = 30
+		}
 	}
 
 	option = {
@@ -2192,6 +2260,26 @@ character_event = {
 			liege = { intrigue = 20 }
 		}
 		modifier = {
+			factor = 0.9
+			liege = { intrigue = 22 }
+		}
+		modifier = {
+			factor = 0.9
+			liege = { intrigue = 24 }
+		}
+		modifier = {
+			factor = 0.9
+			liege = { intrigue = 26 }
+		}
+		modifier = {
+			factor = 0.9
+			liege = { intrigue = 28 }
+		}
+		modifier = {
+			factor = 0.9
+			liege = { intrigue = 30 }
+		}
+		modifier = {
 			factor = 0.8
 			trait = schemer
 		}
@@ -2365,6 +2453,26 @@ character_event = {
 			intrigue = 20
 		}
 		modifier = {
+			factor = 1.2
+			intrigue = 22
+		}
+		modifier = {
+			factor = 1.2
+			intrigue = 24
+		}
+		modifier = {
+			factor = 1.2
+			intrigue = 26
+		}
+		modifier = {
+			factor = 1.2
+			intrigue = 28
+		}
+		modifier = {
+			factor = 1.2
+			intrigue = 30
+		}
+		modifier = {
 			factor = 0.9
 			liege = { NOT = { intrigue = 2 } }
 		}
@@ -2403,6 +2511,26 @@ character_event = {
 		modifier = {
 			factor = 1.1
 			liege = { intrigue = 20 }
+		}
+		modifier = {
+			factor = 1.1
+			liege = { intrigue = 22 }
+		}
+		modifier = {
+			factor = 1.1
+			liege = { intrigue = 24 }
+		}
+		modifier = {
+			factor = 1.1
+			liege = { intrigue = 26 }
+		}
+		modifier = {
+			factor = 1.1
+			liege = { intrigue = 28 }
+		}
+		modifier = {
+			factor = 1.1
+			liege = { intrigue = 30 }
 		}
 		modifier = {
 			factor = 1.2

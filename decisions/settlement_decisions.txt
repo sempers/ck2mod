@@ -1103,7 +1103,7 @@ settlement_decisions = {
 			
 			FROM = {
 				primary_title = {
-					FROM = {
+					ROOT = {
 						custom_tooltip = { 
 							text = TT_KHAN_INDEPENDENCE
 						}

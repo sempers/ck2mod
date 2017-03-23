@@ -484,6 +484,30 @@ province_event = { # Province Modifier Tombola
 		modifier = {
 			factor = 0.9
 			owner = {
+				stewardship = 20
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 30
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 35
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
 				learning = 12
 			}
 		}
@@ -497,6 +521,30 @@ province_event = { # Province Modifier Tombola
 			factor = 0.9
 			owner = {
 				learning = 18
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				learning = 20
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 30
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 35
 			}
 		}
 		modifier = {
@@ -766,7 +814,7 @@ province_event = { #Reclaim Land
 				num_of_max_settlements = 6
 			}
 		}
-		scaled_wealth = 3
+		#scaled_wealth = 3
 	}	
 	
 	mean_time_to_happen = {
@@ -798,6 +846,30 @@ province_event = { #Reclaim Land
 		modifier = {
 			factor = 0.9
 			owner = {
+				stewardship = 20
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 30
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 35
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
 				learning = 12
 			}
 		}
@@ -811,6 +883,30 @@ province_event = { #Reclaim Land
 			factor = 0.9
 			owner = {
 				learning = 18
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				learning = 20
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 30
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 35
 			}
 		}
 		modifier = {
@@ -857,6 +953,11 @@ province_event = { #Reclaim Land
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = { scaled_wealth = 3 } }
+			}
 		}
 		
 		owner = {
@@ -869,8 +970,7 @@ province_event = { #Reclaim Land
 		
 		ai_chance = { 
 			factor = 5
-		}
-		
+		}		
 	}
 }
 
@@ -903,6 +1003,12 @@ province_event = { #Monetary Incentives for culture conversion
 			}
 		}
 		modifier = {
+			factor = 1.2
+			owner = {
+				independent = no
+			}
+		}
+		modifier = {
 			factor = 0.9
 			owner = {
 				stewardship = 12
@@ -923,6 +1029,30 @@ province_event = { #Monetary Incentives for culture conversion
 		modifier = {
 			factor = 0.9
 			owner = {
+				stewardship = 20
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 30
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				stewardship = 35
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
 				learning = 12
 			}
 		}
@@ -936,6 +1066,30 @@ province_event = { #Monetary Incentives for culture conversion
 			factor = 0.9
 			owner = {
 				learning = 18
+			}
+		}
+		modifier = {
+			factor = 0.9
+			owner = {
+				learning = 20
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 25
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 30
+			}
+		}
+		modifier = {
+			factor = 0.8
+			owner = {
+				learning = 35
 			}
 		}
 		modifier = {
@@ -1024,9 +1178,9 @@ province_event = { #Jewish settlement
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 2
-		}
+		#owner = {
+		#	scaled_wealth = 2
+		#}
 	}
 	
 	option = {
@@ -1038,6 +1192,11 @@ province_event = { #Jewish settlement
 			modifier = {
 				factor = 0.1
 				owner = { trait = zealous }
+			}
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 2 } }
 			}
 		}
 		
@@ -1074,9 +1233,9 @@ province_event = { #Monument to Glory
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 2
-		}
+		#owner = {
+		#	scaled_wealth = 2
+		#}
 	}
 	
 	option = {
@@ -1084,6 +1243,11 @@ province_event = { #Monument to Glory
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 2 } }
+			}
 		}
 		
 		owner = {
@@ -1145,9 +1309,9 @@ province_event = { #Merchant Harbor
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 1
-		}
+		#owner = {
+		#	scaled_wealth = 1
+		#}
 	}
 	
 	option = {
@@ -1155,6 +1319,11 @@ province_event = { #Merchant Harbor
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 1 } }
+			}
 		}
 		
 		owner = {
@@ -1185,9 +1354,9 @@ province_event = { #Scholar Foundation
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 2
-		}
+		#owner = {
+		#	scaled_wealth = 2
+		#}
 	}
 	
 	option = {
@@ -1195,6 +1364,11 @@ province_event = { #Scholar Foundation
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 2 } }
+			}
 		}
 		
 		owner = {
@@ -1225,9 +1399,9 @@ province_event = { #Great library
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 1
-		}
+		#owner = {
+		#	scaled_wealth = 1
+		#}
 	}
 	
 	option = {
@@ -1235,6 +1409,11 @@ province_event = { #Great library
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 1 } }
+			}
 		}
 		
 		owner = {
@@ -1265,9 +1444,9 @@ province_event = { #Center of Worship
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 2
-		}
+		#owner = {
+		#	scaled_wealth = 2
+		#}
 	}
 		
 	option = {
@@ -1275,6 +1454,11 @@ province_event = { #Center of Worship
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 2 } }
+			}
 		}
 		
 		owner = {		
@@ -1305,9 +1489,9 @@ province_event = { #Logging Company
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 1
-		}
+		#owner = {
+		#	scaled_wealth = 1
+		#}
 	}
 		
 	option = {
@@ -1315,6 +1499,11 @@ province_event = { #Logging Company
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 1 } } 
+			}
 		}
 		
 		owner = {
@@ -1351,9 +1540,9 @@ province_event = { #Ore Mine
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 1
-		}
+		#owner = {
+		#	scaled_wealth = 1
+		#}
 	}
 		
 	option = {
@@ -1361,6 +1550,11 @@ province_event = { #Ore Mine
 		
 		ai_chance = { 
 			factor = 95
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 1 } }
+			}
 		}
 		
 		owner = {
@@ -1395,9 +1589,9 @@ province_event = { #Religious settlement
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 2
-		}
+		#owner = {
+		#	scaled_wealth = 2
+		#}
 	}
 	
 	option = {
@@ -1409,6 +1603,11 @@ province_event = { #Religious settlement
 			modifier = {
 				factor = 0.1
 				owner = { trait = zealous }
+			}
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 2 } }
 			}
 		}
 		
@@ -1444,9 +1643,9 @@ province_event = { #Regimental Grounds
 	is_triggered_only = yes
 	
 	trigger = {
-		owner = {
-			scaled_wealth = 2
-		}
+		#owner = {
+		#	scaled_wealth = 2
+		#}
 	}
 	
 	option = {
@@ -1454,6 +1653,11 @@ province_event = { #Regimental Grounds
 		
 		ai_chance = { 
 			factor = 95 
+			
+			modifier = {
+				factor = 0
+				owner = { NOT = {scaled_wealth = 2 } }
+			}
 		}
 		
 		owner = {

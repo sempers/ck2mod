@@ -22,6 +22,9 @@ terrain = arctic
 	b_glaumbaer = tribal
 	b_glaumbaer = tb_shipyard_1
 }
+1000.1.1 = {
+	religion = chalcedonian
+}
 1054.1.1 = {
 	religion = catholic
 }

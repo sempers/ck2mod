@@ -613,7 +613,12 @@ character_event = {
 							modifier = { factor = 1.5 has_job_title = job_chancellor }
 							modifier = { factor = 1.4 diplomacy = 12 }	
 							modifier = { factor = 1.4 diplomacy = 15 }	
-							modifier = { factor = 1.4 diplomacy = 18 }	
+							modifier = { factor = 1.4 diplomacy = 18 }
+							modifier = { factor = 1.4 diplomacy = 20 }
+							modifier = { factor = 1.6 diplomacy = 25 }
+							modifier = { factor = 1.6 diplomacy = 30 }
+							modifier = { factor = 1.6 diplomacy = 35 }
+							modifier = { factor = 1.6 diplomacy = 40 }
 							modifier = { factor = 1.5 has_pleasant_personality_trigger = yes }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -647,7 +652,12 @@ character_event = {
 							modifier = { factor = 1.5 has_job_title = job_marshal }
 							modifier = { factor = 1.4 martial = 12 }	
 							modifier = { factor = 1.4 martial = 15 }	
-							modifier = { factor = 1.4 martial = 18 }	
+							modifier = { factor = 1.4 martial = 18 }
+							modifier = { factor = 1.4 martial = 20 }
+							modifier = { factor = 1.6 martial = 25 }
+							modifier = { factor = 1.6 martial = 30 }
+							modifier = { factor = 1.6 martial = 35 }
+							modifier = { factor = 1.6 martial = 40 }
 							modifier = { factor = 1.4 trait = brave }
 							modifier = { factor = 1.4 combat_rating = 2 }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
@@ -683,7 +693,12 @@ character_event = {
 							modifier = { factor = 1.5 has_job_title = job_treasurer }
 							modifier = { factor = 1.4 stewardship = 12 }	
 							modifier = { factor = 1.4 stewardship = 15 }	
-							modifier = { factor = 1.4 stewardship = 18 }	
+							modifier = { factor = 1.4 stewardship = 18 }
+							modifier = { factor = 1.4 stewardship = 20 }
+							modifier = { factor = 1.6 stewardship = 25 }
+							modifier = { factor = 1.6 stewardship = 30 }
+							modifier = { factor = 1.6 stewardship = 35 }
+							modifier = { factor = 1.6 stewardship = 40 }								
 							modifier = { factor = 1.4 monthly_income = 3 }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -717,7 +732,12 @@ character_event = {
 							modifier = { factor = 1.5 has_job_title = job_spymaster }
 							modifier = { factor = 1.4 intrigue = 12 }	
 							modifier = { factor = 1.4 intrigue = 15 }	
-							modifier = { factor = 1.4 intrigue = 18 }	
+							modifier = { factor = 1.4 intrigue = 18 }
+							modifier = { factor = 1.4 intrigue = 20 }
+							modifier = { factor = 1.6 intrigue = 25 }
+							modifier = { factor = 1.6 intrigue = 30 }
+							modifier = { factor = 1.6 intrigue = 35 }
+							modifier = { factor = 1.6 intrigue = 40 }
 							modifier = { factor = 1.4 has_unpleasant_personality_trigger = yes }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -751,7 +771,12 @@ character_event = {
 							modifier = { factor = 1.5 has_job_title = job_spiritual }
 							modifier = { factor = 1.4 learning = 12 }	
 							modifier = { factor = 1.4 learning = 15 }	
-							modifier = { factor = 1.4 learning = 18 }	
+							modifier = { factor = 1.4 learning = 18 }
+							modifier = { factor = 1.4 learning = 20 }
+							modifier = { factor = 1.6 learning = 25 }
+							modifier = { factor = 1.6 learning = 30 }
+							modifier = { factor = 1.6 learning = 35 }
+							modifier = { factor = 1.6 learning = 40 }
 							modifier = { factor = 1.4 is_learned_trigger = yes }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -8563,7 +8588,7 @@ character_event = {
             custom_tooltip = { text = EVTOPTA_MNM_9120_TT_BOW }
         }
 
-        scaled_wealth = { value = -6 min = -400 }
+        scaled_wealth = { value = -6 min = -400 max = -1600 }
 
         hidden_effect = {
         	event_target:weaponsmith = { set_character_flag = expensive_weapons }
@@ -8623,7 +8648,7 @@ character_event = {
             custom_tooltip = { text = EVTOPTB_MNM_9120_TT_BOW }
         }
 
-        scaled_wealth = { value = -3 min = -180 }
+        scaled_wealth = { value = -3 min = -180 max = -800 }
 
         hidden_effect = {
         	event_target:weaponsmith = { set_character_flag = good_weapons }
@@ -8671,7 +8696,7 @@ character_event = {
             custom_tooltip = { text = EVTOPTC_MNM_9120_TT_BOW }
         }
 
-        scaled_wealth = { value = -1.5 min = -75 }
+        scaled_wealth = { value = -1.5 min = -75 max -400 }
 
         hidden_effect = {
         	event_target:weaponsmith = { set_character_flag = cheap_weapons }

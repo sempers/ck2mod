@@ -33,11 +33,6 @@ custom_wales = {
 		d_gwynedd d_deheubarth d_powys
 	}
 }
-custom_cornwall = {
-	duchies = {
-		d_cornwall
-	}
-}
 
 ### CENTRAL EUROPE
 
@@ -124,7 +119,7 @@ custom_italy = {
 }
 custom_serbia = {
 	duchies = {
-		d_rashka d_dioclea d_raguse
+		d_rashka d_dioclea
 	}
 }
 custom_sicily = {
@@ -263,13 +258,6 @@ custom_arabia = {
 		d_arabia_petrae d_maan d_medina d_sanaa d_oman d_nefoud d_amman d_hadramut
 	}
 }
-
-custom_medina = {
-	duchies = {
-		d_medina
-	}
-}
-
 custom_baluchistan = {
 	duchies = {
 		d_baluchistan d_sistan
@@ -840,7 +828,7 @@ custom_roman_hispania = {
 
 custom_roman_illyricum = {
 	duchies = {
-		d_vidin d_rashka d_dioclea d_slavonia d_bosnia d_croatia d_dalmatia d_carinthia d_raguse
+		d_vidin d_rashka d_dioclea d_slavonia d_bosnia d_croatia d_dalmatia d_carinthia
 	}
 }
 

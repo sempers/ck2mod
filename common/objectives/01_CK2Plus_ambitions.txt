@@ -4359,7 +4359,7 @@ obj_adopt_a_lifestyle = {
 	type = character
 	
 	potential = {
-		NOT = { lifestyle_traits < 1 }
+		NOT = { lifestyle_traits = 1 }
 		NOT = { has_character_flag = obj_adopt_a_lifestyle }
 		NOT = { has_character_flag = lifestyle_pick }
 	}
@@ -7016,7 +7016,6 @@ obj_be_legitimized = {
 			is_female = yes
 			is_married = yes
 			spouse = { is_ruler = yes }
-			NOT = { is_ruler = yes }
 		}
 		modifier = {
 			factor = 0
@@ -7029,7 +7028,6 @@ obj_be_legitimized = {
 		modifier = {
 			factor = 0.1
 			is_female = yes
-			has_law = agnatic_succession
 		}
 		modifier = {
 			factor = 0.5
@@ -7038,6 +7036,10 @@ obj_be_legitimized = {
 		modifier = {
 			factor = 0.5
 			trait = trusting
+		}
+		modifier = {
+			factor = 2.0
+			trait = decadent
 		}
 		modifier = {
 			factor = 0.5

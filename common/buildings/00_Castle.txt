@@ -843,7 +843,7 @@ castle = {
 		}
 		prerequisites = { ca_wall_1 }
 		upgrades_from = ca_town_1
-		gold_cost = 120
+		gold_cost = 150
 		build_time = 547
 		tax_income = 2
 		ai_creation_factor = 99
@@ -867,7 +867,7 @@ castle = {
 		upgrades_from = ca_town_2
 		gold_cost = 200
 		build_time = 730
-		tax_income = 2
+		tax_income = 2.5
 		ai_creation_factor = 98
 
 		extra_tech_building_start = 0.8
@@ -888,7 +888,7 @@ castle = {
 		upgrades_from = ca_town_3
 		gold_cost = 300
 		build_time = 1095
-		tax_income = 2
+		tax_income = 3
 		ai_creation_factor = 97
 
 		extra_tech_building_start = 1.0
@@ -909,7 +909,7 @@ castle = {
 		upgrades_from = ca_town_4
 		gold_cost = 400
 		build_time = 2190
-		tax_income = 2
+		tax_income = 3.5
 		ai_creation_factor = 96
 
 		extra_tech_building_start = 1.2
@@ -930,7 +930,7 @@ castle = {
 		upgrades_from = ca_town_5
 		gold_cost = 500
 		build_time = 2190
-		tax_income = 2
+		tax_income = 4
 		ai_creation_factor = 96
 
 		extra_tech_building_start = 1.4

@@ -1,0 +1,51 @@
+###########################################
+#
+# Society decisions for monastic orders
+#
+###########################################
+
+	
+
+society_decisions = {
+	monastic_orders_invite_ascetic = {
+		only_playable = yes
+		
+		potential = {
+			has_dlc = "Mystics"
+			society_rank >= 3
+			is_monastic_member_trigger = yes
+			NOT = { has_character_flag = ascetic_arriving }
+		}
+
+		allow = {
+			has_society_currency_medium_trigger = yes
+			is_inaccessible_trigger = no
+		}
+
+		effect = {
+			set_character_flag = ascetic_arriving
+			detract_society_currency_medium_effect = yes
+			
+			custom_tooltip = {
+				text = monastic_orders_invite_ascetic_tt
+				character_event = { id = MNM.4432 days = 7 }
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0.001
+			modifier = {
+				factor = 0.1
+				any_courtier = { is_monastic_member_trigger = yes } #Less likely to invite if there is already someone else at court
+			}
+			modifier = {
+				any_courtier = { has_job_title = job_spiritual learning = 16 }
+				factor = 0.01
+			}
+		}
+	}
+}

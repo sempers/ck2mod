@@ -437,7 +437,7 @@ e_britannia = {
 			hidden_tooltip = {
 				completely_controls_region = custom_england
 				completely_controls_region = custom_scotland
-				any_demesne_title = {
+				any_landed_title = {
 					tier = KING
 					NOT = { title = k_england_norman }
 					NOT = { title = k_england_saxon }
@@ -817,16 +817,16 @@ e_france = {
 					completely_controls_region = custom_aquitaine
 					completely_controls_region = custom_lotharingia
 				}
-				any_demesne_title = {
+				any_landed_title = {
 					tier = KING
 					NOT = { title = k_france }
 					OR = {
 						AND = {
-							owner = { completely_controls_region = custom_aquitaine }
+							completely_controls_region = custom_aquitaine
 							NOT = { title = k_aquitaine }
 						}
 						AND = {
-							owner = { completely_controls_region = custom_lotharingia }
+							completely_controls_region = custom_lotharingia
 							NOT = { title = k_lotharingia }
 						}
 					}
@@ -2216,6 +2216,7 @@ d_druze = {
 	title_female = "SHAYKHA"
 	foa = "CALIPH_FOA"
 	short_name = yes
+	caliphate = yes
 	
 	religion = druze
 	# Controls a religion
@@ -12739,6 +12740,20 @@ d_noli = {
 		is_republic = yes
 	}
 }
+
+d_raguse = {
+	color = { 133 98 17 }
+	color2 = { 255 255 255 }
+	
+	capital = 468 # Ragusa
+	dignity = 5
+	
+	allow = {
+		may_create_duchy_trigger = yes
+		is_republic = yes
+	}
+}
+
 
 ##################################
 ##

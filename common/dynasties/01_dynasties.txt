@@ -1306,23 +1306,23 @@
 }
 1000037077 = {
 	name = "Drzic"
-	culture = croatian
+	culture = serbian
 }
 1000037078 = {
 	name = "Gucetic"
-	culture = croatian
+	culture = serbian
 }
 1000037079 = {
 	name = "Dobricevic"
-	culture = croatian
+	culture = serbian
 }
 1000037080 = {
 	name = "Mencetic"
-	culture = croatian
+	culture = serbian
 }
 1000037081 = {
 	name = "Vetranovic"
-	culture = croatian
+	culture = serbian
 }
 
 # Dynasty Range 1.000.124.000 - 1.000.127.999

@@ -1078,7 +1078,7 @@ city = {
 		build_time = 2190
 		
 		tech_growth_modifier = 0.2
-		economy_techpoints = 0.05
+		economy_techpoints = 0.1
 		
 		ai_creation_factor = 89
 
@@ -1102,7 +1102,7 @@ city = {
 		build_time = 2190
 		
 		tech_growth_modifier = 0.3
-		economy_techpoints = 0.05
+		economy_techpoints = 0.15
 		
 		ai_creation_factor = 88
 

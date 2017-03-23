@@ -198,7 +198,7 @@ NDefines.NMilitary.OUTSIDE_LIEGE_LEVY_MULT = 0.35				-- Multiplier to liege levi
 
 NDefines.NTechnology.IDEAL_YEAR_AHEAD_PENALTY_INVEST = 0.4			-- Percent increase in cost pre level ahead of ideal date
 
-NDefines.NAI.DOW_AGGRESSION_FACTOR = 1.0							-- General aggressiveness declarations of war
+NDefines.NAI.DOW_AGGRESSION_FACTOR = 1.1							-- General aggressiveness declarations of war
 NDefines.NAI.REVOLT_DISTANCE_FACTOR = 0								-- Multiplier for how much distance from capital affects independence minded revolters
 NDefines.NAI.REVOLT_OTHER_INDEP_RISK = 0							-- Each ongoing other independence revolt increases revolt risk by this amount for all independence-minded revolters
 NDefines.NAI.REVOLT_OTHER_INDEP_RISK_CAP = 0						-- Cap to the total risk from the above	

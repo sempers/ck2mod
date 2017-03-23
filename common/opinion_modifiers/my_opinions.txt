@@ -1,0 +1,4 @@
+opinion_immortalized_me = {
+   opinion = 50
+   months = 2400
+}

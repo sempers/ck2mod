@@ -7,7 +7,13 @@ title = c_rama
 max_settlements = 3
 b_rama = tribal
 #b_usice = city
-b_mostar = temple
+b_samobor = temple
+
+#b_borac = castle
+#b_srebrenica = castle
+#b_srebrnik = castle
+#b_zenica = castle
+#b_zvornik = castle
 
 # Misc
 culture = serbian

@@ -1,4 +1,4 @@
-targeted_decisions = {
+targetted_decisions = {
 	prisoner_torture = {
 		only_playable = yes
 		filter = court

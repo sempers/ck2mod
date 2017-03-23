@@ -761,7 +761,7 @@ character_event = {
 
 	trigger = {
 		trait = in_hiding
-		NOT = { lifestyle_traits = 1 }
+		no_lifestyle_traits_trigger = yes
 		age = 13
 	}
 	

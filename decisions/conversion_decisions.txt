@@ -1908,7 +1908,7 @@ decisions = {
 	}
 }
 
-targeted_decisions = {
+targetted_decisions = {
 
 	convert_to_spouse_religion= {
 		filter = home_court

@@ -3755,6 +3755,10 @@ character_event = {
 	picture = GFX_evt_feast_christian
 	is_triggered_only = yes
 	
+	potential = {
+		always = no
+	}
+	
 	immediate = {
 		clr_character_flag = do_not_disturb
 		clr_character_flag = celebrating_nowruz

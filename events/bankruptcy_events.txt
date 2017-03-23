@@ -28,6 +28,9 @@ character_event = {
 			has_character_modifier = loan_600_hidden
 			has_character_modifier = loan_800_hidden
 			has_character_modifier = loan_1000_hidden
+			has_character_modifier = loan_1500_hidden
+			has_character_modifier = loan_2000_hidden
+			has_character_modifier = loan_2500_hidden
 		}
 		NOR = {
 			has_character_flag = loan_in_progress		
@@ -38,6 +41,9 @@ character_event = {
 			has_character_modifier = loan_600
 			has_character_modifier = loan_800
 			has_character_modifier = loan_1000
+			has_character_modifier = loan_1500
+			has_character_modifier = loan_2000
+			has_character_modifier = loan_2500
 		}
 	}
 
@@ -80,6 +86,18 @@ character_event = {
 				AND = {
 					has_character_modifier = loan_1000_hidden
 					wealth = 1250
+				}
+				AND = {
+					has_character_modifier = loan_1500_hidden
+					wealth = 1800
+				}
+				AND = {
+					has_character_modifier = loan_2000_hidden
+					wealth = 2400
+				}
+				AND = {
+					has_character_modifier = loan_2500_hidden
+					wealth = 3000
 				}
 			}
 		}
@@ -147,6 +165,33 @@ character_event = {
 			}
 		}
 		if = {
+			limit = {
+				has_character_modifier = loan_1500_hidden
+			}
+			wealth = -1800
+			hidden_tooltip = {
+				remove_character_modifier = loan_1500_hidden
+			}
+		}
+		if = {
+			limit = {
+				has_character_modifier = loan_2000_hidden
+			}
+			wealth = -2400
+			hidden_tooltip = {
+				remove_character_modifier = loan_2000_hidden
+			}
+		}
+		if = {
+			limit = {
+				has_character_modifier = loan_2500_hidden
+			}
+			wealth = -3000
+			hidden_tooltip = {
+				remove_character_modifier = loan_2500_hidden
+			}
+		}
+		if = {
 			limit = { NOT = { has_character_modifier = borrowed_from_jews } }
 			clr_character_flag = loan_taken
 		}
@@ -184,6 +229,18 @@ character_event = {
 					has_character_modifier = loan_1000_hidden
 					wealth = 1250
 				}
+				AND = {
+					has_character_modifier = loan_1500_hidden
+					wealth = 1800
+				}
+				AND = {
+					has_character_modifier = loan_2000_hidden
+					wealth = 2400
+				}
+				AND = {
+					has_character_modifier = loan_2500_hidden
+					wealth = 3000
+				}
 			}
 			OR = {
 				AND = {
@@ -213,6 +270,18 @@ character_event = {
 				AND = {
 					has_character_modifier = loan_1000_hidden
 					wealth = 250
+				}
+				AND = {
+					has_character_modifier = loan_1500_hidden
+					wealth = 300
+				}
+				AND = {
+					has_character_modifier = loan_2000_hidden
+					wealth = 400
+				}
+				AND = {
+					has_character_modifier = loan_2500_hidden
+					wealth = 500
 				}
 			}
 		}
@@ -293,6 +362,39 @@ character_event = {
 			}
 			wealth = -250
 		}
+		if = {
+			limit = { has_character_modifier = loan_1500_hidden }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = loan_1500
+					duration = 1095
+					inherit = yes
+				}
+			}
+			wealth = -300
+		}
+		if = {
+			limit = { has_character_modifier = loan_2000_hidden }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = loan_2000
+					duration = 1095
+					inherit = yes
+				}
+			}
+			wealth = -400
+		}
+		if = {
+			limit = { has_character_modifier = loan_2500_hidden }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = loan_2500
+					duration = 1095
+					inherit = yes
+				}
+			}
+			wealth = -500
+		}
 		custom_tooltip = {
 			text = EVTTOOLTIP38002B
 		}
@@ -329,6 +431,18 @@ character_event = {
 				AND = {
 					has_character_modifier = loan_1000_hidden
 					wealth = 1250
+				}
+				AND = {
+					has_character_modifier = loan_1500_hidden
+					wealth = 1800
+				}
+				AND = {
+					has_character_modifier = loan_2000_hidden
+					wealth = 2400
+				}
+				AND = {
+					has_character_modifier = loan_2500_hidden
+					wealth = 3000
 				}
 			}
 		}
@@ -409,6 +523,39 @@ character_event = {
 			}
 			prestige = -500
 		}
+		if = {
+			limit = { has_character_modifier = loan_1500_hidden }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = loan_1500
+					duration = 730
+					inherit = yes
+				}
+			}
+			prestige = -500
+		}
+		if = {
+			limit = { has_character_modifier = loan_2000_hidden }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = loan_2000
+					duration = 730
+					inherit = yes
+				}
+			}
+			prestige = -500
+		}
+		if = {
+			limit = { has_character_modifier = loan_2500_hidden }
+			hidden_tooltip = {
+				add_character_modifier = {
+					name = loan_2500
+					duration = 730
+					inherit = yes
+				}
+			}
+			prestige = -500
+		}
 		custom_tooltip = {
 			text = EVTTOOLTIP38002B
 		}
@@ -475,6 +622,27 @@ character_event = {
 				remove_character_modifier = loan_1000_hidden
 			}
 			prestige = -2000
+		}
+		if = {
+			limit = { has_character_modifier = loan_1500_hidden }
+			hidden_tooltip = {
+				remove_character_modifier = loan_1500_hidden
+			}
+			prestige = -3000
+		}
+		if = {
+			limit = { has_character_modifier = loan_2000_hidden }
+			hidden_tooltip = {
+				remove_character_modifier = loan_2000_hidden
+			}
+			prestige = -4000
+		}
+		if = {
+			limit = { has_character_modifier = loan_2500_hidden }
+			hidden_tooltip = {
+				remove_character_modifier = loan_2500_hidden
+			}
+			prestige = -5000
 		}
 		any_demesne_title = {
 			limit = { tier = count }
@@ -1444,6 +1612,9 @@ character_event = {
 					has_character_modifier = loan_600_hidden
 					has_character_modifier = loan_800_hidden
 					has_character_modifier = loan_1000_hidden
+					has_character_modifier = loan_1500_hidden
+					has_character_modifier = loan_2000_hidden
+					has_character_modifier = loan_2500_hidden
 				}
 			}
 			clr_character_flag = loan_taken
@@ -1557,6 +1728,9 @@ character_event = {
 					has_character_modifier = loan_600_hidden
 					has_character_modifier = loan_800_hidden
 					has_character_modifier = loan_1000_hidden
+					has_character_modifier = loan_1500_hidden
+					has_character_modifier = loan_2000_hidden
+					has_character_modifier = loan_2500_hidden
 				}
 			}
 			clr_character_flag = loan_taken

@@ -46,7 +46,6 @@ decisions = {
 				any_demesne_title = { NOT = { higher_tier_than = count } is_occupied = yes }
 				has_character_flag = planning_feast
 				has_character_modifier = holding_large_feast
-				has_character_flag = celebrating_nowruz
 				liege = { has_character_modifier = holding_large_feast }
 			}
 			OR = {
@@ -1705,6 +1704,10 @@ decisions = {
 					has_character_modifier = loan_600_hidden
 					has_character_modifier = loan_800_hidden
 					has_character_modifier = loan_1000_hidden
+					has_character_modifier = loan_1500_hidden
+					has_character_modifier = loan_2000_hidden
+					has_character_modifier = loan_2500_hidden
+					#loan_taken_trigger = yes
 				}
 				clr_character_flag = loan_taken
 			}
@@ -2519,7 +2522,6 @@ decisions = {
 		allow = {
 			in_command_trigger = no
 			prisoner = no
-			is_adult = yes
 			NOT = { trait = incapable }
 			NOT = { trait = infirm }
 			NOT = { is_inaccessible_trigger = yes }

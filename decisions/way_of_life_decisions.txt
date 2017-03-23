@@ -13,7 +13,7 @@
 #	all: all living characters (Avoid if possible. VERY CPU-HEAVY!)
 #	
 
-targeted_decisions = {
+targetted_decisions = {
 
 	break_up_with_lover = {
 		ai_target_filter = court
@@ -44,20 +44,18 @@ targeted_decisions = {
 			}
 			modifier = {
 				factor = 0.1
-				FROM = {
-					OR = {
-						trait = lustful
-						trait = hedonist
-					}
+				OR = {
+					trait = lustful
+					trait = hedonist
 				}
 			}
 			modifier = {
 				factor = 0.5
-				reverse_opinion = { who = FROM value = 0 }
+				reverse_opinion = { who = ROOT value = 0 }
 			}
 			modifier = {
 				factor = 0
-				reverse_opinion = { who = FROM value = 25 }
+				reverse_opinion = { who = ROOT value = 25 }
 				NOT = { age = 40 }
 			}
 		}
@@ -67,6 +65,8 @@ targeted_decisions = {
 		ai_target_filter = realm
 	
 		from_potential = {
+			is_marriage_adult = yes
+			prisoner = no
 			OR = {
 				has_focus = focus_seduction
 				AND = {
@@ -80,7 +80,6 @@ targeted_decisions = {
 					at_location = ROOT
 				}
 			}
-			is_marriage_adult = yes
 			NOT = {
 				is_pregnant = yes
 				trait = incapable
@@ -116,21 +115,19 @@ targeted_decisions = {
 					}
 				}
 			}
-			prisoner = no
 		}
 		potential = {
 			is_marriage_adult = yes
 			prisoner = no
-			
-			OR = {
-				AND = {
-					FROM = { NOT = { is_homosexual_trigger = yes } }
-					is_opposite_sex = FROM
-				}
-				AND = {
-					FROM = { is_homosexual_trigger = yes }
-					same_sex = FROM
-				}
+			NOR = {
+				character = FROM
+				trait = incapable
+				trait = eunuch
+				trait = infirm
+				is_lover = FROM
+				is_former_lover = FROM
+				is_consort = FROM
+				is_married = FROM
 			}
 			OR = {
 				AND = {
@@ -164,25 +161,22 @@ targeted_decisions = {
 					trait = syphilitic
 				}
 			}
-			NOR = {
-				character = FROM
-				trait = incapable
-				trait = eunuch
-				trait = infirm
-				is_lover = FROM
-				is_former_lover = FROM
-				is_consort = FROM
-				is_married = FROM
+			OR = {
+				AND = {
+					FROM = { NOT = { is_homosexual_trigger = yes } }
+					is_opposite_sex = FROM
+				}
+				AND = {
+					FROM = { is_homosexual_trigger = yes }
+					same_sex = FROM
+				}
 			}
 		}
 		allow = {
+			is_ill = no
+			is_pregnant = no
+			NOT = { trait = celibate }
 			religion_group = FROM
-			custom_tooltip = {
-				text = SEDUCTION_TARGET_TIMER_RECENT
-				hidden_tooltip = {
-					NOT = { has_character_modifier = seduction_target_timer }
-				}
-			}
 			custom_tooltip = {
 				text = SEDUCTION_DISTANCE_OKAY
 				hidden_tooltip = {
@@ -192,9 +186,12 @@ targeted_decisions = {
 					}
 				}
 			}
-			is_ill = no
-			is_pregnant = no
-			NOT = { trait = celibate }
+			custom_tooltip = {
+				text = SEDUCTION_TARGET_TIMER_RECENT
+				hidden_tooltip = {
+					NOT = { has_character_modifier = seduction_target_timer }
+				}
+			}
 			FROM = {
 				is_ill = no
 				NOT = { trait = celibate }
@@ -292,9 +289,47 @@ targeted_decisions = {
 			}
 			modifier = {
 				factor = 0
+				location = { FROM = { location = { NOT = { distance = { who = PREVPREV value = 150 } } } } }
+				NOT = { same_realm = FROM }
+			}
+			modifier = {
+				factor = 0.1
+				OR = {
+					ai = no
+					any_spouse = { ai = no }
+					any_consort = { ai = no }
+				}
+			}
+			modifier = {
+				factor = 0
 				is_female = yes
 				has_character_modifier = lustful_affair_timer
 			}
+			
+			#"Dude, don't you have enough kids already?" factors
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_female = no
+					num_of_children = 3
+				}
+			}
+			modifier = {
+				factor = 0.1
+				FROM = {
+					is_female = no
+					num_of_children = 6
+				}
+			}
+			modifier = {
+				factor = 0.5
+				FROM = {
+					is_female = no
+					num_of_children = 8
+				}
+			}
+			
+			#Target's Age factors
 			modifier = {
 				factor = 0
 				is_female = yes
@@ -305,35 +340,23 @@ targeted_decisions = {
 				is_female = no
 				age = 60
 			}
-			#Target Traits (negative)
 			modifier = {
-				factor = 0
-				OR = {
-					trait = chaste
-					trait = ugly_visible
-					trait = dwarf_visible
-					trait = inbred
-					trait = imbecile_visible
-					trait = clubfooted
-					trait = harelip
-					trait = hunchback
-					trait = eunuch
-				}
+				factor = 2
+				NOT = { age = 20 }
 			}
 			modifier = {
-				factor = 0
-				is_close_relative = FROM
-				FROM = {
-					NOT = {
-						trait = lustful
-						trait = hedonist
-						trait = divine_blood
-						religion = zoroastrian
-						religion = zurvanist
-						religion = messalian
-					}
-				}
+				factor = 0.5
+				age = 25
 			}
+			modifier = {
+				factor = 0.5
+				age = 30
+			}
+			modifier = {
+				factor = 0.25
+				age = 35
+			}
+			
 			#don't target faithful spouses/concubines
 			modifier = {
 				factor = 0
@@ -345,6 +368,7 @@ targeted_decisions = {
 				is_consort = yes
 				liege = { reverse_opinion = { who = FROM value = 50 } }
 			}
+
 			#don't target liege's spouse or kids unless you're brave or reckless or hate them
 			modifier = {
 				factor = 0
@@ -383,60 +407,23 @@ targeted_decisions = {
 					}
 				}
 			}
+			
+						
+			#Target Traits (negative)
 			modifier = {
 				factor = 0
-				location = { FROM = { location = { NOT = { distance = { who = PREVPREV value = 150 } } } } }
-				NOT = { same_realm = FROM }
-			}
-			modifier = {
-				factor = 0.1
 				OR = {
-					ai = no
-					any_spouse = { ai = no }
-					any_consort = { ai = no }
+					trait = chaste
+					trait = ugly_visible
+					trait = dwarf_visible
+					trait = inbred
+					trait = imbecile_visible
+					trait = clubfooted
+					trait = harelip
+					trait = hunchback
+					trait = eunuch
 				}
 			}
-			#"Dude, don't you have enough kids already?" factors
-			modifier = {
-				factor = 0.5
-				FROM = {
-					is_female = no
-					num_of_children = 3
-				}
-			}
-			modifier = {
-				factor = 0.1
-				FROM = {
-					is_female = no
-					num_of_children = 6
-				}
-			}
-			modifier = {
-				factor = 0.5
-				FROM = {
-					is_female = no
-					num_of_children = 8
-				}
-			}
-
-			modifier = {
-				factor = 2
-				NOT = { age = 20 }
-			}
-			modifier = {
-				factor = 0.5
-				age = 25
-			}
-			modifier = {
-				factor = 0.5
-				age = 30
-			}
-			modifier = {
-				factor = 0.25
-				age = 35
-			}
-						
-			
 			
 			#enough lovers already
 			modifier = {
@@ -479,6 +466,20 @@ targeted_decisions = {
 				is_close_relative = FROM
 				FROM = {
 					OR = {
+						trait = lustful
+						trait = hedonist
+						trait = divine_blood
+						religion = zoroastrian
+						religion = zurvanist
+						religion = messalian
+					}
+				}
+			}
+			modifier = {
+				factor = 0
+				is_close_relative = FROM
+				FROM = {
+					NOT = {
 						trait = lustful
 						trait = hedonist
 						trait = divine_blood
@@ -1004,7 +1005,6 @@ targeted_decisions = {
 			NOT = { character = FROM }                            # Can't do this decision on yourself...
 		}
 		allow = {
-			NOT = { has_character_modifier = i_hate_carousing }
 			is_ill = no
 			is_pregnant = no
 			same_realm = FROM   # Can only invite characters in same realm!

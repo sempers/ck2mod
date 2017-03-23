@@ -2306,5 +2306,5 @@ longevity = {
 	random = no
 	customizer = no
 	health = 5
-	hidden = yes
+	is_hidden = yes
 }

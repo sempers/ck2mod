@@ -1,4 +1,4 @@
-targeted_decisions = {
+targetted_decisions = {
 
 	recruit_faction_member = {
 		ai_target_filter = realm

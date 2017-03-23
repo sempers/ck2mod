@@ -52,3 +52,7 @@ no_lifestyle_traits_trigger = {
 		}
 	}
 }
+
+has_society_currency_mega_trigger = {
+	society_currency >= 5000
+}
