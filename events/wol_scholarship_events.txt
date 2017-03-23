@@ -588,7 +588,10 @@ character_event = {
 		name = EVTOPTA_WoL_6170 # Publish findings
 		prestige = 300
 		if = {
-			limit = { no_lifestyle_traits_trigger = yes }
+			limit = { 
+				no_lifestyle_traits_trigger = yes 
+				NOT = {trait = scholar}
+			}
 			remove_character_modifier = studying_the_stars
 			add_trait = scholar
 		}
@@ -653,7 +656,10 @@ character_event = {
 	option = {
 		name = EVTOPTB_WoL_6170 # Keep it secret but continue dedicating myself to knowledge
 		if = {
-			no_lifestyle_traits_trigger = yes
+			limit = {
+						no_lifestyle_traits_trigger = yes
+						NOT = {trait = scholar}
+					}
 			remove_character_modifier = studying_the_stars
 			add_trait = scholar
 		}
@@ -1214,7 +1220,10 @@ character_event = {
 	option = {
 		name = EVTOPTA_WoL_6370 # Keep it secret but continue dedicating myself to knowledge
 		if = {
-			no_lifestyle_traits_trigger = yes
+			limit = { 
+				no_lifestyle_traits_trigger = yes
+				NOT = { trait = mystic }
+			}
 			remove_character_modifier = studying_the_stars
 			add_trait = mystic
 		}

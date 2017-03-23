@@ -2038,6 +2038,14 @@ character_event = {
 			factor = 1.25
 			intrigue = 13
 		}
+		modifier = {
+			factor = 1.25
+			intrigue = 15
+		}
+		modifier = {
+			factor = 1.25
+			intrigue = 20
+		}
 	}
 
 	option = {
@@ -2218,6 +2226,26 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			intrigue = 20
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 22
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 24
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 26
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 28
+		}
+		modifier = {
+			factor = 0.8
+			intrigue = 30
 		}
 		modifier = {
 			factor = 1.1
@@ -2995,4 +3023,3 @@ character_event = {
 		clr_character_flag = large_network_decrease
 	}
 }
-

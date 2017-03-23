@@ -2155,8 +2155,11 @@ character_event = {
 		}
 		prestige = 25
 		FROM = {
-			IF = {
-				limit = { no_lifestyle_traits_trigger = yes }
+			if = {
+				limit = { 
+					no_lifestyle_traits_trigger = yes
+					NOT = { trait = hunter }
+				}
 				random = {
 					chance = 33
 					add_trait = hunter
@@ -2974,7 +2977,9 @@ character_event = {
 			add_trait = chaste
 		}
 		IF = {
-			limit = { no_lifestyle_traits_trigger = yes }
+			limit = { no_lifestyle_traits_trigger = yes
+				NOT = { trait = poet }
+			}
 			random = {
 				chance = 50
 				add_trait = poet
@@ -3155,8 +3160,10 @@ character_event = {
 			chance = 25
 			add_trait = chaste
 		}
-		IF = {
-			limit = { no_lifestyle_traits_trigger = yes }
+		if = {
+			limit = { no_lifestyle_traits_trigger = yes
+				NOT = { trait = poet }
+			}
 			random = {
 				chance = 50
 				add_trait = poet

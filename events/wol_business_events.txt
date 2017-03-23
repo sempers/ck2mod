@@ -3385,7 +3385,6 @@ character_event = {
 						is_tribal = yes
 						is_nomadic = yes
 						NOT = { has_character_modifier = trader }
-						no_lifestyle_traits_trigger = no
 						has_character_flag = tower_start
 						has_character_flag = hedge_maze
 						has_character_flag = tower_end
@@ -3402,7 +3401,6 @@ character_event = {
 				modifier = {
 					OR = {
 						NOT = { has_character_modifier = trader }
-						no_lifestyle_traits_trigger = no
 						has_character_flag = tower_start
 						has_character_flag = hedge_maze
 						has_character_flag = maze_end

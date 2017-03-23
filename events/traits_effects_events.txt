@@ -448,7 +448,6 @@ character_event = {
 		name = EVTOPTA3020
 		trigger = {
 			religion_group = christian
-			no_lifestyle_traits_trigger = yes
 			is_married = yes
 		}
 		ai_chance = {
@@ -20760,7 +20759,6 @@ character_event = {
 					war = no
 					martial = 8
 					NOR = {
-						no_lifestyle_traits_trigger = no
 						has_character_flag = LE_ST
 					}
 				}

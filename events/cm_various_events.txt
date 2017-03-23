@@ -277,7 +277,9 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		FROM = { no_lifestyle_traits_trigger = yes }
+		FROM = { 
+			no_lifestyle_traits_trigger = yes
+		}
 	}
 
 	option = {
@@ -293,7 +295,11 @@ character_event = {
 		name = EVTOPTB_CM_2026
 		trigger = {
 			trait = duelist
-			FROM = { is_female = no }
+			FROM = { 
+				is_female = no
+				NOT = {trait = duelist}
+			}
+			
 		}
 		FROM = {
 			add_trait = duelist

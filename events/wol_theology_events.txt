@@ -851,6 +851,7 @@ character_event = {
 		}
 		trigger = {
 			NOT = { trait = cynical }
+			NOT = { trait = theologian }
 		}
 		remove_character_modifier = religious_philosopher
 		add_trait = theologian

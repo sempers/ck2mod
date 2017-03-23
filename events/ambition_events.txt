@@ -31,13 +31,7 @@ character_event = {
 	is_married = yes
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_war
-				NOT = { martial = 8 }
-			}
-			has_ambition = obj_improve_martial
-		}
+		amb_martial_war_trigger = yes
 		NOT = { has_character_flag = toy_army }
 		NOT = { has_character_flag = street_ruffians }
 		NOT = { has_character_flag = warrior_mentor }
@@ -197,13 +191,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_war
-				NOT = { martial = 8 }
-			}
-			has_ambition = obj_improve_martial
-		}
+		amb_martial_war_trigger = yes
 		NOT = { has_character_flag = toy_army }
 		NOT = { has_character_flag = street_ruffians }
 		NOT = { has_character_flag = warrior_mentor }
@@ -301,13 +289,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_war
-				NOT = { martial = 8 }
-			}
-			has_ambition = obj_improve_martial
-		}
+		amb_martial_war_trigger = yes
 		NOT = { has_character_flag = toy_army }
 		NOT = { has_character_flag = street_ruffians }
 		NOT = { has_character_flag = warrior_mentor }
@@ -475,13 +457,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_war
-				NOT = { martial = 8 }
-			}
-			has_ambition = obj_improve_martial
-		}
+		amb_martial_war_trigger = yes
 		NOT = { has_character_flag = toy_army }
 		NOT = { has_character_flag = street_ruffians }
 		NOT = { has_character_flag = warrior_mentor }
@@ -510,13 +486,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_hunting
-				NOT = { martial = 8 }
-			}
-			has_ambition = obj_improve_martial
-		}
+		amb_martial_hunt_trigger = yes
 		NOT = { has_character_flag = toy_army }
 		NOT = { has_character_flag = street_ruffians }
 		NOT = { has_character_flag = warrior_mentor }
@@ -572,7 +542,6 @@ character_event = {
 			}
 			AND = {
 				has_focus = focus_war
-				no_lifestyle_traits_trigger = yes
 				NOT = { has_character_modifier = student_of_strategy }
 				NOT = { has_character_modifier = adept_of_strategy }
 			}
@@ -651,6 +620,7 @@ character_event = {
 			has_focus = focus_war
 			no_lifestyle_traits_trigger = yes
 			has_character_modifier = adept_of_strategy
+			NOT = { trait = strategist }
 		}
 		remove_character_modifier = adept_of_strategy
 		add_trait = strategist
@@ -705,13 +675,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_business
-				NOT = { stewardship = 8 }
-			}
-			has_ambition = obj_improve_stewardship
-		}
+		amb_stewardship_bsn_trigger = yes
 		wealth = 100
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
@@ -1089,13 +1053,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_business
-				NOT = { stewardship = 8 }
-			}
-			has_ambition = obj_improve_stewardship
-		}
+		amb_stewardship_bsn_trigger = yes
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
@@ -1134,7 +1092,10 @@ character_event = {
 		name = EVTOPTA94066
 		change_stewardship = 2
 		if = {
-			limit = { no_lifestyle_traits_trigger = yes }
+			limit = { 
+				no_lifestyle_traits_trigger = yes
+				NOT = { trait = gardener } 
+			}
 			add_trait = gardener
 		}
 	}
@@ -1155,13 +1116,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_rulership
-				NOT = { stewardship = 8 }
-			}
-			has_ambition = obj_improve_stewardship
-		}
+		amb_stewardship_rul_trigger = yes
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
@@ -1214,13 +1169,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_business
-				NOT = { stewardship = 8 }
-			}
-			has_ambition = obj_improve_stewardship
-		}
+		amb_stewardship_bsn_trigger = yes
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
@@ -1249,13 +1198,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_rulership
-				NOT = { stewardship = 8 }
-			}
-			has_ambition = obj_improve_stewardship
-		}
+		amb_stewardship_rul_trigger = yes
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
@@ -1284,13 +1227,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_rulership
-				NOT = { stewardship = 8 }
-			}
-			has_ambition = obj_improve_stewardship
-		}
+		amb_stewardship_rul_trigger = yes
 		NOT = { has_character_flag = the_inn }
 		NOT = { has_character_flag = the_garden }
 		NOT = { has_character_flag = the_survey }
@@ -1326,13 +1263,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_scholarship
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_sch_trigger = yes
 		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
 		NOT = { has_character_flag = hermit_visit }
@@ -1742,13 +1673,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_theology
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_the_trigger = yes
 		NOT = { religion_group = muslim }
 		NOT = { religion_group = indian_group }
 		NOT = { has_character_flag = flying_machine }
@@ -1807,13 +1732,7 @@ character_event = {
 	
 	trigger = {
 		year = 1010
-		OR = {
-			AND = {
-				has_focus = focus_theology
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_the_trigger = yes
 		OR = {
 			religion_group = muslim
 			religion_group = indian_group
@@ -1872,13 +1791,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_theology
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_the_trigger = yes
 		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
 		NOT = { has_character_flag = hermit_visit }
@@ -1990,13 +1903,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_scholarship
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_sch_trigger = yes
 		NOT = { religion_group = indian_group }
 		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
@@ -2026,13 +1933,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_scholarship
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_sch_trigger = yes
 		NOT = { religion_group = indian_group }
 		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
@@ -2062,13 +1963,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_scholarship
-				NOT = { learning = 8 }
-			}
-			has_ambition = obj_improve_learning
-		}
+		amb_learning_sch_trigger = yes
 		NOT = { has_character_flag = flying_machine }
 		NOT = { has_character_flag = ancient_tome }
 		NOT = { has_character_flag = hermit_visit }
@@ -2103,13 +1998,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_family
-				NOT = { diplomacy = 8 }
-			}
-			has_ambition = obj_improve_diplomacy
-		}
+		amb_dip_family_trigger = yes
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
@@ -2354,13 +2243,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_carousing
-				NOT = { diplomacy = 8 }
-			}
-			has_ambition = obj_improve_diplomacy
-		}
+		amb_dip_carousing_trigger = yes
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
@@ -2425,13 +2308,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_carousing
-				NOT = { diplomacy = 8 }
-			}
-			has_ambition = obj_improve_diplomacy
-		}
+		amb_dip_carousing_trigger = yes
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
@@ -2602,13 +2479,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_carousing
-				NOT = { diplomacy = 8 }
-			}
-			has_ambition = obj_improve_diplomacy
-		}
+		amb_dip_carousing_trigger = yes
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
@@ -2638,13 +2509,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_carousing
-				NOT = { diplomacy = 8 }
-			}
-			has_ambition = obj_improve_diplomacy
-		}
+		amb_dip_carousing_trigger = yes
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
 		NOT = { has_character_flag = the_suicide }
@@ -2673,13 +2538,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_carousing
-				NOT = { diplomacy = 8 }
-			}
-			has_ambition = obj_improve_diplomacy
-		}
+		amb_dip_carousing_trigger = yes
 		NOT = { religion_group = indian_group }
 		NOT = { has_character_flag = the_feud }
 		NOT = { has_character_flag = the_mirror }
@@ -2715,13 +2574,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_intrigue
-				NOT = { intrigue = 8 }
-			}
-			has_ambition = obj_improve_intrigue
-		}
+		amb_int_intrigue_trigger = yes
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
@@ -3166,13 +3019,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_intrigue
-				NOT = { intrigue = 8 }
-			}
-			has_ambition = obj_improve_intrigue
-		}
+		amb_int_intrigue_trigger = yes
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
@@ -3228,13 +3075,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_intrigue
-				NOT = { intrigue = 8 }
-			}
-			has_ambition = obj_improve_intrigue
-		}
+		amb_int_intrigue_trigger = yes
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
@@ -3322,13 +3163,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_intrigue
-				NOT = { intrigue = 8 }
-			}
-			has_ambition = obj_improve_intrigue
-		}
+		amb_int_intrigue_trigger = yes
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
@@ -3357,13 +3192,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_intrigue
-				NOT = { intrigue = 8 }
-			}
-			has_ambition = obj_improve_intrigue
-		}
+		amb_int_intrigue_trigger = yes
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }
@@ -3392,13 +3221,7 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		OR = {
-			AND = {
-				has_focus = focus_intrigue
-				NOT = { intrigue = 8 }
-			}
-			has_ambition = obj_improve_intrigue
-		}
+		amb_int_intrigue_trigger = yes
 		NOT = { has_character_flag = the_necklace }
 		NOT = { has_character_flag = gossip }
 		NOT = { has_character_flag = old_spymaster }

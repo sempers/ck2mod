@@ -1432,7 +1432,10 @@ character_event = {
 		}
 		
 		prestige = 500
-		add_trait = impaler
+		if = {
+			limit = { NOT = { trait = impaler } }
+			add_trait = impaler
+		}	
 		
 		tooltip = {
 			FROM = {

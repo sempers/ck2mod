@@ -4779,14 +4779,12 @@ character_event = {
 	option = {
 		name = EVTOPTA6358
 		prestige = 100
-		if = {
-			limit = { no_lifestyle_traits_trigger = no }
-			change_learning = 1
-		}
+		change_learning = 1
 		if = {
 			limit = {
 				no_lifestyle_traits_trigger = yes
 				NOT = { has_dlc = "Way of Life" }
+				NOT = { trait = scholar }
 			}
 			add_trait = scholar
 		}

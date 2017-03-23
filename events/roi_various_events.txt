@@ -4437,6 +4437,7 @@ narrative_event = {
 			limit = {
 				no_lifestyle_traits_trigger = yes
 				NOT = { has_dlc = "Way of Life" }
+				NOT = { trait = scholar }
 			}
 			random = {
 				chance = 50

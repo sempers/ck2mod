@@ -1845,6 +1845,7 @@ character_event = {
 			NOT = { religion_group = muslim }
 			NOT = { religion_group = zoroastrian_group }
 			NOT = { religion_group = indian_group }
+			NOT = { trait = seductress }
 		}
 		ai_chance = {
 			factor = 100

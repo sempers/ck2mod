@@ -6900,17 +6900,15 @@ character_event = {
         name = EVTOPTA_MNM_4204
 
         custom_tooltip = { text = EVTOPTA_MNM_4204_TT }
-
-        if = {
-        	limit = { has_character_modifier = green_fingers }
-        	add_trait = gardener
-        }
-        trigger = {
+		
+		trigger = {
         	no_lifestyle_traits_trigger = yes
-        	NOT = { trait = gardener }
         	has_character_modifier = green_fingers
+			NOT = { trait = gardener }
 		}
-    }
+		
+       	add_trait = gardener
+	}
 
     option = { # Embrace this new interest
         name = EVTOPTB_MNM_4204

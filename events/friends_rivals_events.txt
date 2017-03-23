@@ -8398,7 +8398,6 @@ character_event = {
 		NOT = { has_character_modifier = in_seclusion }
 		NOR = {
 			religion_group = muslim
-			no_lifestyle_traits_trigger = no
 			has_character_flag = LE_ST
 		}
 		is_inaccessible_trigger = no
@@ -8484,7 +8483,12 @@ character_event = {
 			trait = lustful
 		}
 		prestige = 5
-		add_trait = hedonist
+		if = { limit = { 
+				no_lifestyle_traits_trigger = yes
+				NOT = {trait = hedonist } 
+		}
+			add_trait = hedonist
+		}
 	}
 }
 
@@ -8597,7 +8601,6 @@ character_event = {
 		in_command_trigger = no
 		NOR = {
 			religion_group = muslim
-			no_lifestyle_traits_trigger = no
 			has_character_flag = LE_ST
 		}
 		is_inaccessible_trigger = no
@@ -8787,7 +8790,6 @@ character_event = {
 	
 	trigger = {
 		in_command_trigger = no
-		no_lifestyle_traits_trigger = yes
 		NOT = {
 			has_character_flag = LE_ST
 		}

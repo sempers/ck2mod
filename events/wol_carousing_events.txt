@@ -1965,12 +1965,17 @@ character_event = {
 		name = EVTOPTB_WoL_4800 # Party and carousing is all I wanna do...
 		trigger = {
 			has_focus = focus_carousing
-			no_lifestyle_traits_trigger = yes
+			no_lifestyle_traits_trigger = yes			
 			has_character_modifier = dedicated_carouser
 		}
 		prestige = 20
 		remove_character_modifier = dedicated_carouser
-		add_trait = hedonist
+		if = {		
+			limit = { 				
+				NOT = { trait = hedonist } 
+			}
+			add_trait = hedonist
+		}	
 		clr_character_flag = played_games_today
 		clr_character_flag = game_play_for_money
 		if = {
@@ -1997,7 +2002,10 @@ character_event = {
 		}
 		prestige = 20
 		remove_character_modifier = dedicated_carouser
-		add_trait = socializer
+		if = {
+			limit = { NOT = { trait = socializer } }
+			add_trait = socializer
+		}		
 		clr_character_flag = played_games_today
 		clr_character_flag = game_play_for_money
 		if = {
@@ -2025,7 +2033,10 @@ character_event = {
 		clr_character_flag = played_games_today
 		clr_character_flag = game_play_for_money
 		remove_character_modifier = apprentice_boardgamer
-		add_trait = gamer
+		if = {
+			limit = { NOT = { trait = gamer } }
+			add_trait = gamer
+		}
 		if = {
 			limit = { trait = stressed }
 			random = {

@@ -9335,6 +9335,7 @@ character_event = {
 						}
 					}
 				}
+				
 				modifier = {
 					factor = 0.65
 					NOT = {
@@ -9367,6 +9368,43 @@ character_event = {
 						}
 					}
 				}
+				
+				modifier = {
+					factor = 0.8
+					event_target:looter = {
+						stewardship = 20
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:looter = {
+						learning = 20
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:looter = {
+						intrigue = 20
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:looter = {
+						stewardship = 30
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:looter = {
+						learning = 30
+					}
+				}
+				modifier = {
+					factor = 0.8
+					event_target:looter = {
+						intrigue = 30
+					}
+				}				
 			}
 		}
 		FROM = {

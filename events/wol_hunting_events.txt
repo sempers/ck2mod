@@ -608,7 +608,10 @@ character_event = {
 		name = EVTOPTA_WoL_5030 # Kill and get hunter trait
 		prestige = 200
 		if = {
-			limit = { no_lifestyle_traits_trigger = yes }
+			limit = { 
+				no_lifestyle_traits_trigger = yes
+				NOT = { trait = hunter }
+			}
 			add_trait = hunter
 		}
 		hidden_tooltip = { remove_character_modifier = do_not_disturb }
@@ -705,10 +708,13 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA_WoL_5035
-		trigger = {
-			no_lifestyle_traits_trigger = yes
+		if = {
+			limit = {
+				no_lifestyle_traits_trigger = yes
+				NOT = {trait = hunter}
+			}
+			add_trait = hunter
 		}
-		add_trait = hunter
 		if = {
 			limit = { has_nickname = no }
 			give_nickname = nick_the_hunter

@@ -1875,7 +1875,10 @@ character_event = {
 			}
 		}
 		if = {
-			limit = { no_lifestyle_traits_trigger = yes }
+			limit = { 
+				no_lifestyle_traits_trigger = yes 
+				NOT = { trait = impaler }
+			}
 			random = {
 				chance = 50
 				add_trait = impaler

@@ -28,7 +28,7 @@ strange_chest = {
 necronomicon = {
 	learning = 5
 	diplomacy = -1
-	quality = 4
+	quality = 5
 	monthly_character_piety = -2
 	flags = { book unholy }
 	stacking = no
@@ -977,9 +977,9 @@ spear_of_destiny = {
 }
 
 holy_grail = {
-	monthly_character_prestige = 0.5
+	monthly_character_prestige = 1
 	health = 4
-	same_religion_opinion = 5
+	same_religion_opinion = 10
 	active = { religion_group = christian }
 	quality = 5
 	flags = { religious christian very_rare crucifixion fantasy }
@@ -990,7 +990,7 @@ holy_grail = {
 holy_chalice = {
 	monthly_character_piety = 0.5
 	monthly_character_prestige = 2
-	health = 1
+	health = 2
 	same_religion_opinion = 10
 	active = { religion_group = christian }
 	quality = 5
@@ -2843,7 +2843,7 @@ ingredient_metal_exotic9 = {
 
 emerald_tablet = {
 	learning = 2
-	tech_growth_modifier = 0.05
+	tech_growth_modifier = 0.1
 	quality = 4
 	active = { 
 		society_member_of = hermetics 
@@ -2892,8 +2892,8 @@ radius_astronomicus = {
 hermetic_cypher_machine = {
 	learning = 1
 	intrigue = 2
-	plot_power_modifier = 0.1
-	quality = 2
+	plot_power_modifier = 0.2
+	quality = 3
 	active = { society_member_of = hermetics }
 	flags = { hermetics invention }
 	picture = "GFX_relicbox_iron"
@@ -2902,10 +2902,11 @@ hermetic_cypher_machine = {
 
 hermetic_plate_armor = {
 	learning = 1
+	martial = 1
 	combat_rating = 1 
 	monthly_character_prestige = 0.25
 	command_modifier = { morale_offence = 0.05 }
-	quality = 1
+	quality = 2
 	active = { society_member_of = hermetics }
 	flags = { hermetics invention }
 	picture = "GFX_suit_of_armor_gold"

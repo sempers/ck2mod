@@ -117,6 +117,10 @@ obj_become_chancellor = {
 			diplomacy = 20
 		}
 		modifier = {
+			factor = 1.5
+			diplomacy = 25
+		}
+		modifier = {
 			factor = 20
 			liege = { job_chancellor = { NOT = { diplomacy = ROOT } } }
 		}
@@ -303,6 +307,10 @@ obj_become_marshal = {
 		modifier = {
 			factor = 1.5
 			martial = 20
+		}
+		modifier = {
+			factor = 1.5
+			martial = 25
 		}
 		modifier = {
 			factor = 10
@@ -501,6 +509,14 @@ obj_become_treasurer = {
 			stewardship = 20
 		}
 		modifier = {
+			factor = 1.5
+			stewardship = 25
+		}
+		modifier = {
+			factor = 1.5
+			stewardship = 30
+		}
+		modifier = {
 			factor = 10
 			liege = { job_treasurer = { NOT = { stewardship = ROOT } } }
 		}
@@ -688,6 +704,10 @@ obj_become_spymaster = {
 			intrigue = 20
 		}
 		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
 			factor = 10
 			liege = { job_spymaster = { NOT = { intrigue = ROOT } } }
 		}
@@ -867,6 +887,10 @@ obj_become_spiritual = {
 		modifier = {
 			factor = 1.5
 			learning = 20
+		}
+		modifier = {
+			factor = 1.5
+			learning = 25
 		}
 		modifier = {
 			factor = 10
@@ -2272,7 +2296,13 @@ obj_improve_martial = {
 	}
 
 	allow = {
-		NOT = { martial = 8 }
+		OR = {
+			NOT = { martial = 10 }
+			AND = {
+				trait = immortal
+				martial <= 30
+			}
+		}
 		NOT = { trait = infirm }
 		NOT = { trait = incapable }
 	}
@@ -2311,7 +2341,16 @@ obj_improve_martial = {
 		}
 	}
 	success = {
-		martial = 8
+		OR = {
+			AND = {
+				trait = immortal
+				martial = 30
+			}
+			AND = {
+				NOT = {trait = immortal}
+				martial = 10
+			}
+		}
 	}
 	abort = {
 		OR = {
@@ -2373,7 +2412,13 @@ obj_improve_stewardship = {
 	}
 
 	allow = {
-		NOT = { stewardship = 8 }
+		OR = {
+			NOT = { stewardship = 10 }
+			AND = {
+				trait = immortal
+				stewardship <= 30
+			}
+		}
 		NOT = { trait = infirm }
 		NOT = { trait = incapable }
 	}
@@ -2412,7 +2457,16 @@ obj_improve_stewardship = {
 		}
 	}
 	success = {
-		stewardship = 8
+		OR = {
+			AND = {
+				trait = immortal
+				stewardship = 30
+			}
+			AND = {
+				NOT = {trait = immortal}
+				stewardship = 10
+			}
+		}
 	}
 	abort = {
 		OR = {
@@ -2477,7 +2531,13 @@ obj_improve_learning = {
 	}
 
 	allow = {
-		NOT = { learning = 8 }
+		OR = {
+			NOT = { learning = 10 }
+			AND = {
+				trait = immortal
+				learning <= 30
+			}
+		}
 		NOT = { trait = incapable }
 		NOT = { trait = infirm }
 	}
@@ -2516,7 +2576,16 @@ obj_improve_learning = {
 		}
 	}
 	success = {
-		learning = 8
+		OR = {
+			AND = {
+				trait = immortal
+				learning = 30
+			}
+			AND = {
+				NOT = {trait = immortal}
+				learning = 10
+			}
+		}
 	}
 	abort = {
 		OR = {
@@ -2577,7 +2646,13 @@ obj_improve_diplomacy = {
 	}
 
 	allow = {
-		NOT = { diplomacy = 8 }
+		OR = {
+			NOT = { diplomacy = 10 }
+			AND = {
+				trait = immortal
+				diplomacy <= 30
+			}
+		}
 		NOT = { trait = incapable }
 		NOT = { trait = infirm }
 	}
@@ -2616,7 +2691,16 @@ obj_improve_diplomacy = {
 		}
 	}
 	success = {
-		diplomacy = 8
+		OR = {
+			AND = {
+				trait = immortal
+				diplomacy = 30
+			}
+			AND = {
+				NOT = {trait = immortal}
+				diplomacy = 10
+			}
+		}
 	}
 	abort = {
 		OR = {
@@ -2677,7 +2761,13 @@ obj_improve_intrigue = {
 	}
 
 	allow = {
-		NOT = { intrigue = 8 }
+		OR = {
+			NOT = { intrigue = 10 }
+			AND = {
+				trait = immortal
+				intrigue <= 30
+			}
+		}
 		NOT = { trait = incapable }
 		NOT = { trait = infirm }
 	}
@@ -2716,7 +2806,16 @@ obj_improve_intrigue = {
 		}
 	}
 	success = {
-		intrigue = 8
+		OR = {
+			AND = {
+				trait = immortal
+				intrigue = 30
+			}
+			AND = {
+				NOT = {trait = immortal}
+				intrigue = 10
+			}
+		}
 	}
 	abort = {
 		OR = {

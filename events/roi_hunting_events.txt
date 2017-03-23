@@ -821,6 +821,7 @@ character_event = {
 		if = {
 			limit = {
 				no_lifestyle_traits_trigger = yes
+				NOT = { trait = hunter }
 				NOT = { has_dlc = "Way of Life" }
 			}
 			add_trait = hunter

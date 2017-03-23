@@ -1995,6 +1995,7 @@ character_event = {
 		}
 		martial = 10
 		no_lifestyle_traits_trigger = yes
+		NOT = { trait = duelist }
 	}
 
 	immediate = {

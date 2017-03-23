@@ -1737,7 +1737,6 @@ character_event = {
 						trait = kind
 						trait = craven
 						is_weak_trigger = yes
-						no_lifestyle_traits_trigger = yes
 					}
 				}
 				modifier = {
@@ -4047,7 +4046,6 @@ character_event = {
 			trait = kind
 			trait = craven
 			is_weak_trigger = yes
-			no_lifestyle_traits_trigger = no
 		}
 	}
 
@@ -4057,7 +4055,10 @@ character_event = {
 
 	option = {
 		name = "EVTOPTA70026"
-		add_trait = duelist
+		if = {
+			limit = { NOT = { trait = duelist }}
+			add_trait = duelist
+		}		
 	}
 }
 

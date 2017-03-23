@@ -206,8 +206,13 @@ character_event = {
 		ai_chance = {
 			factor = 100
 		}
+		
+		trigger = {
+			NOT = { trait = schemer }
+		}
+		
 		remove_character_modifier = wol_schemer_2
-		add_trait = schemer
+		add_trait = schemer			
 		
 		hidden_tooltip = {
 			if = {
@@ -226,6 +231,10 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTB_WOL_2003
+		
+		trigger = {
+			NOT = { trait = impaler }
+		}
 		
 		ai_chance = {
 			factor = 20
@@ -253,7 +262,7 @@ character_event = {
 		
 		remove_character_modifier = wol_schemer_2
 		add_trait = impaler
-		
+				
 		hidden_tooltip = {
 			if = {
 				limit = {
@@ -274,7 +283,7 @@ character_event = {
 	option = {
 		name = EVTOPTC_WOL_2003
 		ai_chance = {
-			factor = 0
+			factor = 0.01
 		}
 		set_character_flag = wol_no_to_intrigue_trait
 	}
