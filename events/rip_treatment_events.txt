@@ -2215,6 +2215,12 @@ character_event = {
 					modifier = {
 						factor = 1.2
 						FROM = {
+							learning = 30
+						}
+					}
+					modifier = {
+						factor = 1.2
+						FROM = {
 							learning = 25
 						}
 					}
@@ -2288,6 +2294,12 @@ character_event = {
 						factor = 0.8
 						is_strong_trigger = yes
 					}
+					modifier = {
+						factor = 0.8
+						FROM = {
+							learning = 30
+						}
+					}					
 					modifier = {
 						factor = 0.8
 						FROM = {

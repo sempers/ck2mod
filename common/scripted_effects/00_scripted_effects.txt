@@ -4510,6 +4510,10 @@ detract_society_currency_major_effect = {
 	change_society_currency = -500
 }
 
+detract_society_currency_massive_effect = {
+	change_society_currency = -1000
+}
+
 remove_random_maimed_effect = { #remember to clear flags if using this effect :D
 	random_list = {
 		40 = {

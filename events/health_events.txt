@@ -137,11 +137,23 @@ character_event = {
 
 		modifier = {
 			factor = 0.5
-			health = 8
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			health = 9
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 	}
 
@@ -267,12 +279,32 @@ character_event = {
 
 	mean_time_to_happen = {
 		months = 25000
+		
+		modifier = {
+			factor = 0.5
+			base_health = 6
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
+		}
 	}
 
 	option = {
 		name = EVTOPTA6011
 		remove_trait = leper
-		treasury = -25
 	}
 }
 
@@ -504,7 +536,23 @@ character_event = {
 		months = 12000
 		modifier = {
 			factor = 0.5
-			health = 6
+			base_health = 6
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 	}
 	
@@ -534,7 +582,23 @@ character_event = {
 		months = 20000
 		modifier = {
 			factor = 0.5
-			health = 6
+			base_health = 6
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 	}
 
@@ -643,6 +707,19 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			piety = 10
+		}
+		
+		modifier = {
+			factor = 0.5
+			health = 6
+		}
+		modifier = {
+			factor = 0.5
+			health = 8
+		}
+		modifier = {
+			factor = 0.5
+			health = 10
 		}
 	}
 	
@@ -1269,6 +1346,14 @@ character_event = {
 			factor = 0.5
 			base_health = 8
 		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
+		}
 	}
 
 	option = {
@@ -1452,13 +1537,24 @@ character_event = {
 		}
 
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			base_health = 6
 		}
-
 		modifier = {
-			factor = 0.75
+			factor = 0.5
 			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 
 		modifier = {
@@ -1751,11 +1847,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 6.0
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 7.0
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 		modifier = {
 			factor = 1.5
@@ -1842,11 +1950,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 6.0
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 7.0
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 		modifier = {
 			factor = 1.5
@@ -1933,11 +2053,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 6.0
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 7.0
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 		modifier = {
 			factor = 1.5
@@ -2023,11 +2155,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 6.0
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 7.0
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 		modifier = {
 			factor = 1.5
@@ -2144,11 +2288,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 6.0
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 7.0
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 		modifier = {
 			factor = 1.5
@@ -2235,11 +2391,23 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 6.0
+			base_health = 6
 		}
 		modifier = {
 			factor = 0.5
-			base_health = 7.0
+			base_health = 7
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 8
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 9
+		}
+		modifier = {
+			factor = 0.5
+			base_health = 10
 		}
 		modifier = {
 			factor = 1.5
@@ -2452,6 +2620,14 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			learning = 20
+		}
+		modifier = {
+			factor = 0.8
+			learning = 25
+		}
+		modifier = {
+			factor = 0.8
+			learning = 30
 		}
 		modifier = {
 			factor = 1.2

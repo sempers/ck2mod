@@ -2840,7 +2840,7 @@ character_event = {
 						trait = kind
 						trait = craven
 						is_weak_trigger = yes
-						no_lifestyle_traits_trigger = no					
+						NOT = { no_lifestyle_traits_trigger = yes }					
 					}
 				}
 				modifier = {

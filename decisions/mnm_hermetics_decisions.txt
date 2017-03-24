@@ -5,6 +5,93 @@
 ###########################################
 
 targeted_decisions = {
+	brew_rejuvenation_potion = {
+		filter = court
+		ai_target_filter = court
+
+		from_potential = {
+			has_dlc = "Mystics"
+			society_rank >= 4
+			society_member_of = hermetics 
+		}
+		
+		potential = {
+			
+		}
+		
+		allow = {
+			FROM = { has_society_currency_massive_trigger = yes }
+			NOT = {
+				has_character_flag = rejuvenation_in_effect
+				has_character_modifier = rejuvenation_recent
+			}			
+			custom_tooltip = {
+				text = "[Root.GetFirstName] is injured, sick, maimed or genetically abnormal in any way"
+				OR = {
+					has_disease_trigger = yes
+					has_symptom_trigger = yes
+					has_injury_trigger = yes
+					is_maimed_trigger = yes
+					has_disability_trigger = yes
+				}
+			}
+		}
+		
+		revoke_allowed = { always = no }
+		
+		effect = {
+			FROM = { detract_society_currency_massive_effect = yes }
+			
+			if = {
+				limit = { has_disease_trigger = yes }
+				set_character_flag = rejuvenation_disease_flag
+			}
+			if = {
+				limit = { is_maimed_trigger = yes }
+				set_character_flag = rejuvenation_maimed_flag
+			}
+			if = {
+				limit = { has_injury_trigger = yes }
+				set_character_flag = rejuvenation_injury_flag
+			}
+			if = {
+				limit = { has_disability_trigger = yes }
+				set_character_flag = rejuvenation_disability_flag
+			}
+			
+			set_character_flag = rejuvenation_in_effect
+			
+			if = {
+				limit = { character = FROM } #Making yourself a potion
+				custom_tooltip = {
+					text = "Brew and drink potion yourself"				
+					character_event = { id = MNM.1411 days = 13 }
+				}
+			}
+
+			if = {
+				limit = { NOT = { character = FROM } } #Making someone else a potion
+				custom_tooltip = {
+					text = "Brew and offer potion to character"
+					character_event = { id = MNM.1412 days = 13 }
+				}
+			}
+		}
+		
+		ai_will_do = {
+			factor = 0.25
+			modifier = {
+				OR = {
+					is_maimed_trigger = yes
+					has_disease_trigger = yes
+					has_injury_trigger = yes
+				}
+				factor = 2
+			}
+		}	
+	}
+
+
 	brew_happiness_potion = {
 		filter = court
 		ai_target_filter = court
@@ -36,8 +123,7 @@ targeted_decisions = {
 			}
 		}
 
-		effect = {
-			detract_society_currency_minor_effect = yes
+		effect = {		
 
 			if = {
 				limit = { character = FROM } #Making yourself a potion
@@ -57,6 +143,7 @@ targeted_decisions = {
 			}
 
 			tooltip = {
+				detract_society_currency_minor_effect = yes
 				if = { 
 					limit = { trait = stressed }
 					remove_trait = stressed

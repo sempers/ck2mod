@@ -4016,7 +4016,7 @@ character_event = {
 			10 = {
 				modifier = {
 					factor = 0
-					no_lifestyle_traits_trigger = no
+					NOT = { no_lifestyle_traits_trigger = yes }
 				}
 				modifier = {
 					factor = 0

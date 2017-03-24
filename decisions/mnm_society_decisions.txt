@@ -53,9 +53,9 @@ society_decisions = { # Society decisions are only evaluated by members of socie
 					}
 					AND = {
 						society_rank == 2
-						society_currency >= 1000
+						society_currency >= 1500
 					}
-					society_currency >= 2000 # rank 3
+					society_currency >= 3000 # rank 3
 				}
 			}
 			custom_tooltip = { # No vices for Buddhist/Jain
@@ -164,11 +164,11 @@ society_decisions = { # Society decisions are only evaluated by members of socie
 			}
 			if = {
 				limit = { society_rank == 2 }
-				change_society_currency = -1000
+				change_society_currency = -1500
 			}
 			if = {
 				limit = { society_rank == 3 }
-				change_society_currency = -2000
+				change_society_currency = -3000
 			}
 
 			#Perform rank up
@@ -1302,56 +1302,6 @@ targeted_decisions = {
 		}
 	}
 	
-	#Dark healing other
-	devil_worshipers_dark_healing_other = {
-		is_in_society = yes
-		
-		filter = court
-		ai_target_filter = court
-		
-		potential = {
-			has_dlc = "Mystics"
-			is_devil_worshiper_trigger = yes
-			society_rank >= 3
-			ROOT = {
-				NOR = {
-					has_character_flag = dark_healing_in_effect
-					has_character_modifier = dark_healing_recent
-				}
-			}
-		}
-		
-		allow = {
-			has_society_currency_medium_trigger = yes
-			custom_tooltip = {
-				text = devil_worshipers_dark_healing_tooltip
-				ROOT = {
-					OR = {
-						has_disease_trigger = yes
-						has_symptom_trigger = yes
-						has_injury_trigger = yes
-						is_maimed_trigger = yes
-						trait = infirm
-						trait = mangled
-						trait = eunuch
-						trait = blinded
-						trait = incapable
-					}
-				}
-			}
-		}
-		effect = {
-			detract_society_currency_major_effect = yes
-			ROOT = {
-				increase_visibility_effect = yes
-				character_event = { id = MNM.7118 days = 0 }
-				set_character_flag = dark_healing_in_effect
-			}
-		}
-		ai_will_do = {
-			factor = 0
-		}
-	}
 
 	#Power: Demonic Possession
 	devil_worshipers_demonic_possession = {

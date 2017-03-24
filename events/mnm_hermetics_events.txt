@@ -6782,8 +6782,7 @@ character_event = {
 					character_event = { id = MNM.1403 days = 150 random = 600 }  
 				}
 			} 
-    	}
-        
+    	}       
 
         reverse_opinion = {
         	who = FROM
@@ -6814,6 +6813,1013 @@ character_event = {
         }
     }
 }
+
+#Power: Rejuvenation potion
+
+#Drink rejuvenation potion
+character_event = {
+    id = MNM.1410
+    desc = "The Potion of Rejuvenation has rather weird taste and odour. Nevertheless, according to ancient tomes and papyri of the Hermetic society, the recipe of this panacaea would help to overcome every known disease and even undo disabilities and maims."
+    picture = GFX_evt_experiment
+    border = GFX_event_normal_frame_religion
+
+    #hide_from = yes
+
+    is_triggered_only = yes
+    
+	immediate = {
+		if = {
+			limit = { has_disease_trigger = yes }
+			set_character_flag = rejuvenation_disease_flag
+		}
+		if = {
+			limit = { is_maimed_trigger = yes }
+			set_character_flag = rejuvenation_maimed_flag
+		}
+		if = {
+			limit = { has_injury_trigger = yes }
+			set_character_flag = rejuvenation_injury_flag
+		}
+		if = {
+			limit = { has_disability_trigger = yes }
+			set_character_flag = rejuvenation_disability_flag
+		}
+	}
+	
+    option = { 
+        name = "Drink the Potion"
+		custom_tooltip = {
+			text = "The rejuvenation process begins."
+		}
+		character_event = { id = MNM.1411 days = 2 }
+    }
+}
+
+#Rejuvenation result - for me
+character_event = {
+    id = MNM.1411
+    picture = GFX_evt_experiment
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+    
+	immediate = {
+		random_list = {
+				3 = { set_character_flag = rejuvenation_nothing_happened }
+				7 = {
+					random_list = {
+						10 = {
+							modifier = {
+								NOT = { has_negative_congenital_trigger = yes}
+								factor = 0
+							}
+							#remove_random_negative_congenital_trait = yes
+							set_character_flag = rejuvenation_neg_con_removed
+						}
+						10 = {
+							modifier = {
+								OR = {
+									trait = flu
+									trait = food_poisoning
+								}
+								factor = 2
+							}
+							modifier = {
+								trait = cancer
+								NOT = { trait = has_measles }
+								NOT = { trait = flu }
+								NOT = { trait = food_poisoning }
+								NOT = { trait = gout }
+								NOT = { trait = scurvy }
+								NOT = { trait = lovers_pox }
+								NOT = { trait = pneumonic }
+								NOT = { trait = syphilitic }
+								NOT = { trait = leper }
+								factor = 0.5
+							}
+							remove_random_disease_effect = yes 					# sets a flag to remove random "regular" disease
+							set_character_flag = rejuvenation_disease_removed
+						}
+						10 = {
+							modifier = {
+								NOT = { has_epidemic_disease_trigger = yes }
+								factor = 0
+							}
+							remove_random_epidemic_disease_effect = yes # sets a flag to remove random epidemic disease
+							set_character_flag = rejuvenation_disease_removed
+						}
+						10 = {
+							modifier = {
+								is_maimed_trigger = no
+								factor = 0
+							}
+							modifier = {
+								trait = mangled
+								factor = 2
+							}
+							remove_random_maimed_effect = yes
+							set_character_flag = rejuvenation_maimed
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = infirm }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_infirm
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = incapable }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_incapable
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = eunuch }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_eunuch
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = blinded }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_blinded
+						}
+					}
+				}
+			}
+	}
+	
+	desc = {
+		trigger = {
+			has_character_flag = rejuvenation_neg_con_removed
+		}
+		text = "The Potion fixed some abnormalities that had been with you since your birth"
+	}
+	
+	desc = {
+		trigger = {
+			OR = {
+				has_character_flag = rejuvenation_incapable
+				has_character_flag = rejuvenation_infirm
+			}
+		}
+		text = "The Potion recovered your incapability."
+	}
+	desc = {
+		trigger = {
+			has_character_flag = rejuvenation_blinded
+		}
+		text = "The Potion returned your sight."
+	}
+	desc = {
+		trigger = {
+			has_character_flag = rejuvenation_eunuch
+		}
+		text = "The Potion mystically completed you with your male parts."
+	}
+
+	desc = {
+		trigger = {
+			has_character_flag = rejuvenation_maimed
+		}
+		text = "The Potion you've drunk made you regrow your limbs and heal even the most severe of your mutilations."
+	}
+
+	desc = {
+		trigger = {
+			NOT = {
+				has_character_flag = rejuvenation_incapable
+				has_character_flag = rejuvenation_eunuch
+				has_character_flag = rejuvenation_blinded
+				has_character_flag = rejuvenation_maimed_healed
+				has_character_flag = rejuvenation_infirm
+			}
+			has_character_flag = rejuvenation_disease_flag
+			has_character_flag = rejuvenation_disease_removed
+		}
+		text = "The Potion cured your disease."
+	}
+
+	desc = {
+		trigger = {
+			NAND = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_disease_removed
+			}
+			has_character_flag = rejuvenation_nothing_happened
+			OR = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_maimed_flag
+			}
+		}
+		text = "Unfortunately, you feel no change after drinking the Potion."
+	}
+	
+	desc = {
+		trigger = {
+			has_character_flag = rejuvenation_symptoms_removed
+		}
+		text = "The Potion relieved those unpleasant symptoms you had."
+	}
+	
+	desc = {
+		trigger = {
+			NAND = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_disease_removed
+			}
+			has_character_flag = rejuvenation_injured
+			has_character_flag = rejuvenation_nothing_happened
+			NOR = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_maimed_flag
+			}
+		}
+		text = "You feel well as usual."
+	}
+
+	desc = {
+		trigger = {
+			NAND = { 
+				has_character_flag = rejuvenation_injured 
+				has_character_flag = rejuvenation_disease_removed
+			}
+			has_character_flag = rejuvenation_nothing_happened
+		}
+		text = "You feel too weak."
+	}
+	
+    option = { 
+        name = "Rejuvenation Potion outcome"
+        custom_tooltip = { text = "Some of your bad effects are relieved. The Potion healed your wounds and various unpleasant symptoms." }
+        
+		#Diseases and symptoms
+		if = {
+			limit = { has_character_flag = rejuvenation_disease_removed }
+			#general disease clearing effects:
+			remove_symptoms_effect = yes
+			clear_disease_level_effect = yes
+			remove_disease_flags_effect = yes
+			hidden_effect = { remove_treatment_modifiers_effect = yes }
+		}
+		
+		#Injuries and generic ilness
+		if = { limit = { trait = infection } remove_trait = infection }
+		if = { limit = { trait = severely_injured } remove_trait = severely_injured }
+		if = { limit = { trait = ill } remove_trait = ill }		
+		if = { limit = { trait = wounded } remove_trait = wounded }
+
+		if = {
+			limit = { has_character_flag = rejuvenation_infirm }
+			remove_trait = infirm
+		}
+		if = {
+			limit = { has_character_flag = rejuvenation_blinded }
+			remove_trait = blinded
+		}
+		if = {
+			limit = { has_character_flag = rejuvenation_incapable }
+			remove_trait = incapable
+		}
+		if = {
+			limit = { has_character_flag = rejuvenation_eunuch }
+			remove_trait = eunuch
+		}
+		if = {
+			limit = { has_character_flag = removed_maimed }
+			remove_trait = maimed
+		}
+		if = {
+			limit = { has_character_flag = removed_mangled }
+			remove_trait = mangled
+		}
+		if = {
+			limit = { has_character_flag = removed_one_eyed }
+			remove_trait = one_eyed
+			if = {
+				limit = {
+					has_character_modifier = glass_eye
+				}
+				remove_character_modifier = glass_eye
+			}
+			if = {
+				limit = {
+					has_character_modifier = phantom_pain
+					NOT = { trait = one_handed }
+					NOT = { trait = one_legged }
+					NOT = { trait = disfigured }
+				}
+				remove_character_modifier = phantom_pain
+			}
+		}
+		if = {
+			limit = { has_character_flag = removed_one_handed }
+			remove_trait = one_handed
+			if = {
+				limit = {
+					has_character_modifier = golden_hand
+				}
+				remove_character_modifier = golden_hand
+				wealth = 10
+			}
+			if = {
+				limit = {
+					has_character_modifier = iron_hand
+				}
+				remove_character_modifier = iron_hand
+			}
+			if = {
+				limit = {
+					has_character_modifier = phantom_pain
+					NOT = { trait = one_eyed }
+					NOT = { trait = one_legged }
+					NOT = { trait = disfigured }
+				}
+				remove_character_modifier = phantom_pain
+			}
+		}
+		if = {
+			limit = { has_character_flag = removed_one_legged }
+			remove_trait = one_legged
+			if = {
+				limit = {
+					has_character_modifier = peg_leg
+				}
+				remove_character_modifier = peg_leg
+			}
+			if = {
+				limit = {
+					has_character_modifier = prosthetic_leg
+				}
+				remove_character_modifier = prosthetic_leg
+			}
+			if = {
+				limit = {
+					has_character_modifier = phantom_pain
+					NOT = { trait = one_handed }
+					NOT = { trait = one_eyed }
+					NOT = { trait = disfigured }
+				}
+				remove_character_modifier = phantom_pain
+			}
+		}
+		if = {
+			limit = { has_character_flag = removed_disfigured }
+			remove_trait = disfigured
+			if = {
+				limit = {
+					has_character_modifier = golden_mask
+				}
+				remove_character_modifier = golden_mask
+				wealth = 10
+			}
+			if = {
+				limit = {
+					has_character_modifier = phantom_pain
+					NOT = { trait = one_handed }
+					NOT = { trait = one_legged }
+					NOT = { trait = one_eyed }
+				}
+				remove_character_modifier = phantom_pain
+			}
+		}
+		
+		#Diseases
+		if = {
+			limit = { has_character_flag = removing_flu }
+			remove_trait = flu
+		}
+		if = {
+			limit = { has_character_flag = removing_measles }
+			remove_trait = has_measles
+			set_character_flag = immune_measles
+		}
+		if = {
+			limit = { has_character_flag = removing_food_poisoning }
+			remove_trait = food_poisoning
+		}
+		if = {
+			limit = { has_character_flag = removing_gout }
+			remove_trait = gout
+		}
+		if = {
+			limit = { has_character_flag = removing_scurvy }
+			remove_trait = scurvy
+		}
+		if = {
+			limit = { has_character_flag = removing_lovers_pox }
+			remove_trait = lovers_pox
+		}
+		if = {
+			limit = { has_character_flag = removing_cancer }
+			remove_trait = cancer
+		}
+		if = {
+			limit = { has_character_flag = removing_pneumonic }
+			remove_trait = pneumonic
+		}
+		if = {
+			limit = { has_character_flag = removing_syphilitic }
+			remove_trait = syphilitic
+			set_character_flag = immune_syphilis
+		}
+		if = {
+			limit = { has_character_flag = removing_leper }
+			remove_trait = leper
+		}
+		if = {
+			limit = { has_character_flag = removing_has_tuberculosis }
+			remove_trait = has_tuberculosis
+			set_character_flag = immune_tuberculosis
+		}
+		if = {
+			limit = { has_character_flag = removing_has_aztec_disease }
+			remove_trait = has_aztec_disease
+			set_character_flag = immune_aztec_disease
+		}
+		if = {
+			limit = { has_character_flag = removing_has_small_pox }
+			remove_trait = has_small_pox
+			set_character_flag = immune_smallpox
+		}
+		if = {
+			limit = { has_character_flag = removing_has_bubonic_plague }
+			remove_trait = has_bubonic_plague
+			set_character_flag = immune_bubonic_plague
+		}
+		if = {
+			limit = { has_character_flag = removing_has_typhus }
+			remove_trait = has_typhus
+			set_character_flag = immune_typhus
+		}
+		if = {
+			limit = { has_character_flag = removing_has_typhoid_fever }
+			remove_trait = has_typhoid_fever
+			set_character_flag = immune_typhoid_fever
+		}
+		
+		#Neg-con
+		if = {
+			limit = { has_character_flag = rejuvenation_neg_con_removed }
+			remove_random_negative_congenital_effect = yes
+			clr_character_flag = rejuvenation_neg_con_removed
+		}
+
+		add_character_modifier = {
+			modifier = rejuvenation_recent
+			years = 5
+		}		
+		
+		if = {
+			limit = { NOT = {has_character_flag = rejuvenation_nothing_happened } }
+			add_character_modifier = {
+				modifier = mystic_treatment_decent
+				year = 1
+			}
+		}
+		if = {
+			limit = { has_character_flag = rejuvenation_nothing_happened }
+			add_character_modifier = {
+				modifier = mystic_treatment_poor
+				year = 1
+			}		
+		}
+
+		clr_character_flag = rejuvenation_in_effect
+		clr_character_flag = rejuvenation_nothing_happened
+		clr_character_flag = rejuvenation_maimed_flag
+		clr_character_flag = rejuvenation_disease_flag
+		clr_character_flag = rejuvenation_disease_removed
+		clr_character_flag = rejuvenation_maimed_healed
+		clr_character_flag = rejuvenation_incapable
+		clr_character_flag = rejuvenation_infirm
+		clr_character_flag = rejuvenation_blinded
+		clr_character_flag = rejuvenation_eunuch
+		clr_character_flag = rejuvenation_injured
+		clr_character_flag = removed_maimed
+		clr_character_flag = removed_mangled
+		clr_character_flag = removed_one_eyed
+		clr_character_flag = removed_one_handed
+		clr_character_flag = removed_one_legged
+		clr_character_flag = removed_disfigured
+		clr_character_flag = removing_flu
+		clr_character_flag = removing_measles
+		clr_character_flag = removing_food_poisoning
+		clr_character_flag = removing_gout
+		clr_character_flag = removing_scurvy
+		clr_character_flag = removing_lovers_pox
+		clr_character_flag = removing_cancer
+		clr_character_flag = removing_leper
+		clr_character_flag = removing_has_tuberculosis
+		clr_character_flag = removing_has_aztec_disease
+		clr_character_flag = removing_has_small_pox
+		clr_character_flag = removing_has_bubonic_plague
+		clr_character_flag = removing_has_typhus
+		clr_character_flag = removing_has_typhoid_fever
+	
+    }
+}
+
+
+character_event = {
+	id = MNM.1412
+	picture = GFX_evt_experiment
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+	
+	option = {
+		name = "Bounce back to human"
+		FROMFROM = { character_event = { id = MNM.1413 days = 0 }
+	}
+}
+
+#Rejuvenation result - for other
+character_event = {
+    id = MNM.1413
+    picture = GFX_evt_experiment
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+    
+	immediate = {
+		FROM = {
+		random_list = {
+				3 = { set_character_flag = rejuvenation_nothing_happened }
+				7 = {
+					random_list = {
+						10 = {
+							modifier = {
+								NOT = { has_negative_congenital_trigger = yes}
+								factor = 0
+							}
+							#remove_random_negative_congenital_trait = yes
+							set_character_flag = rejuvenation_neg_con_removed
+						}
+						10 = {
+							modifier = {
+								OR = {
+									trait = flu
+									trait = food_poisoning
+								}
+								factor = 2
+							}
+							modifier = {
+								trait = cancer
+								NOT = { trait = has_measles }
+								NOT = { trait = flu }
+								NOT = { trait = food_poisoning }
+								NOT = { trait = gout }
+								NOT = { trait = scurvy }
+								NOT = { trait = lovers_pox }
+								NOT = { trait = pneumonic }
+								NOT = { trait = syphilitic }
+								NOT = { trait = leper }
+								factor = 0.5
+							}
+							remove_random_disease_effect = yes 					# sets a flag to remove random "regular" disease
+							set_character_flag = rejuvenation_disease_removed
+						}
+						10 = {
+							modifier = {
+								NOT = { has_epidemic_disease_trigger = yes }
+								factor = 0
+							}
+							remove_random_epidemic_disease_effect = yes # sets a flag to remove random epidemic disease
+							set_character_flag = rejuvenation_disease_removed
+						}
+						10 = {
+							modifier = {
+								is_maimed_trigger = no
+								factor = 0
+							}
+							modifier = {
+								trait = mangled
+								factor = 2
+							}
+							remove_random_maimed_effect = yes
+							set_character_flag = rejuvenation_maimed
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = infirm }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_infirm
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = incapable }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_incapable
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = eunuch }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_eunuch
+						}
+						10 = {
+							modifier = {
+								NOT = { trait = blinded }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_blinded
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	desc = {
+		trigger = {
+			FROM = { has_character_flag = rejuvenation_neg_con_removed }
+		}
+		text = "The Potion fixed some abnormalities that had been with [From.GetName] since birth"
+	}
+	
+	desc = {
+		trigger = {
+			FROM = {
+			OR = {
+				has_character_flag = rejuvenation_incapable
+				has_character_flag = rejuvenation_infirm
+			}
+			}
+		}
+		text = "The Potion recovered incapability of [From.GetName]."
+	}
+	desc = {
+		trigger = {
+			FROM = { has_character_flag = rejuvenation_blinded }
+		}
+		text = "The Potion returned sight to [From.GetName]."
+	}
+	desc = {
+		trigger = {
+			FROM = { has_character_flag = rejuvenation_eunuch }
+		}
+		text = "The Potion mystically completed [From.GetName] with his male parts."
+	}
+
+	desc = {
+		trigger = {
+			has_character_flag = rejuvenation_maimed
+		}
+		text = "The Potion drunk made [From.GetName] regrow [From.GetHerHis] limbs and heal even the most severe of [From.GetHerHis] mutilations."
+	}
+
+	desc = {
+		trigger = {
+			FROM = {
+			NOT = {
+				has_character_flag = rejuvenation_incapable
+				has_character_flag = rejuvenation_eunuch
+				has_character_flag = rejuvenation_blinded
+				has_character_flag = rejuvenation_maimed_healed
+				has_character_flag = rejuvenation_infirm
+			}
+			has_character_flag = rejuvenation_disease_flag
+			has_character_flag = rejuvenation_disease_removed
+			}
+		}
+		text = "The Potion cured the disease of [From.GetName]."
+	}
+
+	desc = {
+		trigger = {
+			FROM = {NAND = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_disease_removed
+			}
+			has_character_flag = rejuvenation_nothing_happened
+			OR = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_maimed_flag
+			}
+			}
+		}
+		text = "Unfortunately, [From.GetName] feels no change after drinking the Potion."
+	}
+	
+	desc = {
+		trigger = {
+		FROM = {
+			NAND = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_disease_removed
+			}
+			has_character_flag = rejuvenation_injured
+			has_character_flag = rejuvenation_nothing_happened
+			NOR = {
+				has_character_flag = rejuvenation_disease_flag
+				has_character_flag = rejuvenation_maimed_flag
+			}
+			}
+		}
+		text = "[From.GetName] feels as usual."
+	}
+
+	desc = {
+		trigger = {
+			FROM = {
+			NAND = { 
+				has_character_flag = rejuvenation_injured 
+				has_character_flag = rejuvenation_disease_removed
+			}
+			has_character_flag = rejuvenation_nothing_happened
+			}
+		}
+		text = "[From.GetName] feels too weak."
+	}
+	
+    option = { 
+        name = "Rejuvenation Potion outcome"
+        #custom_tooltip = { text = "Some of bad effects of [From.GetName] are relieved." }
+        
+		FROM = {
+			#Diseases and symptoms
+			if = {
+				limit = { has_character_flag = rejuvenation_disease_removed }
+				#general disease clearing effects:
+				remove_symptoms_effect = yes
+				clear_disease_level_effect = yes
+				remove_disease_flags_effect = yes
+				hidden_effect = { remove_treatment_modifiers_effect = yes }
+			}
+			
+			#Injuries and generic ilness
+			if = { limit = { trait = infection } remove_trait = infection }
+			if = { limit = { trait = severely_injured } remove_trait = severely_injured }
+			if = { limit = { trait = ill } remove_trait = ill }		
+			if = { limit = { trait = wounded } remove_trait = wounded }
+
+			if = {
+				limit = { has_character_flag = rejuvenation_infirm }
+				remove_trait = infirm
+			}
+			if = {
+				limit = { has_character_flag = rejuvenation_blinded }
+				remove_trait = blinded
+			}
+			if = {
+				limit = { has_character_flag = rejuvenation_incapable }
+				remove_trait = incapable
+			}
+			if = {
+				limit = { has_character_flag = rejuvenation_eunuch }
+				remove_trait = eunuch
+			}
+			if = {
+				limit = { has_character_flag = removed_maimed }
+				remove_trait = maimed
+			}
+			if = {
+				limit = { has_character_flag = removed_mangled }
+				remove_trait = mangled
+			}
+			if = {
+				limit = { has_character_flag = removed_one_eyed }
+				remove_trait = one_eyed
+				if = {
+					limit = {
+						has_character_modifier = glass_eye
+					}
+					remove_character_modifier = glass_eye
+				}
+				if = {
+					limit = {
+						has_character_modifier = phantom_pain
+						NOT = { trait = one_handed }
+						NOT = { trait = one_legged }
+						NOT = { trait = disfigured }
+					}
+					remove_character_modifier = phantom_pain
+				}
+			}
+			if = {
+				limit = { has_character_flag = removed_one_handed }
+				remove_trait = one_handed
+				if = {
+					limit = {
+						has_character_modifier = golden_hand
+					}
+					remove_character_modifier = golden_hand
+					wealth = 10
+				}
+				if = {
+					limit = {
+						has_character_modifier = iron_hand
+					}
+					remove_character_modifier = iron_hand
+				}
+				if = {
+					limit = {
+						has_character_modifier = phantom_pain
+						NOT = { trait = one_eyed }
+						NOT = { trait = one_legged }
+						NOT = { trait = disfigured }
+					}
+					remove_character_modifier = phantom_pain
+				}
+			}
+			if = {
+				limit = { has_character_flag = removed_one_legged }
+				remove_trait = one_legged
+				if = {
+					limit = {
+						has_character_modifier = peg_leg
+					}
+					remove_character_modifier = peg_leg
+				}
+				if = {
+					limit = {
+						has_character_modifier = prosthetic_leg
+					}
+					remove_character_modifier = prosthetic_leg
+				}
+				if = {
+					limit = {
+						has_character_modifier = phantom_pain
+						NOT = { trait = one_handed }
+						NOT = { trait = one_eyed }
+						NOT = { trait = disfigured }
+					}
+					remove_character_modifier = phantom_pain
+				}
+			}
+			if = {
+				limit = { has_character_flag = removed_disfigured }
+				remove_trait = disfigured
+				if = {
+					limit = {
+						has_character_modifier = golden_mask
+					}
+					remove_character_modifier = golden_mask
+					wealth = 10
+				}
+				if = {
+					limit = {
+						has_character_modifier = phantom_pain
+						NOT = { trait = one_handed }
+						NOT = { trait = one_legged }
+						NOT = { trait = one_eyed }
+					}
+					remove_character_modifier = phantom_pain
+				}
+			}
+			
+			#Diseases
+			if = {
+				limit = { has_character_flag = removing_flu }
+				remove_trait = flu
+			}
+			if = {
+				limit = { has_character_flag = removing_measles }
+				remove_trait = has_measles
+				set_character_flag = immune_measles
+			}
+			if = {
+				limit = { has_character_flag = removing_food_poisoning }
+				remove_trait = food_poisoning
+			}
+			if = {
+				limit = { has_character_flag = removing_gout }
+				remove_trait = gout
+			}
+			if = {
+				limit = { has_character_flag = removing_scurvy }
+				remove_trait = scurvy
+			}
+			if = {
+				limit = { has_character_flag = removing_lovers_pox }
+				remove_trait = lovers_pox
+			}
+			if = {
+				limit = { has_character_flag = removing_cancer }
+				remove_trait = cancer
+			}
+			if = {
+				limit = { has_character_flag = removing_pneumonic }
+				remove_trait = pneumonic
+			}
+			if = {
+				limit = { has_character_flag = removing_syphilitic }
+				remove_trait = syphilitic
+				set_character_flag = immune_syphilis
+			}
+			if = {
+				limit = { has_character_flag = removing_leper }
+				remove_trait = leper
+			}
+			if = {
+				limit = { has_character_flag = removing_has_tuberculosis }
+				remove_trait = has_tuberculosis
+				set_character_flag = immune_tuberculosis
+			}
+			if = {
+				limit = { has_character_flag = removing_has_aztec_disease }
+				remove_trait = has_aztec_disease
+				set_character_flag = immune_aztec_disease
+			}
+			if = {
+				limit = { has_character_flag = removing_has_small_pox }
+				remove_trait = has_small_pox
+				set_character_flag = immune_smallpox
+			}
+			if = {
+				limit = { has_character_flag = removing_has_bubonic_plague }
+				remove_trait = has_bubonic_plague
+				set_character_flag = immune_bubonic_plague
+			}
+			if = {
+				limit = { has_character_flag = removing_has_typhus }
+				remove_trait = has_typhus
+				set_character_flag = immune_typhus
+			}
+			if = {
+				limit = { has_character_flag = removing_has_typhoid_fever }
+				remove_trait = has_typhoid_fever
+				set_character_flag = immune_typhoid_fever
+			}
+			
+			#Neg-con
+			if = {
+				limit = { has_character_flag = rejuvenation_neg_con_removed }
+				remove_random_negative_congenital_effect = yes
+				clr_character_flag = rejuvenation_neg_con_removed
+			}
+
+			add_character_modifier = {
+				modifier = rejuvenation_recent
+				years = 5
+			}		
+			
+			if = {
+				limit = { NOT = {has_character_flag = rejuvenation_nothing_happened } }
+				add_character_modifier = {
+					modifier = mystic_treatment_decent
+					year = 1
+				}
+			}
+			if = {
+				limit = { has_character_flag = rejuvenation_nothing_happened }
+				add_character_modifier = {
+					modifier = mystic_treatment_poor
+					year = 1
+				}		
+			}
+
+			clr_character_flag = rejuvenation_in_effect
+			clr_character_flag = rejuvenation_nothing_happened
+			clr_character_flag = rejuvenation_maimed_flag
+			clr_character_flag = rejuvenation_disease_flag
+			clr_character_flag = rejuvenation_disease_removed
+			clr_character_flag = rejuvenation_maimed_healed
+			clr_character_flag = rejuvenation_incapable
+			clr_character_flag = rejuvenation_infirm
+			clr_character_flag = rejuvenation_blinded
+			clr_character_flag = rejuvenation_eunuch
+			clr_character_flag = rejuvenation_injured
+			clr_character_flag = removed_maimed
+			clr_character_flag = removed_mangled
+			clr_character_flag = removed_one_eyed
+			clr_character_flag = removed_one_handed
+			clr_character_flag = removed_one_legged
+			clr_character_flag = removed_disfigured
+			clr_character_flag = removing_flu
+			clr_character_flag = removing_measles
+			clr_character_flag = removing_food_poisoning
+			clr_character_flag = removing_gout
+			clr_character_flag = removing_scurvy
+			clr_character_flag = removing_lovers_pox
+			clr_character_flag = removing_cancer
+			clr_character_flag = removing_leper
+			clr_character_flag = removing_has_tuberculosis
+			clr_character_flag = removing_has_aztec_disease
+			clr_character_flag = removing_has_small_pox
+			clr_character_flag = removing_has_bubonic_plague
+			clr_character_flag = removing_has_typhus
+			clr_character_flag = removing_has_typhoid_fever
+		
+		}
+		
+		reverse_opinion = {
+        	who = FROM
+        	modifier = opinion_grateful
+        }		
+    }
+}
+
+
+
 
 ####################################################
 # MAGUS: POWER - Choose Hermetic Art/Lifestyle trait

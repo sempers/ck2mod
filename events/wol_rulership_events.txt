@@ -117,7 +117,7 @@ character_event = {
 	trigger = {
 		NOR = { 
 			AND = {
-				no_lifestyle_traits_trigger = no
+				NOT = { no_lifestyle_traits_trigger = yes }
 				has_character_modifier = wol_steward_2
 				NOT = { religion = jain }
 			}

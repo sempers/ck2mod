@@ -2890,6 +2890,11 @@ has_society_currency_major_trigger = {
 	society_currency >= 500
 }
 
+has_society_currency_massive_trigger = {
+	society_currency >= 1000
+}
+
+
 is_ill_trigger = {
 	OR = {
 		has_disease_trigger = yes

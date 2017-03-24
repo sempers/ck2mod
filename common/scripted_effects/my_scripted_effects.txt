@@ -1,3 +1,7 @@
 detract_society_currency_mega_effect = {
 	change_society_currency = -5000
 }
+
+detract_society_currency_massive_effect = {
+	change_society_currency = -1000
+}

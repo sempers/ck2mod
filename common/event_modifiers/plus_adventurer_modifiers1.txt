@@ -1,7 +1,16 @@
-
-# For available modifier icons, see: common/event_modifiers/REFERENCE_emf_modifier_icons.txt
-
 wrote_magnum_opus = {
 
 }
+
+rejuvenation_recent = {
+	health = 2
+	is_visible = { 
+		OR = {
+			society_member_of = hermetics
+            character = FROM
+		}
+	}
+	icon = 76
+}
+
 

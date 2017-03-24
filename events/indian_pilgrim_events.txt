@@ -1039,7 +1039,7 @@ character_event = {
 		if = {
 			limit = {
 				NOR = {
-					no_lifestyle_traits_trigger = no
+					NOT = { no_lifestyle_traits_trigger = yes }
 					has_dlc = "Way of Life"
 				}
 			}
@@ -1079,7 +1079,7 @@ character_event = {
 		if = {
 			limit = {
 				OR = {
-					no_lifestyle_traits_trigger = no
+					NOT = { no_lifestyle_traits_trigger = yes }
 					has_dlc = "Way of Life"
 				}
 			}

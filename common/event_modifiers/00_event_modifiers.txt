@@ -2667,11 +2667,11 @@ depopulated_3 = {
 	disease_defence = 0.25
 }
 mystic_treatment_decent = {
-	diplomacy_penalty = 1
-	martial_penalty = 1
-	stewardship_penalty = 1
-	intrigue_penalty = 1
-	learning_penalty = 1
+	#diplomacy_penalty = 1
+	#martial_penalty = 1
+	#stewardship_penalty = 1
+	#intrigue_penalty = 1
+	#learning_penalty = 1
 	health_penalty = 1
 	icon = 78
 }
