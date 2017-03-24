@@ -14565,6 +14565,18 @@ character_event = {
 			}
 			random_list = {
 				50 = {
+					modifier = {
+						factor = 0.75
+						learning = 20
+					}
+					modifier = {
+						factor = 0.75
+						learning = 25
+					}
+					modifier = {
+						factor = 0.75
+						learning = 30
+					}
 					character_event = {
 						id = 3587
 						tooltip = EVTTOOLTIP3587

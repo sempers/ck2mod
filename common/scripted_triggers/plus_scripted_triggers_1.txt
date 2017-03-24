@@ -51,34 +51,48 @@ no_lifestyle_traits_trigger = {
 			trait = immortal
 			OR = {
 				AND = {
-					age < 100
-					lifestyle_traits < 1
+					NOT = {age = 100}
+					NOT = {lifestyle_traits = 1 }
 				}
 				AND = {
-					age < 150
-					lifestyle_traits < 2
+					age = 100
+					NOT = {age = 150}
+					NOT = {lifestyle_traits = 2 }
 				}
 				AND = {
-					age < 200
-					lifestyle_traits < 3
+					age = 150
+					NOT = {age = 200}
+					NOT = {lifestyle_traits = 3 }
 				}
 				AND = {
-					age < 300
-					lifestyle_traits < 4
+					age = 200
+					NOT = {age = 250}
+					NOT = {lifestyle_traits = 4 }
 				}
 				AND = {
-					age < 400
-					lifestyle_traits < 5
+					age = 250
+					NOT = {age = 300}
+					NOT = {lifestyle_traits = 5 }
 				}
 				AND = {
-					age < 500
-					lifestyle_traits < 6
+					age = 300
+					NOT = {age = 400}
+					NOT = {lifestyle_traits = 6 }
+				}
+				AND = {
+					age = 400
+					NOT = {age = 500}
+					NOT = {lifestyle_traits = 7 }
+				}
+				AND = {
+					age = 500
+					NOT = {lifestyle_traits = 8 }
 				}
 			}
 		}
 		AND = {
 			NOT = { trait = immortal }
-			lifestyle_traits < 1
+			NOT = { lifestyle_traits = 1 }
 		}
 	}
 }

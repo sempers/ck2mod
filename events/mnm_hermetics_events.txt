@@ -7314,7 +7314,7 @@ character_event = {
     option = { 
         name = EVTOPTA_MNM_1460
         custom_tooltip = { text = EVTOPTA_MNM_1460_TT }
-        scaled_wealth = { value = 0.5 min = 20 }
+        scaled_wealth = { value = -0.5 min = -20 }
         hidden_effect = { 
         	character_event = { id = MNM.1461 days = 7 } 
         	set_character_flag = gathering_of_the_minds
@@ -13210,8 +13210,12 @@ character_event = {
 				random_list = {
 					10 = { # Make observation about stars
 						modifier = {
-							factor = 3
+							factor = 4
 							has_character_flag = built_observatory
+						}
+						modifier = {
+							factor = 1.5
+							has_artifact = radius_astronomicus
 						}
 						modifier = {
 							factor = 2
@@ -13227,6 +13231,10 @@ character_event = {
 							has_character_flag = built_observatory
 						}
 						modifier = {
+							factor = 1.5
+							has_artifact = radius_astronomicus
+						}
+						modifier = {
 							factor = 2
 							has_character_flag = owns_observatory_equipment
 							NOT = { has_character_flag = built_observatory }
@@ -13238,6 +13246,10 @@ character_event = {
 						modifier = {
 							factor = 2
 							has_character_flag = built_observatory
+						}
+						modifier = {
+							factor = 1.5
+							has_artifact = radius_astronomicus
 						}
 						modifier = {
 							factor = 1.5
@@ -14430,10 +14442,21 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA_MNM_1830
-		add_character_modifier = {
-			modifier = astronomical_insights_1
-			duration = -1
+		if = {
+		limit = { has_character_flag = built_observatory }
+			add_character_modifier = {
+				modifier = astronomical_insights_2
+				duration = -1
+			}
 		}
+		if = {
+			limit = { NOT = { has_character_flag = built_observatory } }
+				add_character_modifier = {
+					modifier = astronomical_insights_1
+					duration = -1
+			}
+		}
+		
 		hidden_effect = {
 			character_event = {	id = MNM.1835 days = 40 random = 15	}
 		}
@@ -14532,6 +14555,26 @@ character_event = { # ending event tombola
 				modifier = {
 					factor = 0.5
 					has_character_modifier = astronomical_insights_4
+				}
+				modifier = {
+					factor = 0.5
+					has_character_flag = built_observatory
+				}
+				modifier = {
+					factor = 0.75
+					has_character_modifier = heliocentric_scholar
+				}
+				modifier = {
+					factor = 0.8
+					has_artifact = radius_astronomicus
+				}
+				modifier = {
+					factor = 0.8
+					learning = 20
+				}
+				modifier = {
+					factor = 0.8
+					learning = 30
 				}
 				
 				character_event = { id = MNM.1851 }
