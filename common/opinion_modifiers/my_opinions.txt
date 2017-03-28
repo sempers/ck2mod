@@ -2,3 +2,8 @@ opinion_immortalized_me = {
    opinion = 50
    months = 2400
 }
+
+opinion_stole_my_artifact = {
+	opinion = -25
+	months = 120
+}

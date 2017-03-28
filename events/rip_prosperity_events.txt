@@ -500,9 +500,15 @@ province_event = { # Province Modifier Tombola
 			}
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.7
 			owner = {
-				stewardship = 35
+				stewardship = 40
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				stewardship = 50
 			}
 		}
 		modifier = {
@@ -542,9 +548,15 @@ province_event = { # Province Modifier Tombola
 			}
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.7
 			owner = {
-				learning = 35
+				learning = 40
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				learning = 50
 			}
 		}
 		modifier = {
@@ -862,9 +874,15 @@ province_event = { #Reclaim Land
 			}
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.7
 			owner = {
-				stewardship = 35
+				stewardship = 40
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				stewardship = 50
 			}
 		}
 		modifier = {
@@ -904,9 +922,15 @@ province_event = { #Reclaim Land
 			}
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.7
 			owner = {
-				learning = 35
+				learning = 40
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				learning = 50
 			}
 		}
 		modifier = {
@@ -1045,9 +1069,15 @@ province_event = { #Monetary Incentives for culture conversion
 			}
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.7
 			owner = {
-				stewardship = 35
+				stewardship = 40
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				stewardship = 50
 			}
 		}
 		modifier = {
@@ -1087,9 +1117,15 @@ province_event = { #Monetary Incentives for culture conversion
 			}
 		}
 		modifier = {
-			factor = 0.8
+			factor = 0.7
 			owner = {
-				learning = 35
+				learning = 40
+			}
+		}
+		modifier = {
+			factor = 0.6
+			owner = {
+				learning = 50
 			}
 		}
 		modifier = {

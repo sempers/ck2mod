@@ -2162,7 +2162,10 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		has_job_action = action_organize_spies
+		OR = {
+			has_job_action = action_organize_spies
+			has_job_action = action_organize_spies_mystics
+		}
 	}
 	
 	mean_time_to_happen = {
@@ -2229,19 +2232,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.8
-			intrigue = 22
-		}
-		modifier = {
-			factor = 0.8
-			intrigue = 24
-		}
-		modifier = {
-			factor = 0.8
-			intrigue = 26
-		}
-		modifier = {
-			factor = 0.8
-			intrigue = 28
+			intrigue = 25
 		}
 		modifier = {
 			factor = 0.8
@@ -2289,19 +2280,7 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.9
-			liege = { intrigue = 22 }
-		}
-		modifier = {
-			factor = 0.9
-			liege = { intrigue = 24 }
-		}
-		modifier = {
-			factor = 0.9
-			liege = { intrigue = 26 }
-		}
-		modifier = {
-			factor = 0.9
-			liege = { intrigue = 28 }
+			liege = { intrigue = 25 }
 		}
 		modifier = {
 			factor = 0.9
@@ -2397,13 +2376,15 @@ character_event = {
 		}
 		liege = {
 			custom_tooltip = { text = SPYNETWORK_INCREASE_10_LIEGE }
-			hidden_tooltip = { character_event = { id = 20350 } }
+			hidden_tooltip = { 
+				letter_event = { id = 20350 }
+			}
 		}
 	}
 }
 
 # 20350: Liege informed of network increase
-character_event = {
+letter_event = {
 	id = 20350
 	desc = EVTDESC20350
 	picture = GFX_evt_spymaster
@@ -2434,7 +2415,10 @@ character_event = {
 	prisoner = no
 	
 	trigger = {
-		has_job_action = action_organize_spies
+		OR = {
+			has_job_action = action_organize_spies
+			has_job_action = action_organize_spies_mystics
+		}
 		liege = { check_variable = { which = "personal_spy_network" value = 9 } }
 	}
 	

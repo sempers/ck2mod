@@ -26,13 +26,14 @@ targeted_decisions = {
 				has_character_modifier = rejuvenation_recent
 			}			
 			custom_tooltip = {
-				text = "[Root.GetFirstName] is injured, sick, maimed or genetically abnormal in any way"
+				text = "[Root.GetBestName] is injured, sick, maimed, mentally or physically abnormal in any way"
 				OR = {
 					has_disease_trigger = yes
 					has_symptom_trigger = yes
 					has_injury_trigger = yes
 					is_maimed_trigger = yes
 					has_disability_trigger = yes
+					has_mental_disorder_trigger = yes
 				}
 			}
 		}
@@ -41,6 +42,8 @@ targeted_decisions = {
 		
 		effect = {
 			FROM = { detract_society_currency_massive_effect = yes }
+						
+			set_character_flag = rejuvenation_in_effect
 			
 			if = {
 				limit = { has_disease_trigger = yes }
@@ -58,14 +61,19 @@ targeted_decisions = {
 				limit = { has_disability_trigger = yes }
 				set_character_flag = rejuvenation_disability_flag
 			}
+			if = {
+				limit = { has_mental_disorder_trigger = yes }
+				set_character_flag = rejuvenation_mental_flag
+			}
 			
-			set_character_flag = rejuvenation_in_effect
+			save_event_target_as = rejuvenation_target
 			
 			if = {
 				limit = { character = FROM } #Making yourself a potion
+				
 				custom_tooltip = {
 					text = "Brew and drink potion yourself"				
-					character_event = { id = MNM.1411 days = 13 }
+					character_event = { id = MNM.1500 days = 3 }
 				}
 			}
 
@@ -73,24 +81,24 @@ targeted_decisions = {
 				limit = { NOT = { character = FROM } } #Making someone else a potion
 				custom_tooltip = {
 					text = "Brew and offer potion to character"
-					character_event = { id = MNM.1412 days = 13 }
+					character_event = { id = MNM.1502 days = 3 }
 				}
 			}
 		}
 		
 		ai_will_do = {
-			factor = 0.25
+			factor = 0.2
 			modifier = {
 				OR = {
 					is_maimed_trigger = yes
 					has_disease_trigger = yes
 					has_injury_trigger = yes
+					character_disease_trigger = yes
 				}
 				factor = 2
 			}
 		}	
 	}
-
 
 	brew_happiness_potion = {
 		filter = court
@@ -124,7 +132,8 @@ targeted_decisions = {
 		}
 
 		effect = {		
-
+			FROM = { detract_society_currency_minor_effect = yes }
+			
 			if = {
 				limit = { character = FROM } #Making yourself a potion
 				custom_tooltip = {
@@ -142,8 +151,7 @@ targeted_decisions = {
 				}
 			}
 
-			tooltip = {
-				detract_society_currency_minor_effect = yes
+			tooltip = {				
 				if = { 
 					limit = { trait = stressed }
 					remove_trait = stressed
@@ -406,7 +414,7 @@ targeted_decisions = {
 			factor = 1
 			modifier = {
 				factor = 0
-				no_lifestyle_traits_trigger = no
+				NOT = { no_lifestyle_traits_trigger = yes }
 			}
 		}
 	}

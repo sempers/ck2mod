@@ -891,55 +891,55 @@ character_event = {
 		months = 200
 		
 		modifier = {
-			factor = 1.25
+			factor = 1.2
 			NOT = { martial = 2 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 1.2
 			NOT = { martial = 3 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 1.2
 			NOT = { martial = 4 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 1.2
 			NOT = { martial = 5 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 10
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 11
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 12
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 13
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 15
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 18
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 20
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 25
 		}
 		modifier = {
-			factor = 0.75
+			factor = 0.8
 			martial = 30
 		}
 	}

@@ -14,7 +14,11 @@ focus_rulership = {
 	modifier_name = "RULERSHIP_FOCUS"
 	
 	potential = {
-		is_playable = yes
+		OR = {
+			is_playable = yes
+			has_job_title = job_treasurer
+			has_ambition = obj_become_treasurer
+		}
 	}
 	
 	allow = {
@@ -93,7 +97,11 @@ focus_business = {
 	modifier_name = "BUSINESS_FOCUS"
 	
 	potential = {
-		is_playable = yes
+		OR = {
+			is_playable = yes
+			has_job_title = job_treasurer
+			has_ambition = obj_become_treasurer
+		}
 	}
 	
 	allow = {
@@ -419,7 +427,11 @@ focus_intrigue = {
 	modifier_name = "INTRIGUE_FOCUS"
 	
 	potential = {
-		is_playable = yes
+		OR = {
+			is_playable = yes
+			has_job_title = job_spymaster
+			has_ambition = obj_become_spymaster
+		}
 	}
 	
 	allow = {
@@ -643,7 +655,11 @@ focus_war = {
 	modifier_name = "WAR_FOCUS"
 	
 	potential = {
-		is_playable = yes
+		OR = {
+			is_playable = yes
+			has_job_title = job_marshal
+			has_ambition = obj_become_marshal
+		}
 	}
 	
 	allow = {
@@ -991,7 +1007,11 @@ focus_scholarship = {
 	modifier_name = "SCHOLARSHIP_FOCUS"
 	
 	potential = {
-		is_playable = yes
+		OR = {
+			is_playable = yes
+			has_job_title = job_spiritual
+			has_ambition = obj_become_spiritual
+		}
 	}
 	
 	allow = {
@@ -1112,7 +1132,11 @@ focus_theology = {
 	modifier_name = "THEOLOGY_FOCUS"
 	
 	potential = {
-		is_playable = yes
+		OR = {
+			is_playable = yes
+			has_job_title = job_spiritual
+			has_ambition = obj_become_spiritual
+		}
 	}
 	
 	allow = {

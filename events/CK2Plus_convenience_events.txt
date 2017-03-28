@@ -116,12 +116,11 @@ character_event = { #Prisoner receives ransom demand
 		if = {
             limit = {
 				tier = emperor
-				wealth = 385
 			} 
 
-			wealth = -385
+			wealth = -3000
 			host = {
-				wealth = 385
+				wealth = 3000
 			}
 			prisoner = no
         }
@@ -129,12 +128,11 @@ character_event = { #Prisoner receives ransom demand
 		if = {
             limit = {
 				tier = king
-				wealth = 250
 			} 
 		
-			wealth = -250
+			wealth = -1000
 			host = {
-				wealth = 250
+				wealth = 1000
 			}
 			prisoner = no
         }
@@ -143,12 +141,11 @@ character_event = { #Prisoner receives ransom demand
             limit = {
 				tier = duke
 				mercenary = no
-				wealth = 145
 			} 
 			
-			wealth = -145
+			wealth = -500
 			host = {
-				wealth = 145
+				wealth = 500
 			}
 			prisoner = no
         }
@@ -159,9 +156,9 @@ character_event = { #Prisoner receives ransom demand
 				mercenary = yes
 			} 
 			
-			wealth = -145
+			wealth = -750
 			host = {
-				wealth = 145
+				wealth = 750
 			}
 			prisoner = no
         }
@@ -169,12 +166,11 @@ character_event = { #Prisoner receives ransom demand
         if = {
             limit = {
 				tier = count
-				wealth = 70
 			} 
 		
-			wealth = -70
+			wealth = -300
 			host = {
-				wealth = 70
+				wealth = 300
 			}
 			prisoner = no
         }
@@ -182,12 +178,11 @@ character_event = { #Prisoner receives ransom demand
         if = {
             limit = {
 				tier = baron
-				wealth = 25
 			} 
 		
-			wealth = -25
+			wealth = -150
 			host = {
-				wealth = 25
+				wealth = 150
 			}
 			prisoner = no
         }
@@ -195,19 +190,19 @@ character_event = { #Prisoner receives ransom demand
         if = {
             limit = {
 				is_ruler = no
-				wealth = 10
+				wealth = 100
 			} 
 
-			wealth = -10
+			wealth = -100
 			host = {
-				wealth = 10
+				wealth = 100
 			}
 			prisoner = no
         }
         if = {
             limit = {
 				is_ruler = no
-				NOT = { wealth = 10 }
+				NOT = { wealth = 100 }
 				NOT = { liege = { character = FROM } }
 			} 
 			liege = { character_event = { id = Plus.986 } }
@@ -271,8 +266,8 @@ character_event = { #Liege of landless prisoner receives ransom demand
 				FROM = { is_close_relative = ROOT } 
 			}	
 		}
-		ROOT = { wealth = -10 }
-		FROMFROM = { wealth = 10 }
+		ROOT = { wealth = -100 }
+		FROMFROM = { wealth = 100 }
 		FROM = { prisoner = no }
 	}
 	option = {
@@ -293,16 +288,8 @@ character_event = { #Liege of landless prisoner receives ransom demand
 				trait = cruel
 			}
 			modifier = {
-				factor = 2.5 
-				NOT = { wealth = 75 } 
-			}
-			modifier = {
-				factor = 5 
-				NOT = { wealth = 50 } 
-			}
-			modifier = {
-				factor = 10 
-				NOT = { wealth = 25} 
+				factor = 10
+				NOT = { wealth = 100} 
 			}
 		}
 		FROMFROM = { character_event = { id = Plus.987 } }

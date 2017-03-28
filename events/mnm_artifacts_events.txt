@@ -70,6 +70,22 @@ character_event = {
 					ai = yes
 				}
 				modifier = {
+					factor = 2
+					trait = mystic
+				}
+				modifier = {
+					factor = 1.6
+					learning = 20
+				}
+				modifier = {
+					factor = 1.8
+					learning = 30
+				}
+				modifier = {
+					factor = 2
+					learning = 40
+				}
+				modifier = {
 					factor = 0
 					AND = {
 						religion_group = christian
@@ -179,6 +195,22 @@ character_event = {
 				event_target:rumor_councillor = { character_event = { id = MNM.9001 } } 
 			}
 			90 = { #Good rumor
+				modifier = {
+					factor = 2
+					trait = mystic
+				}
+				modifier = {
+					factor = 1.6
+					learning = 20
+				}
+				modifier = {
+					factor = 1.8
+					learning = 30
+				}
+				modifier = {
+					factor = 2
+					learning = 40
+				}
 				modifier = { 
 					factor = 0 
 					OR = {
@@ -609,16 +641,19 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_chancellor }
 					modifier = { factor = 3 diplomacy = 10 }
 					random_list = {
+						5 = {
+							modifier = { factor = 1.6 diplomacy = 25 }
+							modifier = { factor = 1.6 diplomacy = 30 }
+							modifier = { factor = 1.6 diplomacy = 35 }
+							modifier = { factor = 1.6 diplomacy = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 2 } }
+						}
 						15 = { #Passive points gain
 							modifier = { factor = 1.5 has_job_title = job_chancellor }
 							modifier = { factor = 1.4 diplomacy = 12 }	
 							modifier = { factor = 1.4 diplomacy = 15 }	
 							modifier = { factor = 1.4 diplomacy = 18 }
 							modifier = { factor = 1.4 diplomacy = 20 }
-							modifier = { factor = 1.6 diplomacy = 25 }
-							modifier = { factor = 1.6 diplomacy = 30 }
-							modifier = { factor = 1.6 diplomacy = 35 }
-							modifier = { factor = 1.6 diplomacy = 40 }
 							modifier = { factor = 1.5 has_pleasant_personality_trigger = yes }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -648,16 +683,19 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_marshal }
 					modifier = { factor = 3 martial = 10 }
 					random_list = {
+						5 = {
+							modifier = { factor = 1.6 martial = 25 }
+							modifier = { factor = 1.6 martial = 30 }
+							modifier = { factor = 1.6 martial = 35 }
+							modifier = { factor = 1.6 martial = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 2 } }
+						}
 						15 = { #Passive points gain
 							modifier = { factor = 1.5 has_job_title = job_marshal }
 							modifier = { factor = 1.4 martial = 12 }	
 							modifier = { factor = 1.4 martial = 15 }	
 							modifier = { factor = 1.4 martial = 18 }
 							modifier = { factor = 1.4 martial = 20 }
-							modifier = { factor = 1.6 martial = 25 }
-							modifier = { factor = 1.6 martial = 30 }
-							modifier = { factor = 1.6 martial = 35 }
-							modifier = { factor = 1.6 martial = 40 }
 							modifier = { factor = 1.4 trait = brave }
 							modifier = { factor = 1.4 combat_rating = 2 }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
@@ -689,16 +727,19 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_treasurer }
 					modifier = { factor = 3 stewardship = 10 }
 					random_list = {
+						5 = {
+							modifier = { factor = 1.6 stewardship = 25 }
+							modifier = { factor = 1.6 stewardship = 30 }
+							modifier = { factor = 1.6 stewardship = 35 }
+							modifier = { factor = 1.6 stewardship = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 2 } }
+						}
 						15 = { #Passive points gain
 							modifier = { factor = 1.5 has_job_title = job_treasurer }
 							modifier = { factor = 1.4 stewardship = 12 }	
 							modifier = { factor = 1.4 stewardship = 15 }	
 							modifier = { factor = 1.4 stewardship = 18 }
 							modifier = { factor = 1.4 stewardship = 20 }
-							modifier = { factor = 1.6 stewardship = 25 }
-							modifier = { factor = 1.6 stewardship = 30 }
-							modifier = { factor = 1.6 stewardship = 35 }
-							modifier = { factor = 1.6 stewardship = 40 }								
 							modifier = { factor = 1.4 monthly_income = 3 }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -728,16 +769,19 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_spymaster }
 					modifier = { factor = 3 intrigue = 10 }
 					random_list = {
+						5 = {
+							modifier = { factor = 1.6 intrigue = 25 }
+							modifier = { factor = 1.6 intrigue = 30 }
+							modifier = { factor = 1.6 intrigue = 35 }
+							modifier = { factor = 1.6 intrigue = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 2 } }
+						}
 						15 = { #Passive points gain
 							modifier = { factor = 1.5 has_job_title = job_spymaster }
 							modifier = { factor = 1.4 intrigue = 12 }	
 							modifier = { factor = 1.4 intrigue = 15 }	
 							modifier = { factor = 1.4 intrigue = 18 }
 							modifier = { factor = 1.4 intrigue = 20 }
-							modifier = { factor = 1.6 intrigue = 25 }
-							modifier = { factor = 1.6 intrigue = 30 }
-							modifier = { factor = 1.6 intrigue = 35 }
-							modifier = { factor = 1.6 intrigue = 40 }
 							modifier = { factor = 1.4 has_unpleasant_personality_trigger = yes }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -767,16 +811,19 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_spiritual }
 					modifier = { factor = 3 learning = 10 }
 					random_list = {
+						5 = {
+							modifier = { factor = 1.6 learning = 25 }
+							modifier = { factor = 1.6 learning = 30 }
+							modifier = { factor = 1.6 learning = 35 }
+							modifier = { factor = 1.6 learning = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 2 } }
+						}
 						15 = { #Passive points gain
 							modifier = { factor = 1.5 has_job_title = job_spiritual }
 							modifier = { factor = 1.4 learning = 12 }	
 							modifier = { factor = 1.4 learning = 15 }	
 							modifier = { factor = 1.4 learning = 18 }
 							modifier = { factor = 1.4 learning = 20 }
-							modifier = { factor = 1.6 learning = 25 }
-							modifier = { factor = 1.6 learning = 30 }
-							modifier = { factor = 1.6 learning = 35 }
-							modifier = { factor = 1.6 learning = 40 }
 							modifier = { factor = 1.4 is_learned_trigger = yes }
 							event_target:relic_ruler = { change_variable = { which = relic_score value = 1 } }
 						} 
@@ -9370,19 +9417,19 @@ character_event = {
 				}
 				
 				modifier = {
-					factor = 0.8
+					factor = 0.9
 					event_target:looter = {
 						stewardship = 20
 					}
 				}
 				modifier = {
-					factor = 0.8
+					factor = 0.9
 					event_target:looter = {
 						learning = 20
 					}
 				}
 				modifier = {
-					factor = 0.8
+					factor = 0.9
 					event_target:looter = {
 						intrigue = 20
 					}
@@ -9404,7 +9451,25 @@ character_event = {
 					event_target:looter = {
 						intrigue = 30
 					}
-				}				
+				}
+				modifier = {
+					factor = 0.7
+					event_target:looter = {
+						stewardship = 40
+					}
+				}
+				modifier = {
+					factor = 0.7
+					event_target:looter = {
+						intrigue = 40
+					}
+				}
+				modifier = {
+					factor = 0.7
+					event_target:looter = {
+						learning = 40
+					}
+				}								
 			}
 		}
 		FROM = {

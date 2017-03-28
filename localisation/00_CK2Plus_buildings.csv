@@ -1113,3 +1113,11 @@ ca_hadrianswall;Hadrian's Wall;;;;;;;;;;;;;
 ca_hadrianswall_desc;Former northern border of the mighty Roman Empire that can still be used against enemies.;;;;;;;;;;;;;
 ca_agrafort;Agra Fort;;;;;;;;;;;;;
 ca_agrafort_desc;This walled city serves as a showcase of power and influence, aswell as a wealth of a strong realm.;;;;;;;;;;;;;
+ct_marketplace_7;Stock Exchange;;;;;;;;;;;;;
+ct_marketplace_7_desc;One of the first stock exchanges in Europe;;;;;;;;;;;;;
+tp_monastery_1;Little Church;Temple;Kirche;;Iglesia;;;;;;;;;x
+tp_monastery_2;Small Church;Temple;Kirche;;Iglesia;;;;;;;;;x
+tp_monastery_3;Church;Temple;Kirche;;Iglesia;;;;;;;;;x
+tp_monastery_4;Cathedral;Cathédrale;Kathedrale;;Catedral;;;;;;;;;x
+tp_monastery_5;Large Cathedral;;Große Kathedrale;;Catedral grande;;;;;;;;;x
+tp_monastery_6;Grand Cathedral;;Majestätische Kathedrale;;Catedral muy grande;;;;;;;;;x

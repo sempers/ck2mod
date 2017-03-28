@@ -72,7 +72,10 @@ trade_post = {
 		potential = {
 			port = yes
 			FROM = {
-				is_patrician = yes
+				OR = {
+					is_patrician = yes
+					TECH_TRADE_PRACTICES = 8
+				}
 			}
 		}
 		desc = tr_enclave_1_desc
@@ -90,7 +93,10 @@ trade_post = {
 		potential = {
 			port = yes
 			FROM = {
-				is_patrician = yes
+				OR = {
+					is_patrician = yes
+					TECH_TRADE_PRACTICES = 8
+				}
 			}
 		}
 		desc = tr_enclave_2_desc
@@ -109,7 +115,10 @@ trade_post = {
 		potential = {
 			port = yes
 			FROM = {
-				is_patrician = yes
+				OR = {
+					is_patrician = yes
+					TECH_TRADE_PRACTICES = 8
+				}
 			}
 		}
 		desc = tr_enclave_3_desc
@@ -128,7 +137,10 @@ trade_post = {
 	tr_garrison_1 = {
 		potential = {
 			FROM = {
-				is_patrician = yes
+				OR = {
+					is_patrician = yes
+					TECH_TRADE_PRACTICES = 8
+				}
 			}
 		}
 		desc = tr_garrison_1_desc
@@ -147,7 +159,10 @@ trade_post = {
 	tr_garrison_2 = {
 		potential = {
 			FROM = {
-				is_patrician = yes
+				OR = {
+					is_patrician = yes
+					TECH_TRADE_PRACTICES = 8
+				}
 			}
 		}
 		desc = tr_garrison_2_desc
@@ -167,7 +182,10 @@ trade_post = {
 	tr_garrison_3 = {
 		potential = {
 			FROM = {
-				is_patrician = yes
+				OR = {
+					is_patrician = yes
+					TECH_TRADE_PRACTICES = 8
+				}
 			}
 		}
 		desc = tr_garrison_3_desc

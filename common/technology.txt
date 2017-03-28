@@ -283,6 +283,7 @@ TECH_GROUP_ECONOMY = {
 			add_building = ct_guard_5
 			add_building = ct_university_3
 			add_building = ct_training_grounds_6
+			add_building = ct_marketplace_7
 		}
 	}
 	TECH_TEMPLE_CONSTRUCTION = { #temple buildings

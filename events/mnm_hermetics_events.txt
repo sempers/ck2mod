@@ -6818,7 +6818,7 @@ character_event = {
 
 #Drink rejuvenation potion
 character_event = {
-    id = MNM.1410
+    id = MNM.1500
     desc = "The Potion of Rejuvenation has rather weird taste and odour. Nevertheless, according to ancient tomes and papyri of the Hermetic society, the recipe of this panacaea would help to overcome every known disease and even undo disabilities and maims."
     picture = GFX_evt_experiment
     border = GFX_event_normal_frame_religion
@@ -6826,38 +6826,19 @@ character_event = {
     #hide_from = yes
 
     is_triggered_only = yes
-    
-	immediate = {
-		if = {
-			limit = { has_disease_trigger = yes }
-			set_character_flag = rejuvenation_disease_flag
-		}
-		if = {
-			limit = { is_maimed_trigger = yes }
-			set_character_flag = rejuvenation_maimed_flag
-		}
-		if = {
-			limit = { has_injury_trigger = yes }
-			set_character_flag = rejuvenation_injury_flag
-		}
-		if = {
-			limit = { has_disability_trigger = yes }
-			set_character_flag = rejuvenation_disability_flag
-		}
-	}
-	
+    	
     option = { 
         name = "Drink the Potion"
 		custom_tooltip = {
 			text = "The rejuvenation process begins."
 		}
-		character_event = { id = MNM.1411 days = 2 }
+		character_event = { id = MNM.1501 days = 1 }
     }
 }
 
 #Rejuvenation result - for me
 character_event = {
-    id = MNM.1411
+    id = MNM.1501
     picture = GFX_evt_experiment
     border = GFX_event_normal_frame_religion
 
@@ -6865,202 +6846,126 @@ character_event = {
     
 	immediate = {
 		random_list = {
-				3 = { set_character_flag = rejuvenation_nothing_happened }
-				7 = {
-					random_list = {
-						10 = {
-							modifier = {
-								NOT = { has_negative_congenital_trigger = yes}
-								factor = 0
-							}
-							#remove_random_negative_congenital_trait = yes
-							set_character_flag = rejuvenation_neg_con_removed
+			2 = { set_character_flag = rejuvenation_nothing_happened }
+			8 = {
+				random_list = {
+					30 = {
+						modifier = {
+							NOT = { has_disease_trigger = yes }
+							factor = 0
 						}
-						10 = {
-							modifier = {
-								OR = {
-									trait = flu
-									trait = food_poisoning
-								}
-								factor = 2
+						
+						modifier = {
+							OR = {
+								trait = flu
+								trait = food_poisoning
 							}
-							modifier = {
-								trait = cancer
-								NOT = { trait = has_measles }
-								NOT = { trait = flu }
-								NOT = { trait = food_poisoning }
-								NOT = { trait = gout }
-								NOT = { trait = scurvy }
-								NOT = { trait = lovers_pox }
-								NOT = { trait = pneumonic }
-								NOT = { trait = syphilitic }
-								NOT = { trait = leper }
-								factor = 0.5
-							}
-							remove_random_disease_effect = yes 					# sets a flag to remove random "regular" disease
-							set_character_flag = rejuvenation_disease_removed
+							factor = 2
 						}
-						10 = {
-							modifier = {
-								NOT = { has_epidemic_disease_trigger = yes }
-								factor = 0
-							}
-							remove_random_epidemic_disease_effect = yes # sets a flag to remove random epidemic disease
-							set_character_flag = rejuvenation_disease_removed
+						
+						modifier = {
+							trait = cancer
+							NOT = { trait = has_measles }
+							NOT = { trait = flu }
+							NOT = { trait = food_poisoning }
+							NOT = { trait = gout }
+							NOT = { trait = scurvy }
+							NOT = { trait = lovers_pox }
+							NOT = { trait = pneumonic }
+							NOT = { trait = syphilitic }
+							NOT = { trait = leper }
+							factor = 0.5
 						}
-						10 = {
-							modifier = {
-								is_maimed_trigger = no
-								factor = 0
-							}
-							modifier = {
-								trait = mangled
-								factor = 2
-							}
-							remove_random_maimed_effect = yes
-							set_character_flag = rejuvenation_maimed
+						remove_random_disease_effect = yes
+						set_character_flag = rejuvenation_disease_removed
+					}
+					
+					20 = {
+						modifier = {
+							NOT = { has_epidemic_disease_trigger = yes }
+							factor = 0
 						}
-						10 = {
-							modifier = {
-								NOT = { trait = infirm }
-								factor = 0
-							}
-							set_character_flag = rejuvenation_infirm
+						remove_random_epidemic_disease_effect = yes # sets a flag to remove random epidemic disease
+						set_character_flag = rejuvenation_disease_removed
+					}
+					
+					15 = {
+						modifier = {
+							is_maimed_trigger = no
+							factor = 0
 						}
-						10 = {
-							modifier = {
-								NOT = { trait = incapable }
-								factor = 0
-							}
-							set_character_flag = rejuvenation_incapable
+						modifier = {
+							trait = mangled
+							factor = 2
 						}
-						10 = {
-							modifier = {
-								NOT = { trait = eunuch }
-								factor = 0
-							}
-							set_character_flag = rejuvenation_eunuch
+						remove_random_maimed_effect = yes
+						set_character_flag = rejuvenation_maimed
+					}
+					
+					5 = {
+						modifier = {
+							NOT = { trait = infirm }
+							factor = 0
 						}
-						10 = {
-							modifier = {
-								NOT = { trait = blinded }
-								factor = 0
-							}
-							set_character_flag = rejuvenation_blinded
+						set_character_flag = rejuvenation_infirm
+					}
+					5 = {
+						modifier = {
+							NOT = { trait = incapable }
+							factor = 0
 						}
+						set_character_flag = rejuvenation_incapable
+					}
+					5 = {
+						modifier = {
+							NOT = { trait = eunuch }
+							factor = 0
+						}
+						set_character_flag = rejuvenation_eunuch
+					}
+					5 = {
+						modifier = {
+							NOT = { trait = blinded }
+							factor = 0
+						}
+						set_character_flag = rejuvenation_blinded
+					}
+					5 = {
+						modifier = {
+							NOT = { has_negative_congenital_trigger = yes}
+							factor = 0
+						}
+						set_character_flag = rejuvenation_neg_con_removed
+					}
+					5 = {
+						modifier = {
+							NOT = { trait = lunatic }
+							factor = 0
+						}
+						set_character_flag = rejuvenation_lunatic
+					}
+					5 = {
+						modifier = {
+							NOT = { trait = possessed }
+							factor = 0
+						}
+						set_character_flag = rejuvenation_possessed
 					}
 				}
 			}
+		}
 	}
 	
-	desc = {
-		trigger = {
-			has_character_flag = rejuvenation_neg_con_removed
-		}
-		text = "The Potion fixed some abnormalities that had been with you since your birth"
-	}
-	
-	desc = {
-		trigger = {
-			OR = {
-				has_character_flag = rejuvenation_incapable
-				has_character_flag = rejuvenation_infirm
-			}
-		}
-		text = "The Potion recovered your incapability."
-	}
-	desc = {
-		trigger = {
-			has_character_flag = rejuvenation_blinded
-		}
-		text = "The Potion returned your sight."
-	}
-	desc = {
-		trigger = {
-			has_character_flag = rejuvenation_eunuch
-		}
-		text = "The Potion mystically completed you with your male parts."
-	}
-
-	desc = {
-		trigger = {
-			has_character_flag = rejuvenation_maimed
-		}
-		text = "The Potion you've drunk made you regrow your limbs and heal even the most severe of your mutilations."
-	}
-
-	desc = {
-		trigger = {
-			NOT = {
-				has_character_flag = rejuvenation_incapable
-				has_character_flag = rejuvenation_eunuch
-				has_character_flag = rejuvenation_blinded
-				has_character_flag = rejuvenation_maimed_healed
-				has_character_flag = rejuvenation_infirm
-			}
-			has_character_flag = rejuvenation_disease_flag
-			has_character_flag = rejuvenation_disease_removed
-		}
-		text = "The Potion cured your disease."
-	}
-
-	desc = {
-		trigger = {
-			NAND = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_disease_removed
-			}
-			has_character_flag = rejuvenation_nothing_happened
-			OR = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_maimed_flag
-			}
-		}
-		text = "Unfortunately, you feel no change after drinking the Potion."
-	}
-	
-	desc = {
-		trigger = {
-			has_character_flag = rejuvenation_symptoms_removed
-		}
-		text = "The Potion relieved those unpleasant symptoms you had."
-	}
-	
-	desc = {
-		trigger = {
-			NAND = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_disease_removed
-			}
-			has_character_flag = rejuvenation_injured
-			has_character_flag = rejuvenation_nothing_happened
-			NOR = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_maimed_flag
-			}
-		}
-		text = "You feel well as usual."
-	}
-
-	desc = {
-		trigger = {
-			NAND = { 
-				has_character_flag = rejuvenation_injured 
-				has_character_flag = rejuvenation_disease_removed
-			}
-			has_character_flag = rejuvenation_nothing_happened
-		}
-		text = "You feel too weak."
-	}
+	desc = "The Potion of Rejuvenation has very weird disguisting taste and odour. However, according to ancient tomes and papyri found in the Hermetic society, the recipe of this panacaea would help to overcome every known disease and even undo disabilities and maims, either physical or mental."
 	
     option = { 
-        name = "Rejuvenation Potion outcome"
-        custom_tooltip = { text = "Some of your bad effects are relieved. The Potion healed your wounds and various unpleasant symptoms." }
+        name = "Ewwwww!"
+        custom_tooltip = { text = "Some of your bad effects are relieved. The Potion would surely heal your wounds and unpleasant disease symptoms, other effects may vary." }
         
-		#Diseases and symptoms
+		#Symptoms
 		if = {
 			limit = { has_character_flag = rejuvenation_disease_removed }
-			#general disease clearing effects:
+
 			remove_symptoms_effect = yes
 			clear_disease_level_effect = yes
 			remove_disease_flags_effect = yes
@@ -7072,31 +6977,44 @@ character_event = {
 		if = { limit = { trait = severely_injured } remove_trait = severely_injured }
 		if = { limit = { trait = ill } remove_trait = ill }		
 		if = { limit = { trait = wounded } remove_trait = wounded }
-
+		
+		#Infirm
 		if = {
 			limit = { has_character_flag = rejuvenation_infirm }
 			remove_trait = infirm
 		}
+		
+		#Blind
 		if = {
 			limit = { has_character_flag = rejuvenation_blinded }
 			remove_trait = blinded
 		}
+		
+		#Incapable
 		if = {
 			limit = { has_character_flag = rejuvenation_incapable }
 			remove_trait = incapable
 		}
+		
+		#Eunuch
 		if = {
 			limit = { has_character_flag = rejuvenation_eunuch }
 			remove_trait = eunuch
 		}
+		
+		#Maimed
 		if = {
 			limit = { has_character_flag = removed_maimed }
 			remove_trait = maimed
 		}
+		
+		#Mangled
 		if = {
 			limit = { has_character_flag = removed_mangled }
 			remove_trait = mangled
 		}
+		
+		#One-eyed
 		if = {
 			limit = { has_character_flag = removed_one_eyed }
 			remove_trait = one_eyed
@@ -7116,6 +7034,8 @@ character_event = {
 				remove_character_modifier = phantom_pain
 			}
 		}
+		
+		#One-handed
 		if = {
 			limit = { has_character_flag = removed_one_handed }
 			remove_trait = one_handed
@@ -7142,6 +7062,8 @@ character_event = {
 				remove_character_modifier = phantom_pain
 			}
 		}
+		
+		#One-legged
 		if = {
 			limit = { has_character_flag = removed_one_legged }
 			remove_trait = one_legged
@@ -7167,6 +7089,8 @@ character_event = {
 				remove_character_modifier = phantom_pain
 			}
 		}
+		
+		#Disfigured
 		if = {
 			limit = { has_character_flag = removed_disfigured }
 			remove_trait = disfigured
@@ -7262,20 +7186,32 @@ character_event = {
 			set_character_flag = immune_typhoid_fever
 		}
 		
-		#Neg-con
+		#Negative congenital traits - remove random
 		if = {
 			limit = { has_character_flag = rejuvenation_neg_con_removed }
 			remove_random_negative_congenital_effect = yes
 			clr_character_flag = rejuvenation_neg_con_removed
 		}
-
+		
+		if = {
+			limit = { has_character_flag = rejuvenation_lunatic }
+			remove_trait = lunatic
+			clr_character_flact = rejuvenation_lunatic
+		}
+		
+		if = {
+			limit = { has_character_flag = rejuvenation_possessed }
+			remove_trait = possessed
+			clr_character_flact = rejuvenation_possessed
+		}
+		
 		add_character_modifier = {
 			modifier = rejuvenation_recent
 			years = 5
 		}		
 		
 		if = {
-			limit = { NOT = {has_character_flag = rejuvenation_nothing_happened } }
+			limit = { NOT = { has_character_flag = rejuvenation_nothing_happened } }
 			add_character_modifier = {
 				modifier = mystic_treatment_decent
 				year = 1
@@ -7283,10 +7219,9 @@ character_event = {
 		}
 		if = {
 			limit = { has_character_flag = rejuvenation_nothing_happened }
-			add_character_modifier = {
-				modifier = mystic_treatment_poor
-				year = 1
-			}		
+			custom_tooltip = {
+					text = "Apparently the Potion has had little or no effect on you."
+			}
 		}
 
 		clr_character_flag = rejuvenation_in_effect
@@ -7320,13 +7255,12 @@ character_event = {
 		clr_character_flag = removing_has_bubonic_plague
 		clr_character_flag = removing_has_typhus
 		clr_character_flag = removing_has_typhoid_fever
-	
     }
 }
 
 
 character_event = {
-	id = MNM.1412
+	id = MNM.1502
 	picture = GFX_evt_experiment
     border = GFX_event_normal_frame_religion
 
@@ -7334,13 +7268,15 @@ character_event = {
 	
 	option = {
 		name = "Bounce back to human"
-		FROMFROM = { character_event = { id = MNM.1413 days = 0 }
+		FROMFROM = { 
+			character_event = { id = MNM.1503 days = 1 }
+		}
 	}
 }
 
 #Rejuvenation result - for other
 character_event = {
-    id = MNM.1413
+    id = MNM.1503
     picture = GFX_evt_experiment
     border = GFX_event_normal_frame_religion
 
@@ -7348,19 +7284,16 @@ character_event = {
     
 	immediate = {
 		FROM = {
-		random_list = {
-				3 = { set_character_flag = rejuvenation_nothing_happened }
-				7 = {
+			random_list = {
+				2 = { set_character_flag = rejuvenation_nothing_happened }
+				8 = {
 					random_list = {
-						10 = {
+						30 = {
 							modifier = {
-								NOT = { has_negative_congenital_trigger = yes}
+								NOT = { has_disease_trigger = yes }
 								factor = 0
 							}
-							#remove_random_negative_congenital_trait = yes
-							set_character_flag = rejuvenation_neg_con_removed
-						}
-						10 = {
+							
 							modifier = {
 								OR = {
 									trait = flu
@@ -7368,6 +7301,7 @@ character_event = {
 								}
 								factor = 2
 							}
+							
 							modifier = {
 								trait = cancer
 								NOT = { trait = has_measles }
@@ -7381,10 +7315,11 @@ character_event = {
 								NOT = { trait = leper }
 								factor = 0.5
 							}
-							remove_random_disease_effect = yes 					# sets a flag to remove random "regular" disease
+							remove_random_disease_effect = yes
 							set_character_flag = rejuvenation_disease_removed
 						}
-						10 = {
+						
+						20 = {
 							modifier = {
 								NOT = { has_epidemic_disease_trigger = yes }
 								factor = 0
@@ -7392,7 +7327,8 @@ character_event = {
 							remove_random_epidemic_disease_effect = yes # sets a flag to remove random epidemic disease
 							set_character_flag = rejuvenation_disease_removed
 						}
-						10 = {
+						
+						15 = {
 							modifier = {
 								is_maimed_trigger = no
 								factor = 0
@@ -7404,33 +7340,55 @@ character_event = {
 							remove_random_maimed_effect = yes
 							set_character_flag = rejuvenation_maimed
 						}
-						10 = {
+						
+						5 = {
 							modifier = {
 								NOT = { trait = infirm }
 								factor = 0
 							}
 							set_character_flag = rejuvenation_infirm
 						}
-						10 = {
+						5 = {
 							modifier = {
 								NOT = { trait = incapable }
 								factor = 0
 							}
 							set_character_flag = rejuvenation_incapable
 						}
-						10 = {
+						5 = {
 							modifier = {
 								NOT = { trait = eunuch }
 								factor = 0
 							}
 							set_character_flag = rejuvenation_eunuch
 						}
-						10 = {
+						5 = {
 							modifier = {
 								NOT = { trait = blinded }
 								factor = 0
 							}
 							set_character_flag = rejuvenation_blinded
+						}
+						5 = {
+							modifier = {
+								NOT = { has_negative_congenital_trigger = yes}
+								factor = 0
+							}
+							set_character_flag = rejuvenation_neg_con_removed
+						}
+						5 = {
+							modifier = {
+								NOT = { trait = lunatic }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_lunatic
+						}
+						5 = {
+							modifier = {
+								NOT = { trait = possessed }
+								factor = 0
+							}
+							set_character_flag = rejuvenation_possessed
 						}
 					}
 				}
@@ -7438,117 +7396,17 @@ character_event = {
 		}
 	}
 	
-	desc = {
-		trigger = {
-			FROM = { has_character_flag = rejuvenation_neg_con_removed }
-		}
-		text = "The Potion fixed some abnormalities that had been with [From.GetName] since birth"
-	}
-	
-	desc = {
-		trigger = {
-			FROM = {
-			OR = {
-				has_character_flag = rejuvenation_incapable
-				has_character_flag = rejuvenation_infirm
-			}
-			}
-		}
-		text = "The Potion recovered incapability of [From.GetName]."
-	}
-	desc = {
-		trigger = {
-			FROM = { has_character_flag = rejuvenation_blinded }
-		}
-		text = "The Potion returned sight to [From.GetName]."
-	}
-	desc = {
-		trigger = {
-			FROM = { has_character_flag = rejuvenation_eunuch }
-		}
-		text = "The Potion mystically completed [From.GetName] with his male parts."
-	}
-
-	desc = {
-		trigger = {
-			has_character_flag = rejuvenation_maimed
-		}
-		text = "The Potion drunk made [From.GetName] regrow [From.GetHerHis] limbs and heal even the most severe of [From.GetHerHis] mutilations."
-	}
-
-	desc = {
-		trigger = {
-			FROM = {
-			NOT = {
-				has_character_flag = rejuvenation_incapable
-				has_character_flag = rejuvenation_eunuch
-				has_character_flag = rejuvenation_blinded
-				has_character_flag = rejuvenation_maimed_healed
-				has_character_flag = rejuvenation_infirm
-			}
-			has_character_flag = rejuvenation_disease_flag
-			has_character_flag = rejuvenation_disease_removed
-			}
-		}
-		text = "The Potion cured the disease of [From.GetName]."
-	}
-
-	desc = {
-		trigger = {
-			FROM = {NAND = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_disease_removed
-			}
-			has_character_flag = rejuvenation_nothing_happened
-			OR = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_maimed_flag
-			}
-			}
-		}
-		text = "Unfortunately, [From.GetName] feels no change after drinking the Potion."
-	}
-	
-	desc = {
-		trigger = {
-		FROM = {
-			NAND = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_disease_removed
-			}
-			has_character_flag = rejuvenation_injured
-			has_character_flag = rejuvenation_nothing_happened
-			NOR = {
-				has_character_flag = rejuvenation_disease_flag
-				has_character_flag = rejuvenation_maimed_flag
-			}
-			}
-		}
-		text = "[From.GetName] feels as usual."
-	}
-
-	desc = {
-		trigger = {
-			FROM = {
-			NAND = { 
-				has_character_flag = rejuvenation_injured 
-				has_character_flag = rejuvenation_disease_removed
-			}
-			has_character_flag = rejuvenation_nothing_happened
-			}
-		}
-		text = "[From.GetName] feels too weak."
-	}
+	desc = "The Potion of Rejuvenation has very weird disguisting taste and odour. However, according to ancient tomes and papyri found in the Hermetic society, the recipe of this panacaea would help to overcome every known disease and even undo disabilities and maims, either physical or mental."
 	
     option = { 
-        name = "Rejuvenation Potion outcome"
-        #custom_tooltip = { text = "Some of bad effects of [From.GetName] are relieved." }
+        name = "Ewwwww!"
+        custom_tooltip = { text = "Some of bad effects of [From.GetBestName] are relieved. The Potion would surely heal [From.GetHerHis] wounds and unpleasant disease symptoms, other effects may vary." }
         
 		FROM = {
-			#Diseases and symptoms
+			#Symptoms
 			if = {
 				limit = { has_character_flag = rejuvenation_disease_removed }
-				#general disease clearing effects:
+
 				remove_symptoms_effect = yes
 				clear_disease_level_effect = yes
 				remove_disease_flags_effect = yes
@@ -7560,31 +7418,44 @@ character_event = {
 			if = { limit = { trait = severely_injured } remove_trait = severely_injured }
 			if = { limit = { trait = ill } remove_trait = ill }		
 			if = { limit = { trait = wounded } remove_trait = wounded }
-
+			
+			#Infirm
 			if = {
 				limit = { has_character_flag = rejuvenation_infirm }
 				remove_trait = infirm
 			}
+			
+			#Blind
 			if = {
 				limit = { has_character_flag = rejuvenation_blinded }
 				remove_trait = blinded
 			}
+			
+			#Incapable
 			if = {
 				limit = { has_character_flag = rejuvenation_incapable }
 				remove_trait = incapable
 			}
+			
+			#Eunuch
 			if = {
 				limit = { has_character_flag = rejuvenation_eunuch }
 				remove_trait = eunuch
 			}
+			
+			#Maimed
 			if = {
 				limit = { has_character_flag = removed_maimed }
 				remove_trait = maimed
 			}
+			
+			#Mangled
 			if = {
 				limit = { has_character_flag = removed_mangled }
 				remove_trait = mangled
 			}
+			
+			#One-eyed
 			if = {
 				limit = { has_character_flag = removed_one_eyed }
 				remove_trait = one_eyed
@@ -7604,6 +7475,8 @@ character_event = {
 					remove_character_modifier = phantom_pain
 				}
 			}
+			
+			#One-handed
 			if = {
 				limit = { has_character_flag = removed_one_handed }
 				remove_trait = one_handed
@@ -7630,6 +7503,8 @@ character_event = {
 					remove_character_modifier = phantom_pain
 				}
 			}
+			
+			#One-legged
 			if = {
 				limit = { has_character_flag = removed_one_legged }
 				remove_trait = one_legged
@@ -7655,6 +7530,8 @@ character_event = {
 					remove_character_modifier = phantom_pain
 				}
 			}
+			
+			#Disfigured
 			if = {
 				limit = { has_character_flag = removed_disfigured }
 				remove_trait = disfigured
@@ -7750,31 +7627,44 @@ character_event = {
 				set_character_flag = immune_typhoid_fever
 			}
 			
-			#Neg-con
+			#Negative congenital traits - remove random
 			if = {
 				limit = { has_character_flag = rejuvenation_neg_con_removed }
 				remove_random_negative_congenital_effect = yes
 				clr_character_flag = rejuvenation_neg_con_removed
 			}
-
+			
+			if = {
+				limit = { has_character_flag = rejuvenation_lunatic }
+				remove_trait = lunatic
+				clr_character_flact = rejuvenation_lunatic
+			}
+			
+			if = {
+				limit = { has_character_flag = rejuvenation_possessed }
+				remove_trait = possessed
+				clr_character_flact = rejuvenation_possessed
+			}
+			
 			add_character_modifier = {
 				modifier = rejuvenation_recent
 				years = 5
 			}		
 			
 			if = {
-				limit = { NOT = {has_character_flag = rejuvenation_nothing_happened } }
+				limit = { NOT = { has_character_flag = rejuvenation_nothing_happened } }
 				add_character_modifier = {
 					modifier = mystic_treatment_decent
 					year = 1
 				}
+				opinion = { who = ROOT modifier = opinion_very_grateful months = 12 }
 			}
 			if = {
 				limit = { has_character_flag = rejuvenation_nothing_happened }
-				add_character_modifier = {
-					modifier = mystic_treatment_poor
-					year = 1
-				}		
+				custom_tooltip = {
+					text = "Apparently the Potion has had little or no effect on [From.GetBestName]"
+				}
+				opinion = { who = ROOT modifier = opinion_grateful months = 12 }
 			}
 
 			clr_character_flag = rejuvenation_in_effect
@@ -7807,14 +7697,8 @@ character_event = {
 			clr_character_flag = removing_has_small_pox
 			clr_character_flag = removing_has_bubonic_plague
 			clr_character_flag = removing_has_typhus
-			clr_character_flag = removing_has_typhoid_fever
-		
-		}
-		
-		reverse_opinion = {
-        	who = FROM
-        	modifier = opinion_grateful
-        }		
+			clr_character_flag = removing_has_typhoid_fever		
+		}		
     }
 }
 
@@ -16329,7 +16213,34 @@ long_character_event = {
 					factor = 0.5
 					has_character_modifier = astronomical_insights_4
 				}
-				
+				modifier = {
+					factor = 0.9
+					has_artifact = magnum_opus_astrology_stars_1
+				}
+				modifier = {
+					factor = 0.8
+					has_artifact = magnum_opus_astrology_stars_2
+				}
+				modifier = {
+					factor = 0.7
+					has_artifact = magnum_opus_astrology_stars_3
+				}
+				modifier = {
+					factor = 0.6
+					has_artifact = magnum_opus_astrology_stars_4
+				}
+				modifier = {
+					factor = 0.8
+					learning = 30
+				}
+				modifier = {
+					factor = 0.7
+					learning = 40
+				}
+				modifier = {
+					factor = 0.6
+					learning = 50
+				}				
 				set_character_flag = comet_failure
 			}
 		}

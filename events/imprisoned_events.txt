@@ -832,9 +832,34 @@ character_event = {
 	border = GFX_event_normal_frame_war
 
 	is_triggered_only = yes
-
+	
+	
+	
 	option = {
 		name = "EVTOPTA50020"
+		FROM = {
+				save_event_target_as = original_item_owner
+				random_artifact = {
+					limit = { 
+						OR = {
+							has_artifact_flag = combat_weapon
+							has_artifact_flag = crown
+						}
+					}
+					transfer_artifact = {
+						from = event_target:original_item_owner
+						to = ROOT
+					}
+					event_target:original_item_owner = {
+						opinion = { who = ROOT modifier = opinion_stole_my_artifact years = 10 }
+					}
+				}
+				#if = {
+				#	limit = { has_character_flag = items_stolen }
+				#	opinion = { who = ROOT modifier = opinion_stole_my_artifact years = 10 }
+				#	clr_character_flag = items_stolen
+				#}
+		}
 	}
 }
 
