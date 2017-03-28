@@ -505,10 +505,10 @@ TECH_GROUP_CULTURE = {
 			add_decision = form_new_kingdom
 		}
 		2 = {
-			add_decision = form_new_empire
+			
 		}
 		3 = {}
-		4 = {}
+		4 = { add_decision = form_new_empire }
 		5 = {
 			add_decision = imperial_administration
 		}
