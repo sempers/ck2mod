@@ -1,0 +1,150 @@
+castle = {
+	un_conscription_center = {
+		desc = un_conscription_center_1_desc
+		trigger = {
+			TECH_RECRUITMENT = 8
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		upgrades_from = ca_training_grounds_3
+		gold_cost = 2000
+		build_time = 1825
+		land_morale = 0.25
+		levy_reinforce_rate = 0.25
+		retinuesize = 300
+		ai_creation_factor = 88
+		
+		extra_tech_building_start = 0.8
+	}
+	
+	un_parliament = {
+		desc = un_parliament_desc
+		trigger = {
+			TECH_LEGALISM = 8
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		
+		gold_cost = 3000
+		build_time = 1825	
+		
+		ai_creation_factor = 30
+		extra_tech_building_start = 10.0
+	}
+	
+	un_inquisition = {
+		desc = un_inquisition_desc
+		trigger = {
+			TECH_RELIGIOUS_CUSTOMS = 8
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		gold_cost = 3000
+		build_time = 1825	
+		
+		ai_creation_factor = 30
+		extra_tech_building_start = 10.0
+	}
+	
+	un_army_academy = {
+		desc = un_army_academy_desc
+		trigger = {
+			TECH_LEGALISM = 8
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		gold_cost = 3000
+		build_time = 1825	
+		
+		ai_creation_factor = 30
+		extra_tech_building_start = 10.0
+	}
+	
+	un_diplomatic_cabinet = {
+		desc = un_army_academy_desc
+		trigger = {
+			TECH_LEGALISM = 8
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		gold_cost = 3000
+		build_time = 1825	
+		
+		ai_creation_factor = 30
+		extra_tech_building_start = 10.0
+	}
+	
+	un_secret_agency = {
+		desc = un_secret_agenc_desc
+		trigger = {
+			TECH_LEGALISM = 8
+			hidden_tooltip = {
+				FROM = {
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		gold_cost = 3000
+		build_time = 1825	
+		
+		ai_creation_factor = 30
+		extra_tech_building_start = 10.0
+	}
+}
