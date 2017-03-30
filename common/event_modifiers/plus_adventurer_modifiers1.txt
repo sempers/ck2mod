@@ -13,4 +13,25 @@ rejuvenation_recent = {
 	icon = 76
 }
 
+printing_press = {
+	tech_growth_modifier = 1.0
+	icon = 12
+}
+
+arquebusiers = {
+	archers_offensive = 0.5
+	light_infantry_offensive = 0.5
+	icon = 8
+}
+
+full_plate_armor = {
+	knights_defensive = 1.0
+	icon=8
+}
+
+double_entry_bookkeeping = {
+	global_tax_modifier = 0.15
+	icon = 6
+}
+
 

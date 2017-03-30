@@ -5,6 +5,7 @@ castle = {
 			TECH_RECRUITMENT = 8
 			hidden_tooltip = {
 				FROM = {
+					capital_holding = { title = FROMFROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -33,6 +34,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
+					capital_holding = { title = FROMFROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -58,6 +60,7 @@ castle = {
 			TECH_RELIGIOUS_CUSTOMS = 8
 			hidden_tooltip = {
 				FROM = {
+					capital_holding = { title = FROMFROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -82,6 +85,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
+					capital_holding = { title = FROMFROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -106,6 +110,32 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
+					capital_holding = { title = FROMFROM }
+					OR = {
+						ai = no
+						NOT = { has_character_modifier = ai_austerity }
+					}
+					OR = {
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+				}
+			}
+		}
+		gold_cost = 3000
+		build_time = 1825	
+		
+		ai_creation_factor = 30
+		extra_tech_building_start = 10.0
+	}
+	
+	un_revenue_bureau = {
+		desc = un_revenue_bureau_desc
+		trigger = {
+			TECH_LEGALISM = 8
+			hidden_tooltip = {
+				FROM = {
+					capital_holding = { title = FROMFROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -130,6 +160,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
+					capital_holding = { title = FROMFROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }

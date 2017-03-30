@@ -9229,6 +9229,24 @@ character_event = {
 
     	#Outcome
     	random_list = {
+			5 = { #Super
+				trigger = { has_character_flag = risky_invention }
+				modifier = { learning = 10 factor = 1.3 }
+    			modifier = { learning = 12 factor = 1.3 }
+    			modifier = { learning = 14 factor = 1.3 }
+    			modifier = { learning = 16 factor = 1.3 }
+    			modifier = { learning = 18 factor = 1.3 }
+    			modifier = { learning = 20 factor = 1.3 }
+				modifier = { learning = 25 factor = 1.7 }
+				modifier = { learning = 30 factor = 1.7 }
+				modifier = { learning = 40 factor = 1.7 }
+				modifier = { has_character_flag = brilliant_insight factor = 100 }
+    			modifier = { check_variable = { which = collective_learning value = 40 } factor = 1.4 }
+    			modifier = { check_variable = { which = collective_learning value = 50 } factor = 1.4 }
+    			modifier = { check_variable = { which = collective_learning value = 60 } factor = 1.4 }
+    			set_character_flag = super_outcome
+    			character_event = { id = MNM.1478 }
+			}
     		20 = { #Best
     			trigger = { has_character_flag = risky_invention }
     			modifier = { learning = 10 factor = 1.3 }
@@ -9299,7 +9317,34 @@ character_event = {
     id = MNM.1478
     picture = GFX_evt_gathering_of_minds
     border = GFX_event_normal_frame_religion
-
+	
+	desc = {
+		trigger = {
+    		has_character_flag = super_outcome
+    		has_character_flag = war_invention
+    	}
+    	text = "You have invented the weapon that will truly change how the war is fought for ever, the arquebus."
+    	picture = GFX_evt_gathering_of_minds	
+	}
+	
+	desc = {
+		trigger = {
+    		has_character_flag = super_outcome
+    		has_character_flag = prosperity_invention
+    	}
+    	text = "You have invented the double-entry bookkeeping system, a system of bookkeeping so named because every entry to an account requires a corresponding and opposite entry to a different account."
+    	picture = GFX_evt_gathering_of_minds	
+	}
+	
+	desc = {
+		trigger = {
+    		has_character_flag = super_outcome
+    		has_character_flag = knowledge_invention
+    	}
+    	text = "You have invented a true thing of future, a printing press."
+    	picture = GFX_evt_gathering_of_minds	
+	}	
+	
     desc = {
     	trigger = {
     		has_character_flag = best_outcome
@@ -9377,7 +9422,61 @@ character_event = {
     hide_from = yes
     
    	trigger = { has_character_flag =  gathering_of_the_minds }
+	
+	option = { 
+    	trigger = {
+    		has_character_flag = super_outcome
+    		has_character_flag = war_invention
+    	}
+        name = "The Arquebus"
 
+        capital_scope = {
+			add_province_modifier = {
+				name = arquebusiers
+				years = 1000
+			}
+		}
+
+        military_techpoints = 200
+        add_society_currency_major_effect = yes
+    }
+
+    option = {
+    	trigger = {
+    		has_character_flag = super_outcome
+    		has_character_flag = prosperity_invention
+    	}
+        name = "Double-Entry Bookkeeping"
+
+       	capital_scope = {
+			add_province_modifier = {
+				name = double_entry_bookkeeping
+				years = 1000
+			}
+		}
+
+        economy_techpoints = 200
+        add_society_currency_major_effect = yes
+    }
+    
+    option = {
+    	trigger = {
+    		has_character_flag = super_outcome
+    		has_character_flag = knowledge_invention
+    	}
+        name = "The Printing Press"
+
+        capital_scope = {
+			add_province_modifier = {
+				name = printing_press
+				years = 1000
+			}
+		}
+
+        culture_techpoints = 200
+        add_society_currency_major_effect = yes
+    }	
+	
     option = { 
     	trigger = {
     		has_character_flag = best_outcome
@@ -9427,7 +9526,7 @@ character_event = {
     	capital_scope = {
         	add_province_modifier = {
         		name = giant_crossbow
-        		years = 100
+        		years = 1000
         	}
         }
 
@@ -9445,7 +9544,7 @@ character_event = {
         capital_scope = {
         	add_province_modifier = {
         		name = blast_furnace
-        		years = 100
+        		years = 1000
         	}
         }
 
@@ -9489,7 +9588,7 @@ character_event = {
         capital_scope = {
         	add_province_modifier = {
         		name = great_mill
-        		years = 100
+        		years = 500
         	}
         }
 

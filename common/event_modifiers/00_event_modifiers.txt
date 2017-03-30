@@ -3075,9 +3075,9 @@ merchant_harbor_province = {
 }
 
 scholar_foundation_province = {
-	military_techpoints = 0.03
-	culture_techpoints = 0.03
-	economy_techpoints = 0.03
+	military_techpoints = 0.05
+	culture_techpoints = 0.05
+	economy_techpoints = 0.05
 	icon = 12
 }
 

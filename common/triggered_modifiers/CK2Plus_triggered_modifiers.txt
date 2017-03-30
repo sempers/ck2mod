@@ -31,3 +31,108 @@ player_no_ambition = {
 	monthly_character_prestige = -1
 }
 
+has_parliament = {
+	potential = {
+		is_ruler = yes
+	}
+	
+	trigger = {
+		is_ruler = yes
+		any_demesne_province = {
+			has_building = un_parliament
+		}
+	}
+	
+	vassal_opinion = 15
+	icon = 7
+}
+
+has_diplomatic_cabinet = {
+	potential = {
+		has_job_title = job_chancellor
+	}
+	
+	trigger = {
+		liege = {
+				any_demesne_province = {
+					has_building = un_diplomatic_cabinet
+				}
+		}
+	}
+	
+	diplomacy_penalty = 5
+	
+	icon = 7
+}
+
+has_army_academy = {
+	potential = {
+		has_job_title = job_marshal
+	}
+	
+	trigger = {
+		liege = {
+				any_demesne_province = {
+					has_building = un_army_academy
+				}
+		}
+	}
+	
+	martial_penalty = 5
+	
+	icon = 7
+}
+
+has_revenue_bureau = {
+	potential = {
+		has_job_title = job_steward
+	}
+	
+	trigger = {
+		liege = {
+				any_demesne_province = {
+					has_building = un_revenue_bureau
+				}
+		}
+	}
+	
+	stewardship_penalty = 5
+	
+	icon = 7
+}
+
+has_secret_agency = {
+	potential = {
+		has_job_title = job_spymaster
+	}
+	
+	trigger = {
+		liege = {
+				any_demesne_province = {
+					has_building = un_secret_service
+				}
+		}
+	}
+	
+	intrigue_penalty = 5
+	
+	icon = 7
+}
+
+has_holy_inquisition = {
+	potential = {
+		has_job_title = job_spiritual
+	}
+	
+	trigger = {
+		liege = {
+			any_demesne_province = {
+				has_building = un_inquisition
+			}
+		}
+	}
+	
+	learning_penalty = 5
+	
+	icon = 7
+}

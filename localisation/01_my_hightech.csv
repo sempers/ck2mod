@@ -11,3 +11,16 @@ un_diplomatic_cabinet;Diplomatic Cabinet;;;;;;;;;;;;;x
 un_diplomatic_cabinet_desc;Diplomatic Cabinet;;;;;;;;;;;;;x
 un_secret_agency;Secret Agency;;;;;;;;;;;;;x
 un_secret_agency_desc;Secret Agency;;;;;;;;;;;;;x
+un_revenue_bureau;Revenue Bureau;;;;;;;;;;;;;x
+un_revenue_bureau_desc;Revenue Bureau;;;;;;;;;;;;;x
+
+printing_press;Printing Press;;;;;;;;;;;;;x
+double_entry_bookkeeping;Double Entry Bookkeeping;;;;;;;;;;;;;x
+arquebusiers;Arquebusiers;;;;;;;;;;;;;x
+
+has_parliament;Has Parliament;;;;;;;;;;;;;x
+has_secret_agency;Has Secret Agency;;;;;;;;;;;;;x
+has_army_academy;Has Army Academy;;;;;;;;;;;;;x
+has_diplomatic_cabinet;Has Diplomatic Cabinet;;;;;;;;;;;;;x
+has_holy_inquisition;Has Holy Inquisition;;;;;;;;;;;;;x
+has_revenue_bureau;Has Revenue Bureau;;;;;;;;;;;;;x
