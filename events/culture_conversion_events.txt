@@ -336,6 +336,10 @@ province_event = {
 			owner = { learning = 25 }
 		}
 		modifier = {
+			factor = 0.6
+			owner = { learning = 30 }
+		}
+		modifier = {
 			factor = 0.9
 			owner = { trait = gregarious }
 		}

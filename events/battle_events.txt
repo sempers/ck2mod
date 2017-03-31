@@ -484,6 +484,10 @@ character_event = {
 	
 	weight_multiplier = {
 		days = 1
+		modifier = {
+			factor = 0.2
+			immortal = yes
+		}
 		
 		modifier = {
 			factor = 5
@@ -670,8 +674,8 @@ character_event = {
 	weight_multiplier = {
 		days = 1
 		modifier = {
-			factor = 0.1
-			trait = immortal
+			factor = 0.2
+			immortal = yes
 		}
 		modifier = {
 			factor = 5
@@ -880,10 +884,10 @@ character_event = {
 		days = 1
 		
 		modifier = {
-			factor = 0.05
+			factor = 0.1
+			immortal = yes
 		}
-		
-		
+	
 		modifier = {
 			factor = 5
 			has_character_modifier = proving_bravery

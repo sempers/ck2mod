@@ -950,6 +950,14 @@ character_event = {
 				FROMFROM = { diplomacy = 20 }
 			}
 			modifier = {
+				factor = 1.1
+				FROMFROM = { diplomacy = 25 }
+			}
+			modifier = {
+				factor = 1.1
+				FROMFROM = { diplomacy = 30 }
+			}
+			modifier = {
 				factor = 0
 				NOT = { opinion = { who = FROMFROM value = 0 } }
 			}
@@ -1242,6 +1250,14 @@ character_event = {
 				FROMFROM = { diplomacy = 20 }
 			}
 			modifier = {
+				factor = 1.1
+				FROMFROM = { diplomacy = 25 }
+			}
+			modifier = {
+				factor = 1.1
+				FROMFROM = { diplomacy = 30 }
+			}
+			modifier = {
 				factor = 0
 				NOT = { opinion = { who = FROMFROM value = 0 } }
 			}
@@ -1410,6 +1426,14 @@ character_event = {
 				factor = 1.1
 				FROMFROM = { diplomacy = 20 }
 			}
+			modifier = {
+				factor = 1.1
+				FROMFROM = { diplomacy = 25 }
+			}
+			modifier = {
+				factor = 1.1
+				FROMFROM = { diplomacy = 30 }
+			}
 		}
 		opinion = { who = FROMFROM modifier = pleasant_meeting months = 60 }
 		hidden_tooltip = {
@@ -1450,6 +1474,14 @@ character_event = {
 			modifier = {
 				factor = 0.9
 				FROMFROM = { diplomacy = 20 }
+			}
+			modifier = {
+				factor = 0.9
+				FROMFROM = { diplomacy = 25 }
+			}
+			modifier = {
+				factor = 0.9
+				FROMFROM = { diplomacy = 30 }
 			}
 			modifier = {
 				factor = 2
@@ -1509,6 +1541,14 @@ character_event = {
 			modifier = {
 				factor = 0.9
 				FROMFROM = { diplomacy = 20 }
+			}
+			modifier = {
+				factor = 0.9
+				FROMFROM = { diplomacy = 25 }
+			}
+			modifier = {
+				factor = 0.9
+				FROMFROM = { diplomacy = 30 }
 			}
 			modifier = {
 				factor = 2
@@ -1802,6 +1842,14 @@ character_event = {
 					factor = 1.2
 					diplomacy = 20
 				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 30
+				}
 				custom_tooltip = { text = SMOOTH_THINGS_OVER }
 				hidden_tooltip = {
 					clr_character_flag = had_faction_dispute
@@ -1859,6 +1907,14 @@ character_event = {
 				modifier = {
 					factor = 1.2
 					intrigue = 20
+				}
+				modifier = {
+					factor = 1.2
+					intrigue = 25
+				}
+				modifier = {
+					factor = 1.2
+					intrigue = 30
 				}
 				custom_tooltip = { text = SMOOTH_THINGS_OVER }
 				hidden_tooltip = {
@@ -1945,6 +2001,14 @@ character_event = {
 				modifier = {
 					factor = 1.2
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 30
 				}
 				modifier = {
 					factor = 1.5
@@ -2140,6 +2204,14 @@ character_event = {
 					diplomacy = 20
 				}
 				modifier = {
+					factor = 1.2
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 30
+				}
+				modifier = {
 					factor = 0.8
 					NOT = { diplomacy = 8 }
 				}
@@ -2211,6 +2283,14 @@ character_event = {
 				modifier = {
 					factor = 0.8
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 0.8
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 0.8
+					diplomacy = 30
 				}
 				modifier = {
 					factor = 1.2
@@ -2351,6 +2431,14 @@ character_event = {
 				modifier = {
 					factor = 1.2
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.2
+					diplomacy = 30
 				}
 				modifier = {
 					factor = 0.8

@@ -1599,6 +1599,10 @@ character_event = {
 					}
 					modifier = {
 						factor = 1.2
+						learning = 30
+					}
+					modifier = {
+						factor = 1.2
 						learning = 25
 					}
 					modifier = {
@@ -1629,6 +1633,10 @@ character_event = {
 				}
 				#Writes a good book
 				35 = { 
+					modifier = {
+						factor = 1.2
+						learning = 30
+					}
 					modifier = {
 						factor = 1.2
 						learning = 25
@@ -1671,6 +1679,10 @@ character_event = {
 					modifier = {
 						factor = 1.5
 						physician_bad_trigger = yes
+					}
+					modifier = {
+						factor = 0.8
+						learning = 30
 					}
 					modifier = {
 						factor = 0.8
@@ -2125,6 +2137,10 @@ character_event = {
 							physician_good_trigger = yes
 						}
 						modifier = {
+						factor = 1.2
+						learning = 30
+					}
+						modifier = {
 							factor = 1.2
 							learning = 25
 						}
@@ -2156,6 +2172,10 @@ character_event = {
 						modifier = {
 							factor = 1.5
 							physician_bad_trigger = yes
+						}
+						modifier = {
+							factor = 1.2
+							learning = 30
 						}
 						modifier = {
 							factor = 0.8
@@ -12985,14 +13005,15 @@ character_event = {
 	option = { #persuade 
 		trigger = {
 			is_incapable = no
-			diplomacy = 18
+			diplomacy = 20
+			NOT = { has_character_flag = immortal_rival_horse }
 			OR = {
 				NOT = {
 					calc_true_if = {
 						amount = 2
-						intrigue = 18
-						stewardship = 18
-						learning = 18
+						intrigue = 20
+						stewardship = 20
+						learning = 20
 					}
 				}
 				OR = {
@@ -13008,14 +13029,14 @@ character_event = {
 	option = { #trick
 		trigger = {
 			is_incapable = no
-			intrigue = 18
+			intrigue = 20
 			OR = {
 				NOT = {
 					calc_true_if = {
 						amount = 2
-						diplomacy = 18
-						stewardship = 18
-						learning = 18
+						diplomacy = 20
+						stewardship = 20
+						learning = 20
 					}
 				}
 				OR = {
@@ -13031,14 +13052,14 @@ character_event = {
 	option = { #money power
 		trigger = {
 			is_incapable = no
-			stewardship = 18
+			stewardship = 20
 			OR = {
 				NOT = {
 					calc_true_if = {
 						amount = 2
-						diplomacy = 18
-						intrigue = 18
-						learning = 18
+						diplomacy = 20
+						intrigue = 20
+						learning = 20
 					}
 				}
 				OR = {
@@ -13054,14 +13075,14 @@ character_event = {
 	option = { #debate
 		trigger = {
 			is_incapable = no
-			learning = 18
+			learning = 20
 			OR = {
 				NOT = {
 					calc_true_if = {
 						amount = 2
-						diplomacy = 18
-						intrigue = 18
-						stewardship = 18
+						diplomacy = 20
+						intrigue = 20
+						stewardship = 20
 					}
 				}
 				OR = {
@@ -13370,6 +13391,7 @@ character_event = { # trick
 	option = {
 		trigger = {
 			stewardship = 14
+			NOT = { has_character_flag = immortal_rival_horse }
 		}
 		name = placeholdername_13 #RIP.30310.b	
 		tooltip_info = stewardship
@@ -13378,6 +13400,19 @@ character_event = { # trick
 				name = trapped_immortal
 				duration = -1
 			}			
+		}
+	}
+	option = {
+		trigger = {
+			stewardship = 14
+			martial = 14
+			has_character_flag = immortal_rival_horse
+		}
+		name = "This will be my immortal horse!"	#placeholdername_13 #RIP.30310.b	
+		tooltip_info = stewardship
+		add_character_modifier = {
+			name = immortal_horse
+			duration = -1
 		}
 	}
 }
@@ -13509,7 +13544,7 @@ character_event = { # immortal suspicions
 				ai = yes
 				immortal = no
 				NOT = { opinion = { who = ROOT value = 50 } }
-				intrigue = 12 
+				intrigue = 12
 			}
 			save_event_target_as = immortal_suspector
 		}
@@ -13522,7 +13557,7 @@ character_event = { # immortal suspicions
 	
 	trigger = {
 		immortal = yes
-		age = 70
+		age = 80
 		NOR = { 
 			has_character_flag = immortal_crisis
 			has_character_flag = immortal_crisis_confirmed
@@ -13537,17 +13572,17 @@ character_event = { # immortal suspicions
 			age = 100
 		}
 		modifier = {
-			factor = 2
+			factor = 3
 			age = 150
 		}
 		
 		modifier = {
-			factor = 2
+			factor = 4
 			age = 200
 		}
 		
 		modifier = {
-			factor = 2
+			factor = 8
 			age = 300
 		}		
 
@@ -13665,7 +13700,7 @@ character_event = { # suspicions are confirmed
 	
 	trigger = {
 		immortal = yes
-		age = 70
+		age = 80
 		has_character_flag = immortal_crisis
 		any_vassal = {
 			ai = yes
@@ -13683,20 +13718,19 @@ character_event = { # suspicions are confirmed
 			age = 100
 		}
 		modifier = {
-			factor = 2
+			factor = 3
 			age = 150
 		}
 		
 		modifier = {
-			factor = 2
+			factor = 4
 			age = 200
 		}
 		
 		modifier = {
-			factor = 2
+			factor = 8
 			age = 300
-		}		
-
+		}
 	}
 
 	option = {
@@ -13723,8 +13757,6 @@ character_event = { # spare event
 	is_triggered_only = yes
 
 	option = {
-		name = RIP.30302.a
-		
-	}
-	
+		name = RIP.30302.a		
+	}	
 }

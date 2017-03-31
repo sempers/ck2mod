@@ -2644,11 +2644,11 @@ character_event = {
 				learning = 20
 			}
 			modifier = {
-				factor = 1.5
+				factor = 1.2
 				learning = 25
 			}
 			modifier = {
-				factor = 1.5
+				factor = 1.2
 				learning = 30
 			}
 			modifier = {
@@ -3971,6 +3971,14 @@ character_event = {
 				FROM = { diplomacy = 20 }
 			}
 			modifier = {
+				factor = 0.8
+				FROM = { diplomacy = 25 }
+			}
+			modifier = {
+				factor = 0.8
+				FROM = { diplomacy = 30 }
+			}
+			modifier = {
 				factor = 1.25
 				NOT = { religion_group = pagan_group }
 				FROM = { religion_group = pagan_group }
@@ -4548,6 +4556,10 @@ character_event = {
 			}
 			modifier = {
 				factor = 1.2
+				learning = 30
+			}
+			modifier = {
+				factor = 0.8
 				learning = 30
 			}
 			modifier = {

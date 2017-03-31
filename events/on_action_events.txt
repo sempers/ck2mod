@@ -48,7 +48,7 @@ character_event = {
 			limit = {
 				NOT = { trait = kinslayer }
 				NOT = { religion_group = muslim }
-				NOT = { trait = immortal }
+				immortal = no
 				event_target:target_victim = {
 					is_close_relative = ROOT
 				}

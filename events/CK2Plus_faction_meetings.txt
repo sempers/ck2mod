@@ -2301,6 +2301,14 @@ character_event = {
 					factor = 1.75
 					diplomacy = 20
 				}
+				modifier = {
+					factor = 1.75
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.75
+					diplomacy = 30
+				}
 				set_character_flag = made_great_speech
 				character_event = { id = PlusFaction.311 tooltip = EVTTOOLTIP1900700 } # great speech
 			}
@@ -2340,6 +2348,14 @@ character_event = {
 				modifier = {
 					factor = 1.75
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 1.75
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.75
+					diplomacy = 30
 				}
 				set_character_flag = made_good_speech
 				character_event = { id = PlusFaction.311 tooltip = EVTTOOLTIP1900702 } # good speech
@@ -2381,6 +2397,14 @@ character_event = {
 					factor = 1.75
 					diplomacy = 20
 				}
+				modifier = {
+					factor = 1.75
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.75
+					diplomacy = 30
+				}
 				set_character_flag = made_fair_speech
 				character_event = { id = PlusFaction.311 tooltip = EVTTOOLTIP1900704 } # fair speech
 			}
@@ -2421,6 +2445,14 @@ character_event = {
 					factor = 0.5
 					diplomacy = 20
 				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 30
+				}
 				set_character_flag = made_bad_speech
 				character_event = { id = PlusFaction.311 tooltip = EVTTOOLTIP1900706 } # bad speech
 			}
@@ -2460,6 +2492,14 @@ character_event = {
 				modifier = {
 					factor = 0.5
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 30
 				}
 				set_character_flag = made_terrible_speech
 				character_event = { id = PlusFaction.311 tooltip = EVTTOOLTIP1900708 } # laughed out of the room
@@ -2878,6 +2918,14 @@ character_event = {
 					factor = 1.5
 					diplomacy = 20
 				}
+				modifier = {
+					factor = 1.5
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.5
+					diplomacy = 30
+				}
 				set_character_flag = liege_opinion_slightly_increased
 				character_event = { id = PlusFaction.314 tooltip = EVTTOOLTIP1900716 } # faction opinion of liege slightly increased
 			}
@@ -2925,6 +2973,14 @@ character_event = {
 				modifier = {
 					factor = 0.5
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 30
 				}
 				set_character_flag = liege_opinion_decreased
 				character_event = { id = PlusFaction.314 tooltip = EVTTOOLTIP1900719 } # faction opinion of liege decreased
@@ -3403,6 +3459,14 @@ character_event = {
 					factor = 1.5
 					diplomacy = 20
 				}
+				modifier = {
+					factor = 1.5
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 1.5
+					diplomacy = 30
+				}
 				set_character_flag = liege_opinion_slightly_decreased
 				character_event = { id = PlusFaction.318 tooltip = EVTTOOLTIP1900731 } # faction opinion of liege slightly decreased
 			}
@@ -3450,6 +3514,14 @@ character_event = {
 				modifier = {
 					factor = 0.5
 					diplomacy = 20
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 25
+				}
+				modifier = {
+					factor = 0.5
+					diplomacy = 30
 				}
 				set_character_flag = liege_opinion_increased
 				character_event = { id = PlusFaction.318 tooltip = EVTTOOLTIP1900734 } # faction opinion of liege increased

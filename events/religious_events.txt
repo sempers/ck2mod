@@ -2943,6 +2943,10 @@ province_event = {
 			owner = { learning = 25 }
 		}
 		modifier = {
+			factor = 0.8
+			learning = 30
+		}
+		modifier = {
 			factor = 0.9
 			owner = { demesne_size = 2 }
 		}

@@ -641,6 +641,11 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_chancellor }
 					modifier = { factor = 3 diplomacy = 10 }
 					random_list = {
+						1 = {
+							modifier = { factor = 1.6 diplomacy = 35 }
+							modifier = { factor = 1.6 diplomacy = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 3 } }
+						}
 						5 = {
 							modifier = { factor = 1.6 diplomacy = 25 }
 							modifier = { factor = 1.6 diplomacy = 30 }
@@ -683,6 +688,11 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_marshal }
 					modifier = { factor = 3 martial = 10 }
 					random_list = {
+						1 = {
+							modifier = { factor = 1.6 martial = 35 }
+							modifier = { factor = 1.6 martial = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 3 } }
+						}
 						5 = {
 							modifier = { factor = 1.6 martial = 25 }
 							modifier = { factor = 1.6 martial = 30 }
@@ -727,6 +737,11 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_treasurer }
 					modifier = { factor = 3 stewardship = 10 }
 					random_list = {
+						1 = {
+							modifier = { factor = 1.6 stewardship = 35 }
+							modifier = { factor = 1.6 stewardship = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 3 } }
+						}
 						5 = {
 							modifier = { factor = 1.6 stewardship = 25 }
 							modifier = { factor = 1.6 stewardship = 30 }
@@ -769,6 +784,11 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_spymaster }
 					modifier = { factor = 3 intrigue = 10 }
 					random_list = {
+						1 = {
+							modifier = { factor = 1.6 intrigue = 35 }
+							modifier = { factor = 1.6 intrigue = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 3 } }
+						}
 						5 = {
 							modifier = { factor = 1.6 intrigue = 25 }
 							modifier = { factor = 1.6 intrigue = 30 }
@@ -811,6 +831,11 @@ character_event = {
 					modifier = { factor = 5 has_job_title = job_spiritual }
 					modifier = { factor = 3 learning = 10 }
 					random_list = {
+						1 = {
+							modifier = { factor = 1.6 learning = 35 }
+							modifier = { factor = 1.6 learning = 40 }
+							event_target:relic_ruler = { change_variable = { which = relic_score value = 3 } }
+						}
 						5 = {
 							modifier = { factor = 1.6 learning = 25 }
 							modifier = { factor = 1.6 learning = 30 }

@@ -628,6 +628,10 @@ character_event = {
 					factor = 0.7
 					martial = 26
 				}
+				modifier = {
+					factor = 0.7
+					martial = 30
+				}
 				spawn_unit = {
 					province = event_target:target_province
 					home = event_target:target_province
@@ -668,6 +672,10 @@ character_event = {
 				modifier = {
 					factor = 0.7
 					martial = 24
+				}
+				modifier = {
+					factor = 0.7
+					martial = 30
 				}
 				spawn_unit = {
 					province = event_target:target_province
@@ -848,6 +856,10 @@ character_event = {
 					factor = 0.7
 					martial = 26
 				}
+				modifier = {
+					factor = 0.7
+					martial = 30
+				}
 				spawn_unit = {
 					province = event_target:target_province
 					home = event_target:target_province
@@ -888,6 +900,10 @@ character_event = {
 				modifier = {
 					factor = 0.7
 					martial = 24
+				}
+				modifier = {
+					factor = 0.7
+					martial = 30
 				}
 				spawn_unit = {
 					province = event_target:target_province
@@ -1179,6 +1195,10 @@ character_event = {
 					factor = 0.7
 					martial = 26
 				}
+				modifier = {
+					factor = 0.7
+					martial = 30
+				}
 				spawn_unit = {
 					province = event_target:target_province
 					home = event_target:target_province
@@ -1217,6 +1237,10 @@ character_event = {
 				modifier = {
 					factor = 0.7
 					martial = 24
+				}
+				modifier = {
+					factor = 0.7
+					martial = 30
 				}
 				spawn_unit = {
 					province = event_target:target_province
@@ -1390,6 +1414,10 @@ character_event = {
 					factor = 0.7
 					martial = 26
 				}
+				modifier = {
+					factor = 0.7
+					martial = 30
+				}
 				spawn_unit = {
 					province = event_target:target_province
 					home = event_target:target_province
@@ -1429,6 +1457,10 @@ character_event = {
 				modifier = {
 					factor = 0.7
 					martial = 24
+				}
+				modifier = {
+					factor = 0.7
+					martial = 30
 				}
 				spawn_unit = {
 					province = event_target:target_province

@@ -2279,6 +2279,14 @@ character_event = {
 					}
 					modifier = {
 						factor = 1.1
+						intrigue = 25
+					}
+					modifier = {
+						factor = 1.1
+						intrigue = 30
+					}
+					modifier = {
+						factor = 1.1
 						event_target:hindu_spymaster = {
 							intrigue = 10
 						}

@@ -1105,6 +1105,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
+				modifier = {
+					factor = 0.9
 					martial = 20
 				}
 				modifier = {
@@ -1201,6 +1209,14 @@ character_event = {
 				modifier = {
 					factor = 0
 					has_character_flag = attending_tournament_wound
+				}
+				modifier = {
+					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
 				}
 				modifier = {
 					factor = 0.9
@@ -1303,6 +1319,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
+				modifier = {
+					factor = 0.9
 					martial = 20
 				}
 				modifier = {
@@ -1398,6 +1422,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
+				modifier = {
+					factor = 0.9
 					martial = 20
 				}
 				modifier = {
@@ -1483,6 +1515,14 @@ character_event = {
 				modifier = {
 					factor = 0
 					has_character_flag = attending_tournament_fear
+				}
+				modifier = {
+					factor = 1.1
+					martial = 30
+				}
+				modifier = {
+					factor = 1.1
+					martial = 25
 				}
 				modifier = {
 					factor = 1.1
@@ -3635,6 +3675,14 @@ character_event = {
 
 	mean_time_to_happen = {
 		months = 250
+		modifier = {
+					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
 		modifier = {
 			factor = 0.9
 			martial = 20

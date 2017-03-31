@@ -103,6 +103,14 @@ character_event = {
 			factor = 1.5
 			intrigue = 20
 		}
+		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 30
+		}
 	}
 
 	option = {
@@ -535,6 +543,14 @@ character_event = {
 			factor = 1.5
 			intrigue = 20
 		}
+		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 30
+		}
 	}
 	
 	option = {
@@ -723,6 +739,14 @@ character_event = {
 		modifier = {
 			factor = 1.5
 			intrigue = 20
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 30
 		}
 	}
 	
@@ -2361,10 +2385,10 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
-				9900 = {
+				900 = {
 					modifier = {
-						immortal = no
 						factor = 0
+						immortal = no
 					}
 					hidden_tooltip = {
 						FROM = { character_event = { id = 8166 days = 1 } }
@@ -3567,6 +3591,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				700 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 8186 days = 1 } }
+					}
+					character_event = { id = 8179 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 8183 days = 1 } }
@@ -4779,17 +4813,7 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
-				450 = {
-					modifier = {
-						factor = 0
-						immortal = no
-					}
-					hidden_tooltip = {
-						FROM = { character_event = { id = 7715 days = 1 } }
-					}
-					character_event = { id = 7708 days = 1 } # Lives, murderer discovered
-				}
-				450 = {
+				700 = {
 					modifier = {
 						factor = 0
 						immortal = no
@@ -6000,6 +6024,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				400 = {
+					modifier = {
+						immortal = no
+						factor = 0
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7736 days = 1 } }
+					}
+					character_event = { id = 7729 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7733 days = 1 } }
@@ -10704,6 +10738,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				900 = {
+					modifier = {
+						immortal = no
+						factor = 0
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7816 days = 1 } }
+					}
+					character_event = { id = 7809 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7813 days = 1 } }
@@ -11875,6 +11919,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				700 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7836 days = 1 } }
+					}
+					character_event = { id = 7829 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7833 days = 1 } }
@@ -13044,6 +13098,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				1400 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7856 days = 1 } }
+					}
+					character_event = { id = 7849 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7853 days = 1 } }
@@ -14219,6 +14283,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				700 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7876 days = 1 } }
+					}
+					character_event = { id = 7869 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7873 days = 1 } }
@@ -15391,6 +15465,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				900 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7896 days = 1 } }
+					}
+					character_event = { id = 7889 days = 1 } # Lives, murderer unknown
+				}			
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7893 days = 1 } }
@@ -16560,6 +16644,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				1900 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7916 days = 1 } }
+					}
+					character_event = { id = 7909 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7913 days = 1 } }
@@ -17782,6 +17876,16 @@ character_event = {
 		}
 		hidden_tooltip = {
 			random_list = {
+				900 = {
+					modifier = {
+						factor = 0
+						immortal = no
+					}
+					hidden_tooltip = {
+						FROM = { character_event = { id = 7966 days = 1 } }
+					}
+					character_event = { id = 7959 days = 1 } # Lives, murderer unknown
+				}
 				25 = {
 					hidden_tooltip = {
 						FROM = { character_event = { id = 7963 days = 1 } }

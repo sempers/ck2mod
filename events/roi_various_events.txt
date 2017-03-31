@@ -1988,11 +1988,11 @@ character_event = {
 				NOT = { trait = incapable }
 				NOT = { trait = mangled }
 				NOT = { trait = maimed }
-				immortal = no
+				#immortal = no
 			}
 			random_list = {
 				70 = { add_trait = wounded }
-				25 = { 
+				20 = { 
 					if = {
 						limit = {
 							NOT = {
@@ -2020,6 +2020,12 @@ character_event = {
 							immortal = no
 						}
 						add_trait = incapable
+					}
+				}
+				5 = {
+					modifier = {
+						factor = 10
+						immortal = yes
 					}
 				}
 			}

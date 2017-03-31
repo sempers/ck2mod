@@ -1250,7 +1250,7 @@ character_event = {
 				is_close_relative = FROM
 				NOT = { any_spouse = { character = FROM } }
 				NOT = { religion_group = muslim }
-				NOT = { trait = immortal }
+				immortal = no
 			}
 			add_trait = kinslayer
 		}	

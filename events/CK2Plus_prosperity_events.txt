@@ -49,6 +49,14 @@ province_event = {
 			owner = { realm_stewardship = 40 }
 		}
 		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 60 }
+		}
+		modifier = {
 			factor = 0.9
 			owner = { NOT = { realm_learning = 10 } }
 		}
@@ -63,6 +71,14 @@ province_event = {
 		modifier = {
 			factor = 1.1
 			owner = { realm_learning = 40 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_learning = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_learning = 60 }
 		}
 		modifier = {
 			factor = 0.5
@@ -136,6 +152,14 @@ province_event = {
 		modifier = {
 			factor = 1.1
 			owner = { realm_stewardship = 40 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 60 }
 		}
 		modifier = {
 			factor = 0.9
@@ -227,6 +251,14 @@ province_event = {
 			owner = { realm_stewardship = 40 }
 		}
 		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 60 }
+		}
+		modifier = {
 			factor = 0.9
 			owner = { NOT = { realm_learning = 10 } }
 		}
@@ -316,6 +348,14 @@ province_event = {
 		modifier = {
 			factor = 1.1
 			owner = { realm_stewardship = 40 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 60 }
 		}
 		modifier = {
 			factor = 0.9
@@ -417,6 +457,14 @@ province_event = {
 			owner = { realm_learning = 40 }
 		}
 		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 1.1
+			owner = { realm_stewardship = 60 }
+		}
+		modifier = {
 			factor = 0.5
 			OR = {
 				has_province_modifier = province_prosperity_2
@@ -490,6 +538,14 @@ province_event = {
 		modifier = {
 			factor = 0.9
 			owner = { realm_stewardship = 40 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { realm_stewardship = 60 }
 		}
 		modifier = {
 			factor = 1.1
@@ -585,6 +641,14 @@ province_event = {
 		modifier = {
 			factor = 0.9
 			owner = { realm_stewardship = 40 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { realm_stewardship = 50 }
+		}
+		modifier = {
+			factor = 0.9
+			owner = { realm_stewardship = 60 }
 		}
 		modifier = {
 			factor = 1.1

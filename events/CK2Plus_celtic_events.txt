@@ -2231,6 +2231,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
+				modifier = {
+					factor = 0.9
 					martial = 20
 				}
 				modifier = {
@@ -2327,6 +2335,14 @@ character_event = {
 				modifier = {
 					factor = 0
 					has_character_flag = attending_tailteann_wound
+				}
+				modifier = {
+					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
 				}
 				modifier = {
 					factor = 0.9
@@ -2429,6 +2445,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
+				modifier = {
+					factor = 0.9
 					martial = 20
 				}
 				modifier = {
@@ -2524,6 +2548,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
+				}
+				modifier = {
+					factor = 0.9
 					martial = 20
 				}
 				modifier = {
@@ -2609,6 +2641,14 @@ character_event = {
 				modifier = {
 					factor = 0
 					has_character_flag = attending_tailteann_fear
+				}
+				modifier = {
+					factor = 0.9
+					martial = 30
+				}
+				modifier = {
+					factor = 0.9
+					martial = 25
 				}
 				modifier = {
 					factor = 1.1

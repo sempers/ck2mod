@@ -34,4 +34,16 @@ double_entry_bookkeeping = {
 	icon = 6
 }
 
+immortal_horse = {
+	combat_rating = 1
+	
+	command_modifier = {
+		speed = 0.1
+		morale_offence = 0.1
+		pursue = 0.1
+	}
+	
+	icon = 8
+}
+
 
