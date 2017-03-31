@@ -38,8 +38,10 @@ has_parliament = {
 	
 	trigger = {
 		is_ruler = yes
-		any_demesne_province = {
-			has_building = un_parliament
+		capital_scope = {
+			any_province_holding = {
+				has_building = un_parliament
+			}	
 		}
 	}
 	
@@ -50,13 +52,16 @@ has_parliament = {
 has_diplomatic_cabinet = {
 	potential = {
 		has_job_title = job_chancellor
+		NOT = { character = liege }
 	}
 	
 	trigger = {
 		liege = {
-				any_demesne_province = {
+			capital_scope = {
+				any_province_holding = {
 					has_building = un_diplomatic_cabinet
-				}
+				}	
+			}
 		}
 	}
 	
@@ -68,13 +73,16 @@ has_diplomatic_cabinet = {
 has_army_academy = {
 	potential = {
 		has_job_title = job_marshal
+		NOT = { character = liege }
 	}
 	
 	trigger = {
 		liege = {
-				any_demesne_province = {
+				capital_scope = {
+				any_province_holding = {
 					has_building = un_army_academy
-				}
+				}	
+			}
 		}
 	}
 	
@@ -86,13 +94,16 @@ has_army_academy = {
 has_revenue_bureau = {
 	potential = {
 		has_job_title = job_steward
+		NOT = { character = liege }
 	}
 	
 	trigger = {
 		liege = {
-				any_demesne_province = {
-					has_building = un_revenue_bureau
-				}
+				capital_scope = {
+				any_province_holding = {
+					has_building = un_army_academy
+				}	
+			}
 		}
 	}
 	
@@ -104,13 +115,16 @@ has_revenue_bureau = {
 has_secret_agency = {
 	potential = {
 		has_job_title = job_spymaster
+		NOT = { character = liege }
 	}
 	
 	trigger = {
 		liege = {
-				any_demesne_province = {
-					has_building = un_secret_service
-				}
+				capital_scope = {
+				any_province_holding = {
+					has_building = un_secret_agency
+				}	
+			}
 		}
 	}
 	
@@ -122,12 +136,15 @@ has_secret_agency = {
 has_holy_inquisition = {
 	potential = {
 		has_job_title = job_spiritual
+		NOT = { character = liege }
 	}
 	
 	trigger = {
 		liege = {
-			any_demesne_province = {
-				has_building = un_inquisition
+			capital_scope = {
+				any_province_holding = {
+					has_building = un_inquisition
+				}	
 			}
 		}
 	}

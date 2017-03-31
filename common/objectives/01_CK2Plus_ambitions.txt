@@ -1373,7 +1373,10 @@ obj_cta_0 = {
 	allow = {
 		NOR = {
 			is_adult = no
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -1611,7 +1614,10 @@ obj_cta_0 = {
 				liege = { job_marshal = { character = ROOT } }
 			}
 			is_adult = no # weird stuff happens.
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -1713,7 +1719,10 @@ obj_cta_1 = {
 	allow = {
 		NOR = {
 			is_adult = no
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -1950,7 +1959,10 @@ obj_cta_1 = {
 				liege = { job_marshal = { character = ROOT } }
 			}
 			is_adult = no # weird stuff happens.
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -2059,7 +2071,10 @@ obj_cta_2 = {
 	allow = {
 		NOR = {
 			is_adult = no
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -2295,7 +2310,10 @@ obj_cta_2 = {
 				liege = { job_marshal = { character = ROOT } }
 			}
 			is_adult = no # weird stuff happens.
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -2406,7 +2424,10 @@ obj_cta_3 = {
 	allow = {
 		NOR = {
 			is_adult = no
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -2639,7 +2660,10 @@ obj_cta_3 = {
 				liege = { job_marshal = { character = ROOT } }
 			}
 			is_adult = no # weird stuff happens.
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -5729,17 +5753,26 @@ obj_make_a_friend = {
 
 		modifier = {
 			factor = 0.75
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 		}
 
 		modifier = {
 			factor = 0.75
-			age = 55
+			AND = {
+				age = 55
+				immortal = no
+			}
 		}
 
 		modifier = {
 			factor = 0.5
-			age = 60
+			AND = {
+				age = 60
+				immortal = no
+			}
 		}
 
 		modifier = {

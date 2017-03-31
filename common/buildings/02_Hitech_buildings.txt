@@ -5,7 +5,7 @@ castle = {
 			TECH_RECRUITMENT = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -34,7 +34,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -60,7 +60,7 @@ castle = {
 			TECH_RELIGIOUS_CUSTOMS = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -85,7 +85,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -110,7 +110,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -135,7 +135,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }
@@ -160,7 +160,7 @@ castle = {
 			TECH_LEGALISM = 8
 			hidden_tooltip = {
 				FROM = {
-					capital_holding = { title = FROMFROM }
+					capital_holding = { title = FROM }
 					OR = {
 						ai = no
 						NOT = { has_character_modifier = ai_austerity }

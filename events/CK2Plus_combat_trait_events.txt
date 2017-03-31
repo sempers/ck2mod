@@ -42,7 +42,10 @@ character_event = {
 		NOT = {
 			is_alive = no
 			is_adult = no
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
@@ -425,7 +428,10 @@ character_event = {
 		NOT = {
 			is_alive = no
 			is_adult = no
-			age = 50
+			AND = {
+				age = 50
+				immortal = no
+			}
 			prisoner = yes
 			trait = incapable
 			trait = blinded
