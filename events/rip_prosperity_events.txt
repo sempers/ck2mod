@@ -67,6 +67,12 @@ province_event = { #prosperity gain
 					}
 				}
 				modifier = {
+					factor = 1.5
+					owner = {
+						stewardship = 30
+					}
+				}
+				modifier = {
 					factor = 1.2 #having trade posts increases the chance
 					has_trade_post = yes
 				}
@@ -1287,7 +1293,7 @@ province_event = { #Monument to Glory
 		}
 		
 		owner = {
-			scaled_wealth = -1.5
+			scaled_wealth = -1.0
 		}
 		
 		add_province_modifier = {
@@ -1493,12 +1499,12 @@ province_event = { #Center of Worship
 			
 			modifier = {
 				factor = 0
-				owner = { NOT = {scaled_wealth = 2 } }
+				owner = { NOT = {scaled_wealth = 1.5 } }
 			}
 		}
 		
 		owner = {		
-			scaled_wealth = -1
+			scaled_wealth = -0.75
 		}
 		add_province_modifier = {
 			name = center_of_worship_province

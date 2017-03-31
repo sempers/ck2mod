@@ -1079,6 +1079,14 @@ character_event = {
 		}
 		modifier = {
 			factor = 0.9
+			diplomacy = 25
+		}
+		modifier = {
+			factor = 0.9
+			diplomacy = 30
+		}
+		modifier = {
+			factor = 0.9
 			intrigue = 12
 		}
 		modifier = {
@@ -1096,6 +1104,14 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			intrigue = 20
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
 		}
 		modifier = {
 			factor = 0.5

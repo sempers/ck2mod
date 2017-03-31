@@ -4223,6 +4223,14 @@ character_event = {
 			factor = 0.9
 			intrigue = 20
 		}
+		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
+		}
 	}
 	
 	immediate = {

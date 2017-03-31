@@ -168,6 +168,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -550,6 +554,10 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.8
+			learning = 30
 		}
 	}
 
@@ -1013,6 +1021,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -1372,6 +1384,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -1628,6 +1644,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -1882,6 +1902,10 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.8
+			learning = 30
 		}
 	}
 
@@ -2275,6 +2299,10 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.8
+			learning = 30
 		}
 	}
 
@@ -2673,6 +2701,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -3051,6 +3083,10 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.8
+			learning = 30
 		}
 	}
 
@@ -3719,6 +3755,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = { # Determines what province should become what culture. The lower on the list a culture is, the higher priority it is in the case of overlap
@@ -4145,6 +4185,10 @@ character_event = {
 			factor = 0.95
 			learning = 25
 		}
+		modifier = {
+			factor = 0.8
+			learning = 30
+		}
 	}
 
 	immediate = {
@@ -4530,6 +4574,10 @@ character_event = {
 		modifier = {
 			factor = 0.95
 			learning = 25
+		}
+		modifier = {
+			factor = 0.8
+			learning = 30
 		}
 	}
 

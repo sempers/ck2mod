@@ -22,7 +22,7 @@ character_event = {
 	lacks_dlc = "Reapers"
 
 	trigger = {
-		immortal = no
+		#immortal = no
 		NOT = {
 			trait = syphilitic
 		}
@@ -174,7 +174,7 @@ character_event = {
 	only_capable = yes
 
 	trigger = {
-		immortal = no
+		#immortal = no
 		NOT = {
 			trait = leper
 		}
@@ -997,7 +997,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
-		immortal = no
+		#immortal = no
 		health = 3.0
 		is_ill = no
 
@@ -1059,6 +1059,14 @@ character_event = {
 		modifier = {
 			factor = 2.0
 			base_health = 8
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 9
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 10
 		}
 		modifier = {
 			factor = 0.5
@@ -1231,7 +1239,7 @@ character_event = {
 	lacks_dlc = "Reapers"
 	
 	trigger = {
-		immortal = no
+		#immortal = no
 		OR = {
 			trait = ill
 			trait = has_measles
@@ -1277,6 +1285,14 @@ character_event = {
 		modifier = {
 			factor = 2.0
 			base_health = 8
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 9
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 10
 		}
 		modifier = {
 			factor = 0.25
@@ -1619,7 +1635,7 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 
 	trigger = {
-		immortal = no
+		#immortal = no
 		trait = wounded
 		is_ill = no
 		OR = {
@@ -1682,6 +1698,14 @@ character_event = {
 		modifier = {
 			factor = 2.0
 			base_health = 8
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 9
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 10
 		}
 	}
 
@@ -2664,6 +2688,14 @@ character_event = {
 		modifier = {
 			factor = 0.8
 			martial = 20
+		}
+		modifier = {
+			factor = 0.8
+			martial = 25
+		}
+		modifier = {
+			factor = 0.8
+			martial = 30
 		}
 	}
 	
@@ -4613,6 +4645,14 @@ character_event = {
 		modifier = {
 			factor = 2.0
 			base_health = 8
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 9
+		}
+		modifier = {
+			factor = 2.0
+			base_health = 10
 		}
 	}
 

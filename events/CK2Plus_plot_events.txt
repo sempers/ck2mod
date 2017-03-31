@@ -7767,6 +7767,14 @@ character_event = {
 			factor = 1.2
 			intrigue = 20
 		}
+		modifier = {
+			factor = 1.2
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.2
+			intrigue = 30
+		}
 	}
 	
 	immediate = {
@@ -8235,6 +8243,14 @@ character_event = {
 			intrigue = 20
 		}
 		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
+		}		
+		modifier = {
 			factor = 1.2
 			NOT = { intrigue = 8 }
 		}
@@ -8389,6 +8405,14 @@ character_event = {
 					intrigue = 20
 				}
 				modifier = {
+			factor = 0.9
+			intrigue = 25
+				}
+				modifier = {
+			factor = 0.9
+			intrigue = 30
+		}
+				modifier = {
 					factor = 1.2
 					NOT = { intrigue = 8 }
 				}
@@ -8441,6 +8465,14 @@ character_event = {
 				modifier = {
 					factor = 0.9
 					intrigue = 20
+				}
+				modifier = {
+					factor = 0.9
+					intrigue = 25
+				}
+				modifier = {
+					factor = 0.9
+					intrigue = 30
 				}
 				modifier = {
 					factor = 1.2
@@ -9128,6 +9160,14 @@ character_event = {
 			intrigue = 20
 		}
 		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
+		}
+		modifier = {
 			factor = 1.2
 			NOT = { intrigue = 8 }
 		}
@@ -9278,6 +9318,14 @@ character_event = {
 					intrigue = 20
 				}
 				modifier = {
+					factor = 0.9
+					intrigue = 25
+				}
+				modifier = {
+					factor = 0.9
+					intrigue = 30
+				}
+				modifier = {
 					factor = 1.2
 					NOT = { intrigue = 8 }
 				}
@@ -9360,6 +9408,10 @@ character_event = {
 				modifier = {
 					factor = 0.9
 					intrigue = 20
+				}
+				modifier = {
+					factor = 0.9
+					intrigue = 30
 				}
 				modifier = {
 					factor = 1.2

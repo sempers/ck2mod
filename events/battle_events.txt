@@ -479,11 +479,15 @@ character_event = {
 		can_be_maimed_trigger = yes
 		NOT = { trait = berserker }
 		is_alive = yes
-		immortal = no
+		#immortal = no
 	}
 	
 	weight_multiplier = {
 		days = 1
+		modifier = {
+			factor = 0.2
+			immortal = yes
+		}
 		
 		modifier = {
 			factor = 5
@@ -664,12 +668,15 @@ character_event = {
 		}
 		NOT = { trait = berserker }
 		is_alive = yes
-		immortal = no
+		#immortal = no
 	}
 	
 	weight_multiplier = {
 		days = 1
-		
+		modifier = {
+			factor = 0.2
+			immortal = yes
+		}
 		modifier = {
 			factor = 5
 			has_character_modifier = proving_bravery
@@ -869,12 +876,17 @@ character_event = {
 	
 	trigger = {
 		NOT = { trait = incapable }
-		immortal = no
+		#immortal = no
 		is_alive = yes
 	}
 	
 	weight_multiplier = {
 		days = 1
+		
+		modifier = {
+			factor = 0.2
+			immortal = yes
+		}
 		
 		modifier = {
 			factor = 5
@@ -1581,7 +1593,7 @@ character_event = {
 		is_alive = yes
 		NOT = { trait = brave }
 		NOT = { trait = craven }
-		immortal = no
+		#immortal = no
 	}
 	
 	weight_multiplier = {
@@ -1773,7 +1785,7 @@ character_event = {
 		NOT = { trait = brave }
 		NOT = { trait = craven }
 		NOT = { trait = berserker }
-		immortal = no
+		#immortal = no
 	}
 	
 	weight_multiplier = {
@@ -1959,7 +1971,7 @@ character_event = {
 		is_alive = yes
 		NOT = { trait = wroth }
 		NOT = { trait = patient }
-		immortal = no
+		#immortal = no
 	}
 	
 	weight_multiplier = {
@@ -1985,7 +1997,7 @@ character_event = {
 		is_alive = yes
 		NOT = { trait = wroth }
 		NOT = { trait = patient }
-		immortal = no
+		#immortal = no
 	}
 	
 	weight_multiplier = {

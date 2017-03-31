@@ -92,6 +92,14 @@ character_event = {
 			martial = 20
 		}
 		modifier = {
+			factor = 1.5
+			martial = 25
+		}
+		modifier = {
+			factor = 1.5
+			martial = 30
+		}
+		modifier = {
 			factor = 0.5
 			NOT = { check_variable = { which = "lifestyle_martial" value = 0.9 } }
 		}
@@ -247,6 +255,14 @@ character_event = {
 		modifier = {
 			factor = 1.5
 			intrigue = 20
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 30
 		}
 	}
 
@@ -487,6 +503,14 @@ character_event = {
 			intrigue = 20
 		}
 		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 30
+		}
+		modifier = {
 			factor = 0.5
 			NOT = { check_variable = { which = "lifestyle_learning" value = 0.9 } }
 		}
@@ -630,6 +654,14 @@ character_event = {
 			intrigue = 20
 		}
 		modifier = {
+			factor = 1.5
+			intrigue = 25
+		}
+		modifier = {
+			factor = 1.5
+			intrigue = 30
+		}
+		modifier = {
 			factor = 0.5
 			NOT = { check_variable = { which = "lifestyle_martial" value = 0.9 } }
 		}
@@ -770,6 +802,14 @@ character_event = {
 		modifier = {
 			factor = 1.5
 			stewardship = 20
+		}
+		modifier = {
+			factor = 1.5
+			stewardship = 25
+		}
+		modifier = {
+			factor = 1.5
+			stewardship = 30
 		}
 		modifier = {
 			factor = 0.5

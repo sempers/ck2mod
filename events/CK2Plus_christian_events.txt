@@ -1048,6 +1048,14 @@ character_event = {
 					factor = 1.2
 					learning = 20
 				}
+				modifier = {
+					factor = 1.2
+					learning = 25
+				}
+				modifier = {
+					factor = 1.2
+					learning = 30
+				}
 				narrative_event = { id = Plus.2017 days = 150 random = 250 tooltip = BIBLE_TRANSLATION_GOOD }
 			}
 			50 = {

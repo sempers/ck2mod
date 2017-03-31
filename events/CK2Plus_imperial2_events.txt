@@ -5224,6 +5224,14 @@ character_event = {
 				}
 				modifier = {
 					factor = 1.2
+					martial = 25
+				}
+				modifier = {
+					factor = 1.2
+					martial = 30
+				}
+				modifier = {
+					factor = 1.2
 					diplomacy = 12
 				}
 				modifier = {

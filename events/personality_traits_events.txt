@@ -2666,6 +2666,14 @@ character_event = {
 		}
 		modifier = {
 			factor = 1.5
+			learning = 25
+		}
+		modifier = {
+			factor = 1.5
+			learning = 30
+		}
+		modifier = {
+			factor = 1.5
 			trait = faqih
 		}
 		modifier = {

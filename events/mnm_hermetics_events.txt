@@ -1803,15 +1803,15 @@ letter_event = {
         		modifier = { learning = 14 factor = 1.2 }
         		modifier = { learning = 17 factor = 1.2 }
         		modifier = { learning = 20 factor = 1.2 }
-				modifier = { learning = 25 factor = 1.5 }
-				modifier = { learning = 30 factor = 1.5 }
+				modifier = { learning = 25 factor = 1.4 }
+				modifier = { learning = 30 factor = 1.4 }
 	    		modifier = { FROM = { learning = 8 } factor = 1.2 }
         		modifier = { FROM = { learning = 11 } factor = 1.2 }
         		modifier = { FROM = { learning = 14 } factor = 1.2 }
         		modifier = { FROM = { learning = 17 } factor = 1.2 }
         		modifier = { FROM = { learning = 20 } factor = 1.2 }
-				modifier = { FROM = { learning = 25 } factor = 1.5 }
-        		modifier = { FROM = { learning = 30 } factor = 1.5 }
+				modifier = { FROM = { learning = 25 } factor = 1.4 }
+        		modifier = { FROM = { learning = 30 } factor = 1.4 }
         		custom_tooltip = {
         			text = EVTOPTX_MNM_1420_SUCCESS
         			FROM = { 
@@ -11640,6 +11640,16 @@ character_event = {
 						factor = 1.3
 						intrigue = 20
 						learning = 20
+					}
+					modifier = {
+						factor = 1.6
+						intrigue = 25
+						learning = 25
+					}
+					modifier = {
+						factor = 2.0
+						intrigue = 30
+						learning = 30
 					}
 					
 					set_character_flag = discovered_knowledge_theft

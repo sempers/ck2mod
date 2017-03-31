@@ -3847,6 +3847,14 @@ character_event = {
 						factor = 1.5
 						diplomacy = 20
 					}
+					modifier = {
+						factor = 1.5
+						diplomacy = 25
+					}
+					modifier = {
+						factor = 1.5
+						diplomacy = 30
+					}
 					character_event = { id = Plus.1942 days = 2 random = 2 } # Good Result
 				}
 			}
@@ -5255,6 +5263,14 @@ character_event = {
 			diplomacy = 20
 		}
 		modifier = {
+			factor = 0.8
+			diplomacy = 25
+		}
+		modifier = {
+			factor = 0.8
+			diplomacy = 30
+		}
+		modifier = {
 			factor = 1.25
 			NOT = { martial = 4 }
 		}
@@ -5283,6 +5299,14 @@ character_event = {
 			martial = 20
 		}
 		modifier = {
+			factor = 0.8
+			martial = 25
+		}
+		modifier = {
+			factor = 0.8
+			martial = 30
+		}
+		modifier = {
 			factor = 1.1
 			NOT = { intrigue = 4 }
 		}
@@ -5309,6 +5333,14 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			intrigue = 20
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 25
+		}
+		modifier = {
+			factor = 0.9
+			intrigue = 30
 		}
 		modifier = {
 			factor = 1.5
