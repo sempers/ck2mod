@@ -1364,7 +1364,7 @@ letter_event = {
 				}
 			}
 		}
-		scaled_wealth = { value = -1.5 min = -150 max = -600 }
+		scaled_wealth = { value = -1.5 min = -150 max = -750 }
 		prestige = -150
 		FROM = {
 			FROM = {
@@ -1403,7 +1403,7 @@ letter_event = {
 				}
 			}
 		}
-		scaled_wealth = { value = -1.0 min = -100 max = -400 }
+		scaled_wealth = { value = -1.0 min = -100 max = -500 }
 		prestige = -100
 		FROM = {
 			FROM = {
@@ -1523,7 +1523,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -3.0 min = -300 max = -1200 }
+		scaled_wealth = { value = -3.0 min = -300 max = -1500 }
 		prestige = -300
 		FROM = {
 			FROM = {
@@ -1555,7 +1555,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -2.0 min = -200 max = -400 }
+		scaled_wealth = { value = -2.0 min = -200 max = -1000 }
 		prestige = -200
 		FROM = {
 			FROM = {
@@ -1587,7 +1587,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -1.0 min = -100 max = -400 }
+		scaled_wealth = { value = -1.0 min = -100 max = -500 }
 		prestige = -100
 		FROM = {
 			FROM = {
@@ -1655,7 +1655,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -3.0 min = -300 max=-1200}
+		scaled_wealth = { value = -3.0 min = -300 max=-1500}
 		prestige = -200
 		FROM = {
 			FROM = {
@@ -1687,7 +1687,7 @@ letter_event = {
 				NOT = { scaled_wealth = 2.25 }
 			}
 		}
-		scaled_wealth = { value = -1.5 min = -150 max=-600 }
+		scaled_wealth = { value = -1.5 min = -150 max=-750 }
 		prestige = -100
 		FROM = {
 			FROM = {
