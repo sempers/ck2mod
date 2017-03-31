@@ -1951,7 +1951,12 @@ character_event = {
 		piety = -10
 		hidden_tooltip = {
 			random_list = {
-				50 = { set_character_flag = assassinate_chancellor_succeed }
+				50 = { 
+					modifier = {
+						factor = 0.1
+						FROM = { immortal = yes }
+					}
+					set_character_flag = assassinate_chancellor_succeed }
 				50 = { set_character_flag = assassinate_chancellor_fails }
 			}
 		}
