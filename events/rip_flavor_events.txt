@@ -13411,7 +13411,7 @@ character_event = { # trick
 		name = "This will be my immortal horse!"	#placeholdername_13 #RIP.30310.b	
 		tooltip_info = stewardship
 		add_character_modifier = {
-			name = immortal_horse_victim
+			name = immortal_horse
 			duration = -1
 		}
 	}
