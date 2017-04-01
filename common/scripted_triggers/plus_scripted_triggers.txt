@@ -37,7 +37,7 @@ allowed_custom_titles_trigger = {
 			title = k_bengal
 			title = k_bulgaria
 			title = k_carpathia
-			title = k_croatia
+			#title = k_croatia
 			title = k_cuman
 			title = k_georgia
 			title = k_iceland
@@ -76,7 +76,7 @@ allowed_custom_titles_trigger = {
 			title = d_bosnia
 			title = d_skane
 			title = d_armenia
-			title = d_croatia
+			#title = d_croatia
 		}
 	}
 }
@@ -856,6 +856,11 @@ has_empire_size_trigger = {
 		text = HAS_SIZE_EMPIRE
 		hidden_tooltip = {
 			OR = {
+				any_demesne_title = {
+					tier = KING
+					is_titular = no
+					count = 4 
+				}
 				realm_size = 150
 				num_of_count_titles_in_realm = 50
 			}

@@ -20,7 +20,9 @@ printing_press = {
 
 arquebusiers = {
 	archers_offensive = 0.5
+	archers_defensive = 1.0
 	light_infantry_offensive = 0.5
+	light_infantry_defensive = 1.0	
 	icon = 8
 }
 
@@ -46,4 +48,38 @@ immortal_horse = {
 	icon = 8
 }
 
+has_parliament = {
+	vassal_opinion = 15
+	icon = 7
+}
 
+has_diplomatic_cabinet = {
+	diplomacy = 5
+	
+	icon = 7
+}
+
+has_army_academy = {
+		
+	martial = 5
+	
+	icon = 7
+}
+
+has_revenue_bureau = {
+	stewardship = 5
+	
+	icon = 7
+}
+
+has_secret_agency = {	
+	intrigue = 5
+	
+	icon = 7
+}
+
+has_holy_inquisition = {
+	learning = 5
+	
+	icon = 7
+}

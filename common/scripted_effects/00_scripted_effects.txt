@@ -4490,6 +4490,10 @@ add_society_currency_major_effect = {
 	change_society_currency = 300
 }
 
+add_society_currency_large_effect = {
+	change_society_currency = 500
+}
+
 add_society_currency_massive_effect = {
 	change_society_currency = 1000
 }

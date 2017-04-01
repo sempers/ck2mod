@@ -2858,9 +2858,9 @@ emerald_tablet = {
 hermetic_handgun = {
 	learning = 1
 	combat_rating = 2
-	monthly_character_prestige = 1
-	command_modifier = { morale_offence = 0.2 }
-	quality = 3
+	monthly_character_prestige = 0.5
+	command_modifier = { morale_offence = 0.25 }
+	quality = 4
 	active = { society_member_of = hermetics }
 	flags = { hermetics invention }
 	picture = "GFX_relicbox_iron"
@@ -2869,9 +2869,9 @@ hermetic_handgun = {
 
 hermetic_compass = {
 	learning = 2
-	stewardship = 2 
+	stewardship = 3 
 	monthly_character_prestige = 0.5
-	quality = 3
+	quality = 4
 	active = { society_member_of = hermetics }
 	flags = { hermetics invention }
 	picture = "GFX_relic_box_simple"
@@ -2882,7 +2882,7 @@ radius_astronomicus = {
 	learning = 3
 	tech_growth_modifier = 0.05
 	monthly_character_prestige = 0.5
-	quality = 3
+	quality = 4
 	active = { society_member_of = hermetics }
 	flags = { hermetics invention }
 	picture = "GFX_relic_box_simple"
@@ -2891,8 +2891,8 @@ radius_astronomicus = {
 
 hermetic_cypher_machine = {
 	learning = 1
-	intrigue = 2
-	plot_power_modifier = 0.2
+	intrigue = 3
+	plot_power_modifier = 0.25
 	quality = 3
 	active = { society_member_of = hermetics }
 	flags = { hermetics invention }
@@ -2917,7 +2917,7 @@ hermetic_plate_armor = {
 hermetic_glasses = {
 	learning = 2
 	monthly_character_prestige = 0.25
-	quality = 1
+	quality = 2
 	active = { 
 		age = 40
 	}

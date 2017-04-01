@@ -1,13 +1,23 @@
 -- Format for overwriting define values:
 --
 -- NDefines.NDiplomacy.DEMESNE_BASE_MAX_SIZE = 2.0
+NDefines.NDiplomacy.MAX_DIPLO_DISTANCE = 600
+NDefines.NDiplomacy.LAW_CHANGE_PIETY_COST = 100									-- Piety cost for Iqta government when changing normal demesne laws
+NDefines.NDiplomacy.CROWN_LAW_CHANGE_PIETY_COST = 200							-- Piety cost for Iqta government when changing Crown laws
+NDefines.NDiplomacy.LAW_CHANGE_PRESTIGE_COST = 250								-- Prestige cost for Nomadic government when changing normal demesne laws
+NDefines.NDiplomacy.CROWN_LAW_CHANGE_PRESTIGE_COST = 500						-- Prestige cost for Nomadic government when changing Crown laws
+
+NDefines.NDiplomacy.MIN_PREP_INV_TARGET_HOLDINGS = 7
+NDefines.NDiplomacy.DUKE_POWERFUL_VASSAL_COUNT = 3				-- The x most powerful vassal will expect a seat in the council
+NDefines.NDiplomacy.KING_POWERFUL_VASSAL_COUNT = 4				-- The x most powerful vassal will expect a seat in the council
+NDefines.NDiplomacy.EMPEROR_POWERFUL_VASSAL_COUNT = 5
 
 NDefines.NDiplomacy.MONTHS_PER_SUCCESSION_CB = 24				-- Number of months a succession CB lasts
-NDefines.NDiplomacy.ATTACKING_SOMEONE_CRUSADING_PIETY_COST = 100 -- Piety hit for attacking someone crusading
+NDefines.NDiplomacy.ATTACKING_SOMEONE_CRUSADING_PIETY_COST = 200 -- Piety hit for attacking someone crusading
 NDefines.NDiplomacy.PAPAL_INVEST_PIETY_COST_MULT = 0.75		-- The effect of Papal investiture on the piety cost of the special Papal actions
 NDefines.NDiplomacy.SHORT_REIGN_YEARS_END = 10
 NDefines.NDiplomacy.LONG_REIGN_YEARS_START = 20
-NDefines.NDiplomacy.DOW_ON_ALLY_PRESTIGE_COST = 100
+NDefines.NDiplomacy.DOW_ON_ALLY_PRESTIGE_COST = 500
 NDefines.NDiplomacy.RELEASE_PRISONER_PIETY = 0
 NDefines.NDiplomacy.DEMESNE_MAX_SIZE_COUNT_MULT = 2.0 			-- Extra Max Demesne Size from the ruler's rank
 NDefines.NDiplomacy.DEMESNE_MAX_SIZE_DUKE_MULT = 2.0			-- Extra Max Demesne Size from the ruler's rank
@@ -39,12 +49,12 @@ NDefines.NDiplomacy.EXECUTE_IMPRISONED_INTERACTION_PIETY = 0
 NDefines.NDiplomacy.EXILE_IMPRISONED_INTERACTION_PIETY = 0
 NDefines.NDiplomacy.DEMAND_RELIGIOUS_CONVERSION_INTERACTION_PIETY = 10
 NDefines.NDiplomacy.DEMAND_RELIGIOUS_CONVERSION_INTERACTION_ENABLED = 0						-- Should this action be used at all?
-NDefines.NDiplomacy.ASK_FOR_VASSALIZATION_INTERACTION_PRESTIGE = 25
-NDefines.NDiplomacy.ASK_FOR_EXCOMMUNICATION_INTERACTION_MONEY = 100
+NDefines.NDiplomacy.ASK_FOR_VASSALIZATION_INTERACTION_PRESTIGE = 50
+NDefines.NDiplomacy.ASK_FOR_EXCOMMUNICATION_INTERACTION_MONEY = 250
 NDefines.NDiplomacy.ASK_FOR_EXCOMMUNICATION_INTERACTION_PIETY = 250
 NDefines.NDiplomacy.ASK_FOR_EXCOMMUNICATION_INTERACTION_THRESHOLD_FOR_NO = 75
-NDefines.NDiplomacy.ASK_TO_LIFT_EXCOMMUNICATION_INTERACTION_PIETY = 100
-NDefines.NDiplomacy.ASK_TO_LIFT_EXCOMMUNICATION_INTERACTION_THRESHOLD_FOR_YES = 100
+NDefines.NDiplomacy.ASK_TO_LIFT_EXCOMMUNICATION_INTERACTION_PIETY = 200
+NDefines.NDiplomacy.ASK_TO_LIFT_EXCOMMUNICATION_INTERACTION_THRESHOLD_FOR_YES = 200
 NDefines.NDiplomacy.PREPARE_INVASION_INTERACTION_PRESTIGE = 1000
 NDefines.NDiplomacy.ASK_TO_EMBARGO_INTERACTION_ENABLED = 0
 NDefines.NDiplomacy.ASK_FOR_MONEY_INTERACTION_ENABLED = 0
@@ -52,41 +62,42 @@ NDefines.NDiplomacy.ASK_FOR_CLAIM_INTERACTION_MONEY = 100
 NDefines.NDiplomacy.ASK_FOR_CLAIM_INTERACTION_PIETY = 250
 NDefines.NDiplomacy.ASK_FOR_CLAIM_INTERACTION_THRESHOLD_FOR_NO = 75
 NDefines.NDiplomacy.ASK_FOR_CLAIM_INTERACTION_THRESHOLD_FOR_YES = 175
+NDefines.NDiplomacy.MINIMUM_SEND_GIFT_COST = 25
 
 NDefines.NCharacter.NEED_GUARDIAN_AT_AGE = 6
 NDefines.NCharacter.NON_AGGRESSION_PACT_BLOCKS_FACTIONS = 0
 NDefines.NCharacter.WRONG_GOV_FORM_TAX_MOD = -0.5
 NDefines.NCharacter.WRONG_GOV_FORM_LEVY_MOD = -0.5
-NDefines.NCharacter.ASSIGN_ACTION_DAYS = 180					-- Days before a Councillor can be assigned a new job in a county
+NDefines.NCharacter.ASSIGN_ACTION_DAYS = 30					-- Days before a Councillor can be assigned a new job in a county
 NDefines.NCharacter.RAISED_TROOPS_VASSAL_OPINION_DAYS = 73		-- After 73 days of having their troops raised vassals will get -1 opinion more of you
 NDefines.NCharacter.MAX_GENERATED_TRAITS_FOR_HISTORICAL = 3		-- Generate random traits up this number for adult historical characters
 NDefines.NCharacter.PORTRAIT_ADULT_MALE_AGE_THRESHOLD = 16		-- Male child to adult age portrait switch
 NDefines.NCharacter.PORTRAIT_ADULT_FEMALE_AGE_THRESHOLD = 16	-- Female child to adult age portrait switch
 NDefines.NCharacter.PORTRAIT_MID_AGE_THRESHOLD = 32				-- Middle age switch for character portraits
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_0 = 0				-- Natural deaths per decade out of 10000 people: Age 0-9
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_10 = 0				-- Natural deaths per decade out of 10000 people: Age 10-19
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_20 = 0				-- Natural deaths per decade out of 10000 people: Age 20-29
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_30 = 0				-- Natural deaths per decade out of 10000 people: Age 30-39
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_40 = 0				-- Natural deaths per decade out of 10000 people: Age 40-49
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_0 = 250				-- Natural deaths per decade out of 10000 people: Age 0-9
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_10 = 10				-- Natural deaths per decade out of 10000 people: Age 10-19
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_20 = 25				-- Natural deaths per decade out of 10000 people: Age 20-29
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_30 = 50				-- Natural deaths per decade out of 10000 people: Age 30-39
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_40 = 120				-- Natural deaths per decade out of 10000 people: Age 40-49
 NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_60 = 320			-- Natural deaths per decade out of 10000 people: Age 60-69
 NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_70 = 734			-- Natural deaths per decade out of 10000 people: Age 70-79
 NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_80 = 1728			-- Natural deaths per decade out of 10000 people: Age 80-90
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_90 = 4000			-- Natural deaths per decade out of 10000 people: Age 90-99
-NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_100 = 8160			-- Natural deaths per decade out of 10000 people: Age 100+
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_90 = 4125			-- Natural deaths per decade out of 10000 people: Age 90-99
+NDefines.NCharacter.NATURAL_DEATH_CHANCE_AGE_100 = 8600			-- Natural deaths per decade out of 10000 people: Age 100+
 NDefines.NCharacter.NOT_SPOUSE_FERTILITY_MULT = 0.25			-- Applied to fertility when the two characters are not married
-NDefines.NCharacter.INFANT_DEATH_CHANCE = 0.03					-- Chance of stillbirth / death at birth
+NDefines.NCharacter.INFANT_DEATH_CHANCE = 0.05					-- Chance of stillbirth / death at birth
 NDefines.NCharacter.TRIBAL_EMPTY_HOLDING_TAX_MULTIPLIER = 0.7
 
-NDefines.NTitle.BARON_AS_VASSAL_PRESTIGE = 0.005
-NDefines.NTitle.COUNT_AS_VASSAL_PRESTIGE = 0.025
-NDefines.NTitle.DUKE_AS_VASSAL_PRESTIGE = 0.1
+NDefines.NTitle.BARON_AS_VASSAL_PRESTIGE = 0.025
+NDefines.NTitle.COUNT_AS_VASSAL_PRESTIGE = 0.05
+NDefines.NTitle.DUKE_AS_VASSAL_PRESTIGE = 0.25
 NDefines.NTitle.KING_AS_VASSAL_PRESTIGE = 0.5
 NDefines.NTitle.EMPEROR_AS_VASSAL_PRESTIGE = 1.0 	-- Impossible but needs to be here
 NDefines.NTitle.BARON_TITLE_PRESTIGE = 0.05
-NDefines.NTitle.COUNT_TITLE_PRESTIGE = 0.075
-NDefines.NTitle.DUKE_TITLE_PRESTIGE = 0.1
-NDefines.NTitle.KING_TITLE_PRESTIGE = 0.5
-NDefines.NTitle.EMPEROR_TITLE_PRESTIGE = 1.0
+NDefines.NTitle.COUNT_TITLE_PRESTIGE = 0.1
+NDefines.NTitle.DUKE_TITLE_PRESTIGE = 0.5
+NDefines.NTitle.KING_TITLE_PRESTIGE = 1.0
+NDefines.NTitle.EMPEROR_TITLE_PRESTIGE = 2.0
 NDefines.NTitle.DUKE_GRANT_TO_CHURCH_PIETY = 100
 NDefines.NTitle.KING_GRANT_TO_CHURCH_PIETY = 250
 NDefines.NTitle.EMPEROR_GRANT_TO_CHURCH_PIETY = 500
@@ -96,13 +107,13 @@ NDefines.NTitle.KING_PIETY_CREATION_COST = 0
 NDefines.NTitle.EMPEROR_PIETY_CREATION_COST = 0
 NDefines.NTitle.KING_CREATION_PRESTIGE = 500
 NDefines.NTitle.EMPEROR_CREATION_PRESTIGE = 1000
-NDefines.NTitle.KING_DESTRUCTION_PRESTIGE_COST = 500
-NDefines.NTitle.EMPEROR_DESTRUCTION_PRESTIGE_COST = 1000	
+NDefines.NTitle.KING_DESTRUCTION_PRESTIGE_COST = 1000
+NDefines.NTitle.EMPEROR_DESTRUCTION_PRESTIGE_COST = 2000	
 NDefines.NTitle.BARON_REVOKE_PRESTIGE_COST = 50
 NDefines.NTitle.COUNT_REVOKE_PRESTIGE_COST = 100
-NDefines.NTitle.DUKE_REVOKE_PRESTIGE_COST = 200
-NDefines.NTitle.KING_REVOKE_PRESTIGE_COST = 500
-NDefines.NTitle.EMPEROR_REVOKE_PRESTIGE_COST = 1000 -- Unused impossible
+NDefines.NTitle.DUKE_REVOKE_PRESTIGE_COST = 500
+NDefines.NTitle.KING_REVOKE_PRESTIGE_COST = 1000
+NDefines.NTitle.EMPEROR_REVOKE_PRESTIGE_COST = 100000 -- Unused impossible
 NDefines.NTitle.BARON_GRANT_DECADENCE_RED = 0.0025
 NDefines.NTitle.COUNT_GRANT_DECADENCE_RED = 0.01
 NDefines.NTitle.DUKE_GRANT_DECADENCE_RED = 0.02
@@ -196,7 +207,7 @@ NDefines.NMilitary.GALLEYS_MAINTENANCE = 50
 NDefines.NMilitary.MAX_RIVER_MOVEMENT_FORT_LEVEL = 15.0
 NDefines.NMilitary.OUTSIDE_LIEGE_LEVY_MULT = 0.35				-- Multiplier to liege levies outside all capital regions
 
-NDefines.NTechnology.IDEAL_YEAR_AHEAD_PENALTY_INVEST = 0.4			-- Percent increase in cost pre level ahead of ideal date
+
 
 NDefines.NAI.DOW_AGGRESSION_FACTOR = 1.1							-- General aggressiveness declarations of war
 NDefines.NAI.REVOLT_DISTANCE_FACTOR = 0								-- Multiplier for how much distance from capital affects independence minded revolters
@@ -251,3 +262,30 @@ NDefines.NRulerDesigner.COST_GENERAL_OPINION = 0.5
 NDefines.NRulerDesigner.COST_MORALE_OFFENCE = 25.0
 NDefines.NRulerDesigner.COST_MORALE_DEFENCE = 25.0
 NDefines.NRulerDesigner.COST_DEFENCE = 25.0
+
+
+--Changes to Infamy and Coalitions
+NDefines.NDiplomacy.DEFENSIVE_PACT_THREAT_LIMIT = 0.15						-- The amount of threat that is needed for a defensive pact to be created
+NDefines.NDiplomacy.DEFENSIVE_PACT_MAX_RANGE = 200							-- At 100% threat characters are able to join defensive pacts against targets of this distance
+NDefines.NDiplomacy.MAX_INFAMY_GAIN = 14.5									-- This is the max infamy gained from a single source
+NDefines.NInfamy.REALM_SIZE_GROWTH_MODIFIER = 5.0							-- The bigger you are, the more dangerous you are, modifier for when nation is shrinking
+NDefines.NInfamy.INHERITANCE_CHANGE_VALUE = 0								-- How much base value for realm growth/shrink is worth when inheriting titles.
+NDefines.NInfamy.VASSAL_CHANGE_VALUE = 0	 								-- How much base value for realm growth/shrink is worth when inheriting titles.
+NDefines.NInfamy.MIN_INFAMY_DECAY = 0.06									-- The minimum infamy decay regardless of troop strength.
+NDefines.NInfamy.MAX_INFAMY_DECAY = 0.06									-- The maximum infamy decay regardless of troop strength.
+NDefines.NInfamy.MAX_INFAMY_PER_WAR_PROVINCE = 2.5							-- A single province taken in war can give at most this much threat
+NDefines.NInfamy.MIN_INFAMY_PER_WAR_PROVINCE = 0							-- A single province taken in war can give at most this much threat
+
+--Reduce Effectiveness of Shattered Retreat
+NDefines.NMilitary.SHATTERED_RETREAT_MOVEMENT_MULTIPLIER = 1.1
+NDefines.NMilitary.SHATTERED_RETREAT_MORALE_MULTIPLIER = 1.0
+NDefines.NMilitary.SHATTERED_RETREAT_PREFERRED_PROVINCES = 2
+NDefines.NMilitary.SHATTERED_RETREAT_MAX_PROVINCES = 5
+
+
+NDefines.NTechnology.BASE_NEIGHBOUR_SPREAD_BONUS = 0.02 		-- bonus for each neighbour with the tech
+NDefines.NTechnology.BASE_DEMESNE_SPREAD_BONUS = 0.05 			-- bonus for each other province in demesne with the tech
+NDefines.NTechnology.MAX_DEMESNE_BONUS = 0.25 					-- maximum bonus from demesne
+NDefines.NTechnology.TRADEPOST_SPREAD_BONUS = 0.002			-- Spread from trade posts
+NDefines.NTechnology.SPYACTION_SPREAD_BONUS = 0.005				-- Spread from the target of the study technology spymaster action
+NDefines.NTechnology.IDEAL_YEAR_AHEAD_PENALTY_INVEST = 1.0	-- Percent increase in cost pre level ahead of ideal date	

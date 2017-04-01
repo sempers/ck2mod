@@ -791,7 +791,10 @@ character_event = {
 						AND = {
 							ROOT = {
 								liege = { 
-									has_ambition = obj_become_king
+									OR = {
+										has_ambition = obj_become_king
+										has_ambition = obj_become_emperor
+									}
 									NOT = { has_character_flag = kingdom_claimed_with_ambition }
 								}
 							}

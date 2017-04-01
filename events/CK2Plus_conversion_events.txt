@@ -639,6 +639,22 @@ character_event = {
 				trait = theologian
 			}
 		}
+		modifier = {
+			factor = 2
+			learning = 30
+		}
+		modifer = {
+			factor = 3
+			learning = 40
+		}
+		modifier = {
+			factor = 4
+			learning = 50
+		}
+		modifier = {
+			factor = 10
+			learning = 60
+		}
 	}
 	
 	immediate = {

@@ -7196,13 +7196,13 @@ character_event = {
 		if = {
 			limit = { has_character_flag = rejuvenation_lunatic }
 			remove_trait = lunatic
-			clr_character_flact = rejuvenation_lunatic
+			clr_character_flag = rejuvenation_lunatic
 		}
 		
 		if = {
 			limit = { has_character_flag = rejuvenation_possessed }
 			remove_trait = possessed
-			clr_character_flact = rejuvenation_possessed
+			clr_character_flag = rejuvenation_possessed
 		}
 		
 		add_character_modifier = {
@@ -9323,7 +9323,7 @@ character_event = {
     		has_character_flag = super_outcome
     		has_character_flag = war_invention
     	}
-    	text = "You have invented the weapon that will truly change how the war is fought for ever, the arquebus."
+    	text = "The invention, the culmination of our great collaboration, is finally finished! You have invented the weapon that will truly change how the war is fought for ever, the Arquebus."
     	picture = GFX_evt_gathering_of_minds	
 	}
 	
@@ -9332,7 +9332,7 @@ character_event = {
     		has_character_flag = super_outcome
     		has_character_flag = prosperity_invention
     	}
-    	text = "You have invented the double-entry bookkeeping system, a system of bookkeeping so named because every entry to an account requires a corresponding and opposite entry to a different account."
+    	text = "The invention, the culmination of our great collaboration, is finally finished! You have invented the double-entry bookkeeping system, a system of bookkeeping so named because every entry to an account requires a corresponding and opposite entry to a different account."
     	picture = GFX_evt_gathering_of_minds	
 	}
 	
@@ -9341,7 +9341,7 @@ character_event = {
     		has_character_flag = super_outcome
     		has_character_flag = knowledge_invention
     	}
-    	text = "You have invented a true thing of future, a printing press."
+    	text = "The invention, the culmination of our great collaboration, is finally finished! You have invented a true thing of the future, a printing press."
     	picture = GFX_evt_gathering_of_minds	
 	}	
 	
@@ -9438,7 +9438,7 @@ character_event = {
 		}
 
         military_techpoints = 200
-        add_society_currency_major_effect = yes
+        add_society_currency_large_effect = yes
     }
 
     option = {
@@ -9456,7 +9456,7 @@ character_event = {
 		}
 
         economy_techpoints = 200
-        add_society_currency_major_effect = yes
+        add_society_currency_large_effect = yes
     }
     
     option = {
@@ -9474,12 +9474,15 @@ character_event = {
 		}
 
         culture_techpoints = 200
-        add_society_currency_major_effect = yes
+        add_society_currency_large_effect = yes
     }	
 	
     option = { 
     	trigger = {
-    		has_character_flag = best_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+			}
     		has_character_flag = war_invention
     	}
         name = EVTOPTA_MNM_1478
@@ -9492,7 +9495,10 @@ character_event = {
 
     option = {
     	trigger = {
-    		has_character_flag = best_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+			}
     		has_character_flag = prosperity_invention
     	}
         name = EVTOPTB_MNM_1478
@@ -9505,7 +9511,10 @@ character_event = {
     
     option = {
     	trigger = {
-    		has_character_flag = best_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+			}
     		has_character_flag = knowledge_invention
     	}
         name = EVTOPTC_MNM_1478
@@ -9518,7 +9527,12 @@ character_event = {
     
     option = {
     	trigger = {
-    		has_character_flag = good_outcome
+			OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+				has_character_flag = good_outcome
+			}
+    		
     		has_character_flag = war_invention
     	}
         name = EVTOPTD_MNM_1478
@@ -9536,7 +9550,11 @@ character_event = {
 
     option = {
     	trigger = {
-    		has_character_flag = good_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+				has_character_flag = good_outcome
+			}
     		has_character_flag = prosperity_invention
     	}
         name = EVTOPTE_MNM_1478
@@ -9554,7 +9572,11 @@ character_event = {
 
     option = {
     	trigger = {
-    		has_character_flag = good_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+				has_character_flag = good_outcome
+			}
     		has_character_flag = knowledge_invention
     	}
         name = EVTOPTF_MNM_1478
@@ -9567,7 +9589,13 @@ character_event = {
 
     option = {
     	trigger = {
-    		has_character_flag = ok_outcome
+			OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+				has_character_flag = good_outcome
+				has_character_flag = ok_outcome
+			}
+    		
     		has_character_flag = war_invention
     	}
         name = EVTOPTG_MNM_1478
@@ -9580,7 +9608,12 @@ character_event = {
 
     option = {
     	trigger = {
-    		has_character_flag = ok_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+				has_character_flag = good_outcome
+				has_character_flag = ok_outcome
+			}
     		has_character_flag = prosperity_invention
     	}
         name = EVTOPTH_MNM_1478
@@ -9598,7 +9631,12 @@ character_event = {
 
     option = {
     	trigger = {
-    		has_character_flag = ok_outcome
+    		OR = {
+				has_character_flag = super_outcome
+				has_character_flag = best_outcome
+				has_character_flag = good_outcome
+				has_character_flag = ok_outcome
+			}
     		has_character_flag = knowledge_invention
     	}
         name = EVTOPTI_MNM_1478
@@ -9615,7 +9653,8 @@ character_event = {
     		clr_character_flag = war_invention
     		clr_character_flag = prosperity_invention
     		clr_character_flag = knowledge_invention
-    		clr_character_flag = great_outcome
+			clr_character_flag = super_outcome
+    		clr_character_flag = best_outcome
     		clr_character_flag = good_outcome
     		clr_character_flag = ok_outcome
     	}

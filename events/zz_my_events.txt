@@ -1,0 +1,229 @@
+character_event = {
+	id = My.0001
+	hide_window = yes
+	
+	trigger = {
+		is_ruler = yes
+		NOT = { has_character_modifier = has_parliament }
+		capital_scope = {
+			any_province_holding = {
+				has_building = un_parliament
+			}	
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I have a Parliament"
+		
+		add_character_modifier = {
+			name = has_parliament
+			duration = -1
+		}
+	}		
+}
+
+character_event = {
+	id = My.0002
+	hide_window = yes
+	
+	trigger = {
+		has_character_modifier = has_parliament
+		NOT = {
+			capital_scope = {
+				any_province_holding = {
+					has_building = un_parliament
+				}	
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I do not have a Parliament"
+		
+		remove_character_modifier = has_parliament
+	}		
+}
+
+character_event = {
+	id = My.0003
+	hide_window = yes
+	
+	trigger = {
+		has_job_title = job_chancellor
+		NOT = { has_character_modifier = has_diplomatic_cabinet }
+		liege = {
+			capital_scope = {
+				any_province_holding = {
+					has_building = un_diplomatic_cabinet
+				}	
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I have a Diplomatic Cabinet"
+		
+		add_character_modifier = {
+			name = has_diplomatic_cabinet
+			duration = -1
+		}
+	}		
+}
+
+character_event = {
+	id = My.0004
+	hide_window = yes
+	
+	trigger = {
+		has_character_modifier = has_diplomatic_cabinet
+		NAND = {
+			alive = yes
+			has_job_title = job_chancellor
+			liege = {
+				capital_scope = {
+						any_province_holding = {
+							has_building = un_diplomatic_cabinet
+						}	
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I do not have a DC"
+		
+		remove_character_modifier = has_parliament
+	}			
+}
+
+character_event = {
+	id = My.0005
+	hide_window = yes
+	
+	trigger = {
+		has_job_title = job_spymaster
+		NOT = { has_character_modifier = has_secret_agency }
+		liege = {
+			capital_scope = {
+				any_province_holding = {
+					has_building = un_secret_agency
+				}	
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I have a Secret Agency"
+		
+		add_character_modifier = {
+			name = has_secret_agency
+			duration = -1
+		}
+	}		
+}
+
+character_event = {
+	id = My.0006
+	hide_window = yes
+	
+	trigger = {
+		has_character_modifier = has_secret_agency
+		NAND = {
+			alive = yes
+			has_job_title = job_spymaster
+			liege = {
+				capital_scope = {
+						any_province_holding = {
+							has_building = un_secret_agency
+						}	
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I do not have a Secret Agency"
+		
+		remove_character_modifier = has_secret_agency
+	}
+}
+
+character_event = {
+	id = My.0007
+	hide_window = yes
+	
+	trigger = {
+		has_job_title = job_treasurer
+		NOT = { has_character_modifier = has_revenue_bureau }
+		liege = {
+			capital_scope = {
+				any_province_holding = {
+					has_building = un_revenue_bureau
+				}	
+			}
+		}
+	}
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I have a Revenue Bureau"
+		
+		add_character_modifier = {
+			name = has_revenue_bureau
+			duration = -1
+		}
+	}		
+}
+
+character_event = {
+	id = My.0008
+	hide_window = yes
+	
+	trigger = {
+		has_character_modifier = has_revenue_bureau
+		NAND = {
+			alive = yes
+			has_job_title = job_treasurer
+			liege = {
+				capital_scope = {
+						any_province_holding = {
+							has_building = un_revenue_bureau
+						}	
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "I do not have a Revenue Bureau"
+		
+		remove_character_modifier = has_revenue_bureau
+	}
+}
